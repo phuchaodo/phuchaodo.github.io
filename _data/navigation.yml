@@ -5,14 +5,11 @@ main:
     
   - title: "Publications"
     url: /publications/
-    #https://scholar.google.com/citations?user=6nGP2ysAAAAJ&hl=en&authuser=1
 
   - title: "Teaching"
     url: /teaching/ 
     
-  - title: "My Blog"
-    url: https://dophuchao.github.io/
- 
+
   - title: "Qualification"
     url: /qualification/ 
     
