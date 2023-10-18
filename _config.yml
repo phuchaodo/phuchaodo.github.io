@@ -89,7 +89,7 @@ author:
   googlescholar    : "https://scholar.google.com.sg/citations?hl=vi&user=IfpzzeoAAAAJ"
   email            : "do.hf@sut.ru"
   researchgate     : "https://www.researchgate.net/profile/Do-Hao-3" # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              : "https://dophuchao.github.io/"
+  uri              : #"https://dophuchao.github.io/"
   bitbucket        :
   codepen          :
   dribbble         :
