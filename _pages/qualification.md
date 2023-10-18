@@ -19,4 +19,5 @@ author_profile: true
 - Deep Learning Certificate. Awarded by Coursera.
 
 **2017**
+
 Top 5 in “Entropy – Data mining held by John von Neumann Institute.
