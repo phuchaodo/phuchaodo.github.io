@@ -1,22 +1,23 @@
 # main links links
 main:
+  - title: "Research"
+    url: /research/
+    
   - title: "Publications"
     url: /publications/
-
-  - title: "Talks"
-    url: /talks/    
+    #https://scholar.google.com/citations?user=6nGP2ysAAAAJ&hl=en&authuser=1
 
   - title: "Teaching"
-    url: /teaching/    
+    url: /teaching/ 
     
-  - title: "Portfolio"
-    url: /portfolio/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
+  - title: "My Blog"
+    url: https://dophuchao.github.io/
+ 
+  - title: "Qualification"
+    url: /qualification/ 
     
-  - title: "CV"
-    url: /cv/
-    
+  - title: "Service"
+    url: /service/ 
+
   - title: "Guide"
     url: /markdown/
