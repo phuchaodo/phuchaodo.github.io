@@ -11,6 +11,10 @@ main:
     
   - title: "Projects"
     url: /projects/ 
+
+  - title: "My Blog"
+    url: /blog/
+
     
   - title: "Qualification"
     url: /qualification/ 
