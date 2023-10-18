@@ -18,7 +18,7 @@ My journey is guided by an insatiable curiosity for algorithms, the fundamental 
 ---------------------------------------------------------------
 📢 **NEWS**  
 
-🗣️ 2023/10/13: Our collegue - MSc. Phuc Hao Do, a Ph.D. student at the Bonch-Bruevich Saint Petersburg State University of Telecommunications, Saint-Petersburg, Russia, is going to present our paper titled "**Enhancing Satellite Communication Efficiency through AI-Based Traffic Prioritization**" at [ICACNGC 2023](https://icacnc.com/) on October 12th, 2023. [Conference's Program.](/files/icacnc2023.pdf)
+🗣️ 2023/10/13: I'm going to present my paper titled "**Enhancing Satellite Communication Efficiency through AI-Based Traffic Prioritization**" at [ICACNGC 2023](https://icacnc.com/) on October 12th, 2023. [Conference's Program.](/files/icacnc2023.pdf)
 
 🥳 2023/10/09: Congratulations on the newly accepted paper of our research team: "**Leveraging FFT and Hybrid EfficientNet for Enhanced Action Recognition in Video Sequences**" in SoICT 2023. [Conference's Link](https://soict.org/)
 
