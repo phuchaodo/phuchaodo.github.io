@@ -20,4 +20,4 @@ author_profile: true
 
 **2017**
 
-Top 5 in “Entropy – Data mining held by John von Neumann Institute.
+- Top 5 in “Entropy – Data mining held by John von Neumann Institute.
