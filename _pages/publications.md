@@ -47,7 +47,7 @@ author_profile: true
 
 [10] Pham, Van Dai, **Do, Phuc Hao**, Le, Tran Duc, Kirichek, Ruslan. A Method for Link Quality Estimation in LoRa Network based on Support Vector Machine. Distributed Computer and Communication Networks: Control, Computation, Communications: 24th International Conference, 401-408, 2021.
 
-[9] Van, Nguyen Nang Hung, Pham Minh Tuan, and Kanta Tachibana Do Phuc Hao. "Lstm for human activity recognition based on feature extraction method using conformal geometric algebra.", Kỷ yếu Hội nghị KHCN Quốc gia lần thứ XIV về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR), 2021
+[9] Van, Nguyen Nang Hung, Pham Minh Tuan, and Kanta Tachibana, **Do Phuc Hao**. "Lstm for human activity recognition based on feature extraction method using conformal geometric algebra.", Kỷ yếu Hội nghị KHCN Quốc gia lần thứ XIV về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR), 2021
 
 
 **2020**
@@ -57,7 +57,7 @@ author_profile: true
 
 **2018**
 
-[7] Pham, T. M., **Do, H. P.**, Doan, D. C., & Nguyen, H. V. (2018). Fast gaussian distribution based adaboost algorithm for face detection. Tạp chí Khoa học và Công nghệ-Đại học Đà Nẵng, 45-50.
+[7] Pham, T. M., **Do, H. P.**, Doan, D. C., & Nguyen, H. V. (2018). Fast gaussian distribution based adaboost algorithm for face detection. Tạp chí Khoa học và Công nghệ. Đại học Đà Nẵng, 45-50.
 
 
 **2016**
