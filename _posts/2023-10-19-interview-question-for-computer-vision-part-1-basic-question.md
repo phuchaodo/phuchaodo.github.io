@@ -9,7 +9,7 @@ tags:
   - question
 ---
 
-Some interview questions and answers for the computer vision field.
+Some interview questions and answers for the computer vision field. Part 1 shows some basic interview questions and answers.
 
 Computer Vision Basics Interview Questions & Answers
 ======
