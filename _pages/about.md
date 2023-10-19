@@ -22,4 +22,4 @@ My journey is guided by an insatiable curiosity for algorithms, the fundamental 
 
 🥳 2023/10/09: Congratulations on the newly accepted paper of our research team: "**Leveraging FFT and Hybrid EfficientNet for Enhanced Action Recognition in Video Sequences**" in SoICT 2023. [Conference's Link](https://soict.org/)
 
-✍️ 2023/10/13: My new post on the my blog: [Queuing theory basics](https://phuchaodo.github.io/)
+✍️ 2023/10/13: My new post on the my blog: [Computer vision for interview](https://phuchaodo.github.io/posts/2023/10/19/interview-question-for-computer-vision-part-8-image-generation-based-questions/)
