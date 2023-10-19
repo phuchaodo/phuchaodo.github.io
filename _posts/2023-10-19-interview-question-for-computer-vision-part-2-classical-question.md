@@ -9,7 +9,7 @@ tags:
   - question
 ---
 
-Some interview questions and answers for the computer vision field.
+Some interview questions and answers for the computer vision field. Part 2 shows some classical interview questions and answers.
 
 Classical Computer Vision Interview Questions & Answers
 ======
