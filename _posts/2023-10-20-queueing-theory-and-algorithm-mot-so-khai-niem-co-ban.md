@@ -292,17 +292,17 @@ Queueing theory algorithms
    
    * Tương tự như M/D/1 nhưng với nhiều server (c).
 
-### 7. Hàng đợi M/M/1/K 
+### 7. **Hàng đợi M/M/1/K**: 
 
-	* M(Markovian Arrival Process): Thời gian giữa các sự kiện đến hàng đợi tuân theo quá trình Markov, thường được mô tả bằng phân phối Poisson.
-	* M(Exponential Service Time): Thời gian phục vụ của mỗi khách hàng tuân theo phân phối mũ (Exponential).
-	* 1 (Single Server): Hệ thống chỉ có một server duy nhất để phục vụ khách hàng.
-	* K: Số lượng tối đa khách hàng mà hàng đợi có thể chứa. Khi hàng đợi đạt đến sức chứa tối đa, các khách hàng tiếp theo sẽ bị từ chối hoặc rơi vào trạng thái "blocked" (chờ đợi).
+   * Markovian Arrival Process): Thời gian giữa các sự kiện đến hàng đợi tuân theo quá trình Markov, thường được mô tả bằng phân phối Poisson.
+   * Exponential Service Time: Thời gian phục vụ của mỗi khách hàng tuân theo phân phối mũ Exponential.
+   * Single Server: Hệ thống chỉ có một server duy nhất để phục vụ khách hàng.
+   * K: Số lượng tối đa khách hàng mà hàng đợi có thể chứa. Khi hàng đợi đạt đến sức chứa tối đa, các khách hàng tiếp theo sẽ bị từ chối hoặc rơi vào trạng thái blocked chờ đợi.
 
 ### 8. So sánh M/M/1 vs M/M/1/K
 
-* Nếu dùng M/M/1 thì khó chỉ ra được sự khác biệt khi đề cập đến packet loss, vì khi gói tin đến. Ví dụ M/M/1/k (k = 3) thì có nghĩa là 3 gói tin sẽ được server chờ đợi để đáp ứng.
-* Còn nếu gói thứ 4 đến thì nó sẽ bị drop --> packet loss. Còn đối với M/M/1 thì queue là vô hạn nên không thể đo được packet losss.
+   * Nếu dùng M/M/1 thì khó chỉ ra được sự khác biệt khi đề cập đến packet loss, vì khi gói tin đến. Ví dụ M/M/1/k (k = 3) thì có nghĩa là 3 gói tin sẽ được server chờ đợi để đáp ứng.
+   * Còn nếu gói thứ 4 đến thì nó sẽ bị drop dẫn đến packet loss. Còn đối với M/M/1 thì queue là vô hạn nên không thể đo được packet losss.
 
 Tài liệu tham khảo: [Queueing theory and algorithms](https://packetpushers.net/average-network-delay/)
 
