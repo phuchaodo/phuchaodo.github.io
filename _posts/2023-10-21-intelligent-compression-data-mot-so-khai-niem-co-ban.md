@@ -202,11 +202,13 @@ Lợi ích của Neural Network-Based Video Compression bao gồm:
 
 - **Adaptability**: Mạng thần kinh có khả năng học từ dữ liệu mới, giúp cập nhật mô hình nén video khi có thay đổi về loại dữ liệu hoặc yêu cầu chất lượng nén.
 
-Link source code Video compression: [Video compression - tutorial 01](https://github.com/flyywh/Image-compression-and-video-coding/tree/master)
+Link source code Video compression: 
 
-Link source code Video compression: [Video compression - tutorial 02](https://github.com/ZhihaoHu/PyTorchVideoCompression)
+[Video compression - tutorial 01](https://github.com/flyywh/Image-compression-and-video-coding/tree/master)
 
-Link source code Video compression: [Video compression - tutorial 03](https://github.com/mightydeveloper/Deep-Compression-PyTorch)
+[Video compression - tutorial 02](https://github.com/ZhihaoHu/PyTorchVideoCompression)
+
+[Video compression - tutorial 03](https://github.com/mightydeveloper/Deep-Compression-PyTorch)
 
 
 Các thuật toán nén lossless
@@ -251,11 +253,13 @@ Stable diffusion for image compression data
 
 Stable Diffusion makes for a very powerful lossy image compression codec.
 
-Link source code SD for compression: [SD for compression - tutorial 01](https://pub.towardsai.net/stable-diffusion-based-image-compresssion-6f1f0a399202)
+Link source code SD for compression: 
 
-Link source code SD for compression: [SD for compression - tutorial 02](https://colab.research.google.com/drive/1Ci1VYHuFJK5eOX9TB0Mq4NsqkeDrMaaH?usp=sharing)
+[SD for compression - tutorial 01](https://pub.towardsai.net/stable-diffusion-based-image-compresssion-6f1f0a399202)
 
-Link source code SD for compression: [SD for compression - tutorial 03](https://www.stavros.io/posts/compressing-images-with-stable-diffusion/)
+[SD for compression - tutorial 02](https://colab.research.google.com/drive/1Ci1VYHuFJK5eOX9TB0Mq4NsqkeDrMaaH?usp=sharing)
+
+[SD for compression - tutorial 03](https://www.stavros.io/posts/compressing-images-with-stable-diffusion/)
 
 
 Hết.
