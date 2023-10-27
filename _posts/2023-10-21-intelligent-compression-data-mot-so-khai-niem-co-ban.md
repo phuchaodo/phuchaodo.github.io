@@ -244,6 +244,18 @@ Link source code for lossless compression: [Lossless compression - tutorial 02](
 
 Link source code for lossless compression: [Lossless compression - tutorial 03](https://github.com/mohit1997/DeepZip)
 
+Stable diffusion for image compression data
+======
+
+## Stable Diffusion Based Image Compression: 
+
+* Stable Diffusion makes for a very powerful lossy image compression codec.
+
+Link source code SD for compression: [SD for compression - tutorial 01](https://pub.towardsai.net/stable-diffusion-based-image-compresssion-6f1f0a399202)
+
+Link source code SD for compression: [SD for compression - tutorial 02](https://colab.research.google.com/drive/1Ci1VYHuFJK5eOX9TB0Mq4NsqkeDrMaaH?usp=sharing)
+
+Link source code SD for compression: [SD for compression - tutorial 03](https://www.stavros.io/posts/compressing-images-with-stable-diffusion/)
 
 
 Hết.
