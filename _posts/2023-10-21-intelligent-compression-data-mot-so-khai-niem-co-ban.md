@@ -247,9 +247,9 @@ Link source code for lossless compression: [Lossless compression - tutorial 03](
 Stable diffusion for image compression data
 ======
 
-## Stable Diffusion Based Image Compression: 
+## Stable Diffusion Based Image Compression
 
-* Stable Diffusion makes for a very powerful lossy image compression codec.
+Stable Diffusion makes for a very powerful lossy image compression codec.
 
 Link source code SD for compression: [SD for compression - tutorial 01](https://pub.towardsai.net/stable-diffusion-based-image-compresssion-6f1f0a399202)
 
