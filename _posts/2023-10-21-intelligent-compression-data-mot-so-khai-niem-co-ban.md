@@ -100,6 +100,9 @@ Các thuật toán nén lossy
 
 Link source code VAEs cho lossy compression: [VAEs for lossy compression](https://github.com/duanzhiihao/lossy-vae)
 
+Link source code DNN vs VAEs cho lossy compression: [DNN vs VAEs for lossy compression](https://github.com/NJUVISION/NIC/tree/main)
+
+
 ## 2. Generative Adversarial Networks (GANs)
 
 Đây là một loại mô hình học sâu (deep learning) gồm hai thành phần chính: một mô hình sinh (generator) và một mô hình phân biệt (discriminator). GANs được huấn luyện thông qua quá trình cạnh tranh giữa hai mô hình này. Generator cố gắng tạo ra dữ liệu giống với dữ liệu thật từ một phân phối ẩn, trong khi discriminator cố gắng phân biệt giữa dữ liệu thật và dữ liệu được tạo ra bởi generator.
@@ -131,6 +134,116 @@ Link source code VAEs cho lossy compression: [VAEs for lossy compression](https:
    - Đây là một phần quan trọng, và phụ thuộc vào bài toán cụ thể. Việc thiết kế generator và discriminator, cũng như lựa chọn siêu tham số (như learning rate) đòi hỏi sự thử nghiệm và điều chỉnh.
 
 Link source code GAN cho lossy compression: [GAN for lossy compression](https://github.com/mit-han-lab/gan-compression)
+
+## 3. Quá trình nén âm thanh lossy
+
+Các bước chính của quá trình nén âm thanh lossy bao gồm:
+
+1. **Phân tích âm thanh**:
+   - Tín hiệu âm thanh ban đầu được phân tách thành các thành phần tần số khác nhau, thông qua biến đổi Fourier hoặc các phương pháp khác.
+
+2. **Kỹ thuật mã hóa**:
+   - Sử dụng các thuật toán nén để giảm dung lượng tệp âm thanh. Trong quá trình này, thông tin không cần thiết hoặc ít quan trọng bị loại bỏ.
+
+3. **Lưu trữ tệp nén**:
+   - Tệp âm thanh đã được nén sẽ có dung lượng nhỏ hơn và có thể được lưu trữ hoặc truyền đi nhanh hơn.
+
+4. **Giải nén**:
+   - Khi tệp nén được phát lại, nó sẽ được giải nén để tạo ra một bản sao gần giống với tín hiệu âm thanh ban đầu.
+
+Link source code tutorial lossy compression: [Audio compression - tutorial 01](https://github.com/facebookresearch/audiocraft)
+
+Link source code tutorial lossy compression: [Audio compression - tutorial 02](https://github.com/descriptinc/descript-audio-codec)
+
+
+## 4. Learned Image Compression with Neural Networks
+
+Nó là một phương pháp nén hình ảnh sử dụng mạng nơ-ron để học cách biểu diễn và nén hình ảnh. Điều này khác biệt với các phương pháp truyền thống dựa trên tiếp cận số học hoặc biến đổi tín hiệu.
+
+* Cụ thể, LICN kết hợp một mô hình học sâu (neural network) để học một biểu diễn hiệu quả của hình ảnh. 
+* Mạng nơ-ron này được huấn luyện trên một tập dữ liệu lớn các hình ảnh để học cách biểu diễn chúng trong một không gian dữ liệu thấp chiều hơn, giúp giảm thiểu dung lượng lưu trữ mà vẫn giữ lại lượng thông tin quan trọng.
+
+Các thành phần quan trọng trong Learned Image Compression with Neural Networks bao gồm:
+
+1. **Encoder Network**: Mạng này được sử dụng để biểu diễn hình ảnh ban đầu thành một biểu diễn tương đối nhỏ. Đây là phần của mô hình học sâu được huấn luyện để nén hình ảnh.
+
+2. **Decoder Network**: Mạng này nhận vào biểu diễn nhỏ hơn và cố gắng khôi phục lại hình ảnh ban đầu từ đó. Nó chịu trách nhiệm giải nén dữ liệu và tạo ra hình ảnh gần giống với hình ảnh gốc.
+
+3. **Loss Function**: Hàm mất mát định nghĩa cách đo sự sai lệch giữa hình ảnh gốc và hình ảnh được giải nén. Mục tiêu của mô hình là tối thiểu hóa hàm mất mát này để đảm bảo rằng hình ảnh giải nén sẽ gần giống hình ảnh gốc.
+
+Công nghệ LICN cho phép một mức độ linh hoạt cao hơn trong việc tùy chỉnh việc nén hình ảnh theo yêu cầu cụ thể và cho phép điều chỉnh độ phân giải và chất lượng hình ảnh được giữ lại sau khi giải nén.
+
+Link source code Learned Image Compression with Neural Networks: [Learned Image Compression with Neural Networks](https://github.com/jmliu206/LIC_TCM)
+
+
+## 5. Video compression
+
+Neural Network-Based Video Compression (NNBC) là một phương pháp nén video sử dụng mạng thần kinh nhân tạo (neural network) để giảm kích thước của dữ liệu video mà vẫn giữ được chất lượng hình ảnh tương đương. 
+
+Dưới đây là một số thành phần chính của Neural Network-Based Video Compression:
+
+1. **Encoder Network**: Mạng này chịu trách nhiệm chuyển đổi các khung hình video đầu vào thành một biểu diễn có kích thước nhỏ hơn, gọi là latent space. Mục tiêu của encoder là tìm cách biểu diễn dữ liệu video sao cho có thể tái tạo lại ảnh gốc từ biểu diễn này.
+
+2. **Decoder Network**: Mạng này được sử dụng để giải nén biểu diễn nhỏ hơn (latent space) và tái tạo lại khung hình gốc. Mục tiêu của decoder là học cách biểu diễn các đặc trưng trong latent space để tái tạo lại ảnh ban đầu.
+
+3. **Loss Function**: Hàm mất mát được sử dụng để đo lường sự sai lệch giữa ảnh gốc và ảnh tái tạo. Mục tiêu là tối thiểu hóa sự sai lệch này để đảm bảo chất lượng hình ảnh tái tạo là tốt nhất có thể.
+
+4. **Training Data**: Để huấn luyện mạng, cần sử dụng một tập dữ liệu lớn gồm các video và các phiên bản đã được nén của chúng. Mạng sẽ học cách biểu diễn dữ liệu video sao cho có thể nén và giải nén lại mà không mất đi nhiều thông tin quan trọng.
+
+5. **Quantization**: Kỹ thuật này thường được áp dụng để giới hạn số lượng giá trị mà mỗi phần tử trong biểu diễn có thể nhận. Điều này giúp giảm kích thước của dữ liệu biểu diễn.
+
+6. **Entropy Coding**: Sau khi quantization, các giá trị được mã hóa bằng các phương pháp mã hóa thông tin như Huffman coding hoặc arithmetic coding để giảm kích thước tệp nén.
+
+Lợi ích của Neural Network-Based Video Compression bao gồm:
+
+- **Khả năng học cách biểu diễn dữ liệu phức tạp**: Mạng thần kinh có khả năng học cách biểu diễn các đặc trưng phức tạp của video, giúp nén dữ liệu một cách hiệu quả.
+
+- **Giữ lại chất lượng tốt**: So với các phương pháp nén truyền thống, NNBC thường có khả năng giữ lại chất lượng hình ảnh tốt hơn ở mức độ nén cao.
+
+- **Adaptability**: Mạng thần kinh có khả năng học từ dữ liệu mới, giúp cập nhật mô hình nén video khi có thay đổi về loại dữ liệu hoặc yêu cầu chất lượng nén.
+
+Link source code Video compression: [Video compression - tutorial 01](https://github.com/flyywh/Image-compression-and-video-coding/tree/master)
+
+Link source code Video compression: [Video compression - tutorial 02](https://github.com/ZhihaoHu/PyTorchVideoCompression)
+
+Link source code Video compression: [Video compression - tutorial 03](https://github.com/mightydeveloper/Deep-Compression-PyTorch)
+
+
+Các thuật toán nén lossless
+======
+
+## Giải thích các khái niệm và thuật toán đơn giản
+
+Nén dữ liệu không mất mát (Lossless Compression) là quá trình giảm kích thước của dữ liệu mà không làm mất bất kỳ thông tin nào so với dữ liệu ban đầu. Đây là một quá trình khá đặc biệt, khác với nén mất mát (Lossy Compression) như JPEG hay MP3, nơi một phần thông tin có thể bị loại bỏ để giảm kích thước tệp.
+
+Dưới đây là một số phương pháp đơn giản của nén dữ liệu không mất mát:
+
+1. **Dictionary Coding (Huffman Coding)**:
+   - **Ý tưởng**: Phương pháp này sử dụng một bảng từ điển (dictionary) để ánh xạ các biểu diễn thông tin với các mã ngắn nhất.
+   - **Cách hoạt động**: Những phần dữ liệu thường xuất hiện nhiều lần trong tệp sẽ được biểu diễn bằng các mã ngắn hơn. Những phần dữ liệu ít phổ biến sẽ được biểu diễn bằng các mã dài hơn.
+
+2. **Run-Length Encoding (RLE)**:
+   - **Ý tưởng**: Kỹ thuật này nhóm các ký tự liên tiếp giống nhau thành một cặp gồm ký tự và số lượng lặp lại.
+   - **Cách hoạt động**: Ví dụ, chuỗi "AAAABBBCCDAA" sẽ được biểu diễn thành "4A3B2C1D2A".
+
+3. **Arithmetic Coding**:
+   - **Ý tưởng**: Mỗi ký tự hoặc cụm ký tự trong dữ liệu đầu vào được ánh xạ vào một khoảng giá trị trên đoạn [0,1].
+   - **Cách hoạt động**: Quá trình này liên quan đến việc chia nhỏ đoạn [0,1] thành các khoảng con tương ứng với xác suất xuất hiện của các ký tự hoặc cụm ký tự. Quá trình nén và giải nén sẽ sử dụng các khoảng này để tương tác với dữ liệu.
+
+4. **Burrows-Wheeler Transform (BWT)**:
+   - **Ý tưởng**: BWT tái sắp xếp các ký tự trong chuỗi để tạo ra các chuỗi có tính chất gom cụm, từ đó dễ dàng nén được.
+   - **Cách hoạt động**: BWT sắp xếp lại các chuỗi thành các chuỗi tương tự nhưng chứa các cụm ký tự giống nhau. Sau đó, chuỗi đã biến đổi này thường được nén bằng RLE hoặc các kỹ thuật khác.
+
+5. **Lempel-Ziv-Welch (LZW)**:
+   - **Ý tưởng**: Kỹ thuật này xây dựng một bảng từ điển dựa trên chuỗi dữ liệu xuất hiện trong tệp tin.
+   - **Cách hoạt động**: Chuỗi dữ liệu liên tiếp được so sánh với các phần tử trong bảng từ điển, và khi có sự trùng khớp, một mã được gán cho chuỗi đó và bảng từ điển được mở rộng.
+
+Link source code for lossless compression: [Lossless compression - tutorial 01](https://github.com/kedartatwawadi/NN_compression)
+
+Link source code for lossless compression: [Lossless compression - tutorial 02](https://github.com/Model-Compression/Lossless_Compression)
+
+Link source code for lossless compression: [Lossless compression - tutorial 03](https://github.com/mohit1997/DeepZip)
+
 
 
 Hết.
