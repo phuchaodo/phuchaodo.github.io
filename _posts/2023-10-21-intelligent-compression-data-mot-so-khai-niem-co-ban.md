@@ -98,9 +98,11 @@ Các thuật toán nén lossy
 
 - Sử dụng decoder để giải mã dữ liệu từ không gian tiếp cận trở lại dạng ban đầu.
 
-Link source code VAEs cho lossy compression: [VAEs for lossy compression](https://github.com/duanzhiihao/lossy-vae)
+Link source code VAEs cho lossy compression: 
+[VAEs for lossy compression](https://github.com/duanzhiihao/lossy-vae)
 
-Link source code DNN vs VAEs cho lossy compression: [DNN vs VAEs for lossy compression](https://github.com/NJUVISION/NIC/tree/main)
+Link source code DNN vs VAEs cho lossy compression: 
+[DNN vs VAEs for lossy compression](https://github.com/NJUVISION/NIC/tree/main)
 
 
 ## 2. Generative Adversarial Networks (GANs)
@@ -133,7 +135,9 @@ Link source code DNN vs VAEs cho lossy compression: [DNN vs VAEs for lossy compr
 ### 6. **Cấu trúc mạng và siêu tham số**:
    - Đây là một phần quan trọng, và phụ thuộc vào bài toán cụ thể. Việc thiết kế generator và discriminator, cũng như lựa chọn siêu tham số (như learning rate) đòi hỏi sự thử nghiệm và điều chỉnh.
 
-Link source code GAN cho lossy compression: [GAN for lossy compression](https://github.com/mit-han-lab/gan-compression)
+Link source code GAN cho lossy compression: 
+
+[GAN for lossy compression](https://github.com/mit-han-lab/gan-compression)
 
 ## 3. Quá trình nén âm thanh lossy
 
@@ -151,9 +155,11 @@ Các bước chính của quá trình nén âm thanh lossy bao gồm:
 4. **Giải nén**:
    - Khi tệp nén được phát lại, nó sẽ được giải nén để tạo ra một bản sao gần giống với tín hiệu âm thanh ban đầu.
 
-Link source code tutorial lossy compression: [Audio compression - tutorial 01](https://github.com/facebookresearch/audiocraft)
+Link source code tutorial lossy compression: 
 
-Link source code tutorial lossy compression: [Audio compression - tutorial 02](https://github.com/descriptinc/descript-audio-codec)
+[Audio compression - tutorial 01](https://github.com/facebookresearch/audiocraft)
+
+[Audio compression - tutorial 02](https://github.com/descriptinc/descript-audio-codec)
 
 
 ## 4. Learned Image Compression with Neural Networks
@@ -240,11 +246,13 @@ Dưới đây là một số phương pháp đơn giản của nén dữ liệu 
    - **Ý tưởng**: Kỹ thuật này xây dựng một bảng từ điển dựa trên chuỗi dữ liệu xuất hiện trong tệp tin.
    - **Cách hoạt động**: Chuỗi dữ liệu liên tiếp được so sánh với các phần tử trong bảng từ điển, và khi có sự trùng khớp, một mã được gán cho chuỗi đó và bảng từ điển được mở rộng.
 
-Link source code for lossless compression: [Lossless compression - tutorial 01](https://github.com/kedartatwawadi/NN_compression)
+Link source code for lossless compression: 
 
-Link source code for lossless compression: [Lossless compression - tutorial 02](https://github.com/Model-Compression/Lossless_Compression)
+[Lossless compression - tutorial 01](https://github.com/kedartatwawadi/NN_compression)
 
-Link source code for lossless compression: [Lossless compression - tutorial 03](https://github.com/mohit1997/DeepZip)
+[Lossless compression - tutorial 02](https://github.com/Model-Compression/Lossless_Compression)
+
+[Lossless compression - tutorial 03](https://github.com/mohit1997/DeepZip)
 
 Stable diffusion for image compression data
 ======
