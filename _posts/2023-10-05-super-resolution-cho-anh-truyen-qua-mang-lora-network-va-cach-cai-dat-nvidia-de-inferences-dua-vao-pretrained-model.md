@@ -479,11 +479,11 @@ Hướng dẫn làm việc với lora sx1276 và esp32-cam sử dụng esp32 idf
 
 * Khi có lora thì nối như sau: (Đây là node lora - có nghĩa là nó sẽ thu thập dữ liệu từ camera và gửi đi --> SENDER)
 
-** Việc flash code xuống esp32-cam thì bình thường (như lưu ý ở trên)
-** Đầu tiên thì UART sẽ nối nguồn (5V, GND) trực tiếp với 5V và GND của esp32-cam.
-** Thứ hai, phần 3V, GND của esp32-cam sẽ nối với VCC và GND của lora sx1276
-** Thứ ba, phần tx, rx của esp32-cam sẽ nối trực tiếp với lora.
-** Thứ tư, cần anten vào tương ứng.
+**Việc flash code xuống esp32-cam thì bình thường (như lưu ý ở trên)**
+**Đầu tiên thì UART sẽ nối nguồn (5V, GND) trực tiếp với 5V và GND của esp32-cam.**
+**Thứ hai, phần 3V, GND của esp32-cam sẽ nối với VCC và GND của lora sx1276**
+**Thứ ba, phần tx, rx của esp32-cam sẽ nối trực tiếp với lora.**
+**Thứ tư, cần anten vào tương ứng.**
 
 * Đối với lora gateway (chỗ nhận - RECEIVER) thì nối cổng bình thường (5V, GND, TX, RX) với UART tương ứng.
 
@@ -862,7 +862,7 @@ void app_main(void)
 
 * Phần code chỗ port ở ubuntu có thể sửa thành: 
 
-```python
+```sh
 port='/dev/ttyUSB0',\
 ```
 
@@ -958,17 +958,17 @@ Hướng dẫn làm việc với lora sx1276 và esp32-cam sử dụng esp32 idf
 
 Một số lưu ý khi thực hiện 
 
-* Xác định loại nvidia mà mình đang dùng. Mình đã mua nvidia dạng này: https://www.avermedia.com/professional/products?category=Carrier-Board
+* Xác định loại nvidia mà mình đang dùng. Mình đã mua nvidia dạng này: [Link avermedia](https://www.avermedia.com/professional/products?category=Carrier-Board)
 
-* Chọn version nên được cài đặt phù hợp với thiết bị của bạn: https://www.avermedia.com/professional/product-detail/NX215
+* Chọn version nên được cài đặt phù hợp với thiết bị của bạn: [Link version](https://www.avermedia.com/professional/product-detail/NX215)
 
-* Link: https://s3.us-west-2.amazonaws.com/storage.avermedia.com/web_release_www/NX215B/BSP/2022-03-16/NX215B-R1.0.11.4.6.zip
+* Link: [Link download](https://s3.us-west-2.amazonaws.com/storage.avermedia.com/web_release_www/NX215B/BSP/2022-03-16/NX215B-R1.0.11.4.6.zip)
 
 Các bước thực hiện cài đặt cho nvidia
 
 * Bước 1: Download file ở trên
 
-```html
+```sh
 Để giải nén file dạng tar.gz thì gõ lệnh sau:
 
 sudo tar zxf file.tar.gz
@@ -982,7 +982,7 @@ Chọn default: rasberry 2
 
 * Bước 2: Chuẩn bị SD card
 
-```html
+```sh
 Initialize the SD card and create new ext4 partition.
 
 export sdcard=/dev/sdb
@@ -995,7 +995,7 @@ Link:  https://www.youtube.com/watch?v=kjptoLT7nck
 
 * Bước 3: Connext NX to Host
 
-```html
+```sh
 Cái này cần phải kết nối từ từ và cẩn thận.
 
 Nếu gặp lỗi: string not found
@@ -1008,11 +1008,11 @@ sudo apt install python-is-python3
 ### Cài đặt Cuda
 
 * Tham khảo phần video hướng dẫn ở sau: 
-** https://youtu.be/LUxyNyCl4ro
-** https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048
+**https://youtu.be/LUxyNyCl4ro**
+**https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048**
 
 
-```html
+```sh
 sudo apt install nvidia-jetpack
 ```
 
