@@ -1006,10 +1006,9 @@ sudo apt install python-is-python3
 
 ### Cài đặt Cuda
 
-* Tham khảo phần video hướng dẫn ở sau: 
-**https://youtu.be/LUxyNyCl4ro**
-**https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048**
-
+* Tham khảo phần video hướng dẫn ở sau:
+- [Link 01](https://youtu.be/LUxyNyCl4ro)
+- [Link 02](https://forums.developer.nvidia.com/t/pytorch-for-jetson/72048)
 
 ```sh
 sudo apt install nvidia-jetpack
