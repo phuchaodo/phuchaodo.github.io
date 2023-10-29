@@ -14,9 +14,8 @@ Khái niệm và ứng dụng của mạng neural và mạng tích chập
 Mạng neuron nhân tạo và ứng dụng
 ======
 
-Tìm hiểu về kiến trúc và cách cài đặt mạng neuron
-
 ## Các khái niệm cơ bản
+- Tìm hiểu về kiến trúc và cách cài đặt mạng neuron
 
 ### Kiến trúc mạng neuron
 
@@ -247,8 +246,6 @@ print(correct, total, 100.0 * correct / total)
 Giải thích cơ chế của mạng neural networks
 ======
 
-Giải thích cơ chế hoạt động chi tiết của mạng neural network
-
 - Bước 1
 
 ![img](/images/neural-network/co-che/1.jpg){: .align-center width="500px"}
@@ -281,10 +278,10 @@ Giải thích cơ chế hoạt động chi tiết của mạng neural network
 Mạng tích chập neural
 ======
 
-- Tìm hiểu về kiến trúc và cách cài đặt mạng tích chập neural
 
 ## Convolution & Correlation 
 
+- Tìm hiểu về kiến trúc và cách cài đặt mạng tích chập neural
 - Giới thiệu phép tích chập và phép correlation
 
 ![img](/images/mang-tich-chap-neural/conv_valid_full.jpg){: .align-center width="500px"}
@@ -389,7 +386,7 @@ def binary_cross_entropy_prime(y_true, y_pred):
 
 ## Phương pháp backward (đối với convolution)
 
-- toán học và cài đặt
+- Giải thích dạng toán học và cài đặt
 
 ```python
 def backward(self, output_gradient, learning_rate):
@@ -693,7 +690,5 @@ for x, y in zip(x_test, y_test):
     print(f"pred: {np.argmax(output)}, true: {np.argmax(y)}")
 
 ```
-
-
 
 Hết.
