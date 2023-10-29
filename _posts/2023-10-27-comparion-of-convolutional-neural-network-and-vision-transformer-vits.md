@@ -74,9 +74,9 @@ Popular ViT Architectures: Several ViT architectures have been proposed, with va
 
 * ViTs have demonstrated their potential to outperform traditional CNNs on a variety of computer vision tasks, offering a new paradigm for visual recognition that leverages the strengths of the Transformer architecture.
 
-
-
 ## Performance Comparison: CNNs and ViTs
+
+In summary, both CNNs and ViTs exhibit strong performance in terms of classification accuracy and speed. While ViTs have shown promising results and in some cases outperform CNNs, it is important to recognize that each architecture has its strengths and weaknesses. Ultimately, the choice between CNNs and ViTs depends on the specific requirements of the application, including the desired classification accuracy, computational efficiency, and inference speed.
 
 - When selecting the most appropriate architecture for computer vision tasks, it is crucial to compare the performance of Convolutional Neural Networks (CNNs) and Vision Transformers (ViTs) in terms of classification accuracy and speed. In this section, we will discuss the performance differences between these two architectures.
 
@@ -86,18 +86,14 @@ Popular ViT Architectures: Several ViT architectures have been proposed, with va
 
 - Inference Speed: In terms of inference speed, both architectures have their advantages and disadvantages. CNNs generally have a faster inference speed for smaller input sizes, whereas ViTs can process larger input images more efficiently due to their ability to attend to global information directly. However, the specific speed of each architecture can vary depending on factors such as hardware, implementation, and model size. Therefore, it is essential to consider the specific requirements of the application when comparing inference speeds.
 
-In summary, both CNNs and ViTs exhibit strong performance in terms of classification accuracy and speed. While ViTs have shown promising results and in some cases outperform CNNs, it is important to recognize that each architecture has its strengths and weaknesses. Ultimately, the choice between CNNs and ViTs depends on the specific requirements of the application, including the desired classification accuracy, computational efficiency, and inference speed.
-
-
 ## Conclusion
+
+In conclusion, the choice between CNNs and ViTs depends on the specific requirements of the application and the desired trade-offs between classification accuracy, robustness, and computational efficiency. Researchers and practitioners should carefully consider the unique properties of each architecture and adapt their models accordingly to achieve the best possible performance for their computer vision tasks. While the recent advancements in ViTs have shown great potential, it is important to recognize that both CNNs and ViTs will continue to play vital roles in the development of computer vision applications in the foreseeable future.
 
 - Throughout this article, we have examined the key differences between Convolutional Neural Networks (CNNs) and Vision Transformers (ViTs) in terms of their architecture, internal representations, robustness, and performance. The comparison highlights the unique strengths and weaknesses of both approaches, with ViTs emerging as a promising alternative to CNNs in various computer vision applications.
 
 - ViTs have demonstrated superior performance in classification accuracy and robustness to adversarial perturbations in certain scenarios. They also exhibit distinct internal representation structures, characterized by consistent layer similarity and a combination of local and global attention across layers. However, ViTs are less inherently invariant to geometric transformations and may require data augmentation techniques during training to address this limitation.
 
 - On the other hand, CNNs have been the backbone of computer vision tasks for years, offering computational efficiency and faster inference speeds for smaller input sizes. Their hierarchical representations and distinct layer similarity structures contribute to their robust performance in various tasks. Yet, CNNs face challenges in terms of scaling up to high-resolution images and require large amounts of labeled data for training.
-
-In conclusion, the choice between CNNs and ViTs depends on the specific requirements of the application and the desired trade-offs between classification accuracy, robustness, and computational efficiency. Researchers and practitioners should carefully consider the unique properties of each architecture and adapt their models accordingly to achieve the best possible performance for their computer vision tasks. While the recent advancements in ViTs have shown great potential, it is important to recognize that both CNNs and ViTs will continue to play vital roles in the development of computer vision applications in the foreseeable future.
-
 
 Hết.
