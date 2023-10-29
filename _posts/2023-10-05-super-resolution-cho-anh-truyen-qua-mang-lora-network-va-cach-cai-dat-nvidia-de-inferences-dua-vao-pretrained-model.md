@@ -478,12 +478,11 @@ Hướng dẫn làm việc với lora sx1276 và esp32-cam sử dụng esp32 idf
 * Khi flash thì nối esp32-cam với uart thì bình thường (nguồn với nguồn, gnd với gnd, tx và rx cũng tương ứng, còn GPIO0 vs GND của eps32-cam thì phải nối với nhau, còn khi sử dụng thì remove cái này đi) [cái này khi chỉ build mình với esp32-cam chứ chưa có lora.
 
 * Khi có lora thì nối như sau: (Đây là node lora - có nghĩa là nó sẽ thu thập dữ liệu từ camera và gửi đi --> SENDER)
-
-**Việc flash code xuống esp32-cam thì bình thường (như lưu ý ở trên)**
-**Đầu tiên thì UART sẽ nối nguồn (5V, GND) trực tiếp với 5V và GND của esp32-cam.**
-**Thứ hai, phần 3V, GND của esp32-cam sẽ nối với VCC và GND của lora sx1276**
-**Thứ ba, phần tx, rx của esp32-cam sẽ nối trực tiếp với lora.**
-**Thứ tư, cần anten vào tương ứng.**
+  - Việc flash code xuống esp32-cam thì bình thường (như lưu ý ở trên)
+  - Đầu tiên thì UART sẽ nối nguồn (5V, GND) trực tiếp với 5V và GND của esp32-cam.
+  - Thứ hai, phần 3V, GND của esp32-cam sẽ nối với VCC và GND của lora sx1276
+  - Thứ ba, phần tx, rx của esp32-cam sẽ nối trực tiếp với lora.
+  - Thứ tư, cần anten vào tương ứng.
 
 * Đối với lora gateway (chỗ nhận - RECEIVER) thì nối cổng bình thường (5V, GND, TX, RX) với UART tương ứng.
 
