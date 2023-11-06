@@ -30,7 +30,7 @@ Khi được sử dụng trong deep learning, hàm mũ và logarithm thường x
 Một số ví dụ và chứng minh một hàm là hàm lồi
 ======
 
-![img](/images/convex_function/1.JPG){: .align-center width="500px"}
+![img](/images/convex_function/1.JPG)
 
 
 ![img](/images/convex_function/2.JPG){: .align-center width="500px"}
