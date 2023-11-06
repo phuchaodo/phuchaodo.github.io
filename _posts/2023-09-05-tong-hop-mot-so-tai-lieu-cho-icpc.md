@@ -11,6 +11,32 @@ tags:
 
 Tổng hợp với số tài liệu và kiến thức cơ bản cho cuộc thi ICPC hằng năm.
 
+Các bước để giải một bài toán quy hoạch động
+======
+
+## Bước 1
+
+* Cố gắng giải bài toán theo hướng đệ quy
+* Ở bước này, chúng ta không cần quan tâm đến độ phức tạp
+* Quan trọng cách tiếp cận để giải nó trước. Thường ở bước này độ phức tạp cực lớn.
+
+## Bước 2
+
+* Vì khi sử dụng đệ quy, sẽ có nhiều hàm gọi nhiều lần, nên chúng ta sẽ dùng thêm bộ nhớ để lưu trữ.
+* Ở bước này gọi là Top-Down DP (làm từ n đến 0, từ trên xuống)
+
+## Bước 3
+
+* Bottom-up DP
+* Thay vì dùng đệ quy, chúng ta sử dụng mảng để chứa các giá trị và thực hiện tính toán trên mảng đó.
+
+## Bước 4
+
+* Dựa vào cái mảng từ bước 3, chúng ta có thể phát hiện được những giá trị chỉ sử dụng 1 hoặc 2 lần.
+* Cải thiện về không gian.
+
+List bài tập và tư duy về đệ quy được liệt kê ở cuối blog này.
+
 Template cho các cuộc thi ICPC
 ======
 
@@ -696,6 +722,82 @@ update(1, 1, n, 4, 10)
 print(get(1, 1, n, 2, 5))
 
 ```
+
+
+
+Recursive Problems List
+======
+
+1. Tính giai thừa: Tính n! (n giai thừa) với n >= 0.
+2. Fibonacci: Tìm số Fibonacci thứ n trong dãy Fibonacci.
+3. Tính lũy thừa: Tính a^n với a và n là các số nguyên dương.
+4. Tìm ước chung lớn nhất (UCLN) và bội chung nhỏ nhất (BCNN) của hai số nguyên dương a và b.
+5. Quy hoạch động: Các bài toán như tìm dãy con tăng dài nhất, tìm số cách di chuyển từ điểm (0,0) đến điểm (m,n) trên lưới bằng cách di chuyển theo các bước (1,0) hoặc (0,1).
+6. Tìm các tập con của một tập hợp.
+7. Tìm các tuyến đường trong đồ thị.
+
+8. Tính tổ hợp: Tính toán các tổ hợp chập k của n phần tử (nCk).
+9. Tính tổng các phần tử trong một mảng.
+10. Tìm kiếm nhị phân: Tìm kiếm một phần tử trong một mảng đã được sắp xếp.
+11. Sắp xếp lại một mảng (ví dụ: sắp xếp mảng theo thứ tự tăng dần hoặc giảm dần).
+12. Tính đường đi ngắn nhất trong đồ thị (Dijkstra's algorithm hoặc Bellman-Ford algorithm).
+13. Tìm kiếm chuỗi con chung dài nhất giữa hai chuỗi.
+14. Tính tập hợp con có tổng bằng một số x (Subset Sum Problem).
+15. Tìm đường đi trong mê cung.
+16. Tính số Fibonacci sử dụng ma trận.
+17. Kiểm tra xem một chuỗi có phải là chuỗi Palindrome không.
+
+
+8. Tính tổ hợp: Tính toán các tổ hợp chập k của n phần tử (nCk).
+9. Tính tổng các phần tử trong một mảng.
+10. Tìm kiếm nhị phân: Tìm kiếm một phần tử trong một mảng đã được sắp xếp.
+11. Sắp xếp lại một mảng (ví dụ: sắp xếp mảng theo thứ tự tăng dần hoặc giảm dần).
+12. Tính đường đi ngắn nhất trong đồ thị (Dijkstra's algorithm hoặc Bellman-Ford algorithm).
+13. Tìm kiếm chuỗi con chung dài nhất giữa hai chuỗi.
+14. Tính tập hợp con có tổng bằng một số x (Subset Sum Problem).
+15. Tìm đường đi trong mê cung.
+16. Tính số Fibonacci sử dụng ma trận.
+17. Kiểm tra xem một chuỗi có phải là chuỗi Palindrome không.
+
+
+18. Tính toán các số Catalan: Các số Catalan xuất hiện trong nhiều vấn đề kết cấu dữ liệu và tổ hợp.
+
+19. Tìm tất cả các hoán vị của một chuỗi ký tự.
+
+20. Tìm các tập con không giao nhau với tổng lớn nhất (Maximum Sum Subarray Problem).
+
+21. Tìm tất cả các cách chia một số nguyên dương thành tổng các số nguyên dương nhỏ hơn.
+
+22. Tìm đường đi Hamilton trong đồ thị.
+
+23. Tính số Bell: Đếm số cách chia một tập hợp gồm n phần tử thành các phân lớp khác nhau.
+
+24. Tính tổ hợp lặp lại: Tính toán tổ hợp chập k của n phần tử với lặp lại.
+
+25. Tìm dãy con dài nhất không giảm (Longest Increasing Subsequence).
+
+26. Tìm tất cả các hoán vị của một mảng.
+
+27. Tìm các cách sắp xếp n phần tử để tạo thành các cặp.
+
+
+28. Tìm chuỗi con dài nhất có các ký tự duy nhất (Longest Substring Without Repeating Characters).
+
+29. Tìm tất cả các tập con có tổng bằng một số x (Subset Sum Problem).
+
+30. Tìm chuỗi con chung dài nhất của ba chuỗi.
+
+31. Tính số cách tạo ra một số nguyên dương bằng tổng các số nguyên dương nhỏ hơn n.
+
+32. Tìm tất cả các cách chia một số nguyên dương thành tổng các số nguyên dương lẻ.
+
+33. Tìm đường đi trong đồ thị có trọng số âm (Bellman-Ford algorithm).
+
+34. Tìm tất cả các dãy con không giao nhau có tổng lớn nhất (Maximum Sum Non-Adjacent Subsequence).
+
+35. Tính số Fibonacci sử dụng đệ quy đuôi (tail recursion).
+
+36. Tính toán tất cả các cách sắp xếp n phần tử để tạo thành các tập con.
 
 
 Tài liệu tham khảo
