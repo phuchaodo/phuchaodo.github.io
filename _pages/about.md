@@ -18,6 +18,8 @@ My journey is guided by an insatiable curiosity for algorithms, the fundamental 
 ---------------------------------------------------------------
 📢 **NEWS**  
 
+✍️ 2023/10/30: My new post on the my blog: [Understanding and Implementing Deep Learning Models with PyTorch](https://phuchaodo.github.io/posts/2023/10/30/understanding-and-implement-deep-learning-model-with-pytorch/)
+
 ✍️ 2023/10/20: My new post on the my blog: [Queuing Theory and Algorithms](https://phuchaodo.github.io/posts/2023/10/20/queueing-theory-and-algorithm-mot-so-khai-niem-co-ban/)
 
 🗣️ 2023/10/13: I'm going to present my paper titled "**Enhancing Satellite Communication Efficiency through AI-Based Traffic Prioritization**" at [ICACNGC 2023](https://icacnc.com/) on October 12th, 2023. [Conference's Program.](/files/icacnc2023.pdf)
