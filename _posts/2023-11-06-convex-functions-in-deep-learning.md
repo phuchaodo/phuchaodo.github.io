@@ -58,6 +58,7 @@ Chứng minh một hàm là hàm lồi
 
 Để chứng minh rằng một hàm \(f(x)\) là hàm lồi trên một miền cụ thể, ta cần kiểm tra điều kiện sau:
 
+```markdown
 1. **Định nghĩa hàm lồi**:
 
    Một hàm \(f(x)\) được gọi là lồi trên một miền \(D\) nếu với mọi \(x_1, x_2\) trong \(D\) và mọi số thực \(t\) từ 0 đến 1, ta có:
@@ -82,70 +83,59 @@ Chứng minh một hàm là hàm lồi
 
    - Nếu ta có các hàm phức tạp, cần kiểm tra điều kiện lồi trên từng miền cụ thể.
 
-Lưu ý rằng không phải tất cả các hàm đều là lồi, và cách chứng minh lồi sẽ khác nhau tùy thuộc vào tính chất của hàm đó. Trong thực tế, việc chứng minh tính lồi của một hàm có thể khá phức tạp và đòi hỏi kiến thức về phân tích toán học và đại số tuyến tính.
-
+```
 
 Một ví dụ
 ======
 
 Tất nhiên, hãy xem xét ví dụ các hàm và chứng minh tính lồi của chúng.
 
+Dưới đây là các công thức trong dạng Markdown (file .md):
+
 1. **Hàm logarithm tự nhiên (\(f(x) = \log(x)\)) trên miền dương**:
 
-   - Đầu tiên, chúng ta chọn hai điểm bất kỳ \(x_1\) và \(x_2\) trong miền dương (\(x_1 > 0\) và \(x_2 > 0\)).
-   
+   ```markdown
+   - Chúng ta chọn hai điểm bất kỳ \(x_1\) và \(x_2\) trong miền dương (\(x_1 > 0\) và \(x_2 > 0\)).
    - Chọn một số thực \(t\) từ khoảng từ 0 đến 1.
-   
    - Tính \(tx_1 + (1-t)x_2\).
-   
    - Tính \(tf(x_1) + (1-t)f(x_2)\).
-   
    - So sánh \(f(tx_1 + (1-t)x_2)\) với \(tf(x_1) + (1-t)f(x_2)\).
-   
    - Chúng ta muốn chứng minh rằng:
      \[\log(tx_1 + (1-t)x_2) \leq t\log(x_1) + (1-t)\log(x_2)\]
-   
    - Chứng minh: Với \(t\) và \(x_1, x_2\) được chọn như trên, ta có:
      \[tx_1 + (1-t)x_2 > 0\]
      Do đó, hàm logarithm tự nhiên là lồi trên miền dương của nó.
+   ```
 
 2. **Hàm mũ (\(f(x) = e^x\)) trên toàn miền số thực**:
 
+   ```markdown
    - Chúng ta chọn hai điểm bất kỳ \(x_1\) và \(x_2\) trong miền số thực (\(x_1, x_2 \in \mathbb{R}\)).
-   
    - Chọn một số thực \(t\) từ khoảng từ 0 đến 1.
-   
    - Tính \(tx_1 + (1-t)x_2\).
-   
    - Tính \(tf(x_1) + (1-t)f(x_2)\).
-   
    - So sánh \(f(tx_1 + (1-t)x_2)\) với \(tf(x_1) + (1-t)f(x_2)\).
-   
    - Chúng ta muốn chứng minh rằng:
      \[e^{tx_1 + (1-t)x_2} \leq te^{x_1} + (1-t)e^{x_2}\]
-   
    - Chứng minh: Sử dụng tính chất của hàm mũ, ta có:
      \[e^{tx_1 + (1-t)x_2} = e^{tx_1} \cdot e^{(1-t)x_2} \leq te^{x_1} + (1-t)e^{x_2}\]
      Do đó, hàm mũ là lồi trên toàn miền số thực.
+   ```
 
 3. **Hàm tuyến tính (\(f(x) = ax + b\)) trên toàn miền số thực**:
 
+   ```markdown
    - Chúng ta chọn hai điểm bất kỳ \(x_1\) và \(x_2\) trong miền số thực (\(x_1, x_2 \in \mathbb{R}\)).
-   
    - Chọn một số thực \(t\) từ khoảng từ 0 đến 1.
-   
    - Tính \(tx_1 + (1-t)x_2\).
-   
    - Tính \(tf(x_1) + (1-t)f(x_2)\).
-   
    - So sánh \(f(tx_1 + (1-t)x_2)\) với \(tf(x_1) + (1-t)f(x_2)\).
-   
    - Chúng ta muốn chứng minh rằng:
      \[a(tx_1 + (1-t)x_2) + b \leq t(ax_1 + b) + (1-t)(ax_2 + b)\]
-   
    - Chứng minh: Thực hiện các phép toán và thu gọn, ta có:
      \[a(tx_1 + (1-t)x_2) + b = t(ax_1 + b) + (1-t)(ax_2 + b)\]
      Do đó, hàm tuyến tính là lồi trên toàn miền số thực.
-
+   ```
+   
 
 Hết.
