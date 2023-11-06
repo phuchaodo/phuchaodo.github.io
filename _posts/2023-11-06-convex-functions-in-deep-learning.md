@@ -33,19 +33,18 @@ Một số ví dụ và chứng minh một hàm là hàm lồi
 ![img](/images/convex_function/1.JPG)
 
 
-![img](/images/convex_function/2.JPG){: .align-center width="500px"}
+![img](/images/convex_function/2.JPG)
 
 
-![img](/images/convex_function/3.JPG){: .align-center width="500px"}
+![img](/images/convex_function/3.JPG)
 
 
-![img](/images/convex_function/4.JPG){: .align-center width="500px"}
+![img](/images/convex_function/4.JPG)
 
 
-![img](/images/convex_function/5.JPG){: .align-center width="500px"}
+![img](/images/convex_function/5.JPG)
 
 
-![img](/images/convex_function/6.JPG){: .align-center width="500px"}
-
+![img](/images/convex_function/6.JPG)
 
 Hết.
