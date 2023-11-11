@@ -370,15 +370,11 @@ Systematic review là phương pháp review có hệ thống, đáp ứng đủ 
 
 5. Về tính xác thực, do bài syst review là bằng chứng thực chứng, nghĩa là chứng minh giả thiết dựa trên 1 loạt bằng chứng nên rõ ràng phương pháp luận của syst review là phương pháp luận có tính xác thực cao. Khác với nhiều nghiên cứu kém chất lượng đưa ra giả thiết ko thể chứng minh ở thực tế
 
-6. Về tính khái quát hoá, do syst review tổng hợp dữ liệu từ các nghiên cứu đơn lẻ nên hiển nhiên syst review có tính khái quát kiến thức cao hơn các nghiên cứu đơn lẻ được dùng trong bài syst review
+6. Về tính khái quát hoá, do syst review tổng hợp dữ liệu từ các nghiên cứu đơn lẻ nên hiển nhiên syst review có tính khái quát kiến thức cao hơn các nghiên cứu đơn lẻ được dùng trong bài syst review.
 
-7-8. Về tính chính xác và tính tin cậy, bài syst review do tổng hợp và làm rõ các conflict của các nghiên cứu đơn lẻ, vì vậy nó hạn chế và thường loại bỏ được confounding factor xuất hiện trong mô hình nghiên cứu. Do đó, các kết luận từ syst review thường chính xác hơn bài nghiên cứu đơn lẻ
+7. Về tính chính xác và tính tin cậy, bài syst review do tổng hợp và làm rõ các conflict của các nghiên cứu đơn lẻ, vì vậy nó hạn chế và thường loại bỏ được confounding factor xuất hiện trong mô hình nghiên cứu. Do đó, các kết luận từ syst review thường chính xác hơn bài nghiên cứu đơn lẻ
 
-
-Literature review (đánh giá về văn bản khoa học) là một phần quan trọng trong quá trình nghiên cứu, trong đó tác giả tập trung trình bày và tổng hợp thông tin từ các nguồn văn bản, bài báo khoa học, sách và các tài liệu khác liên quan đến chủ đề của họ. Mục đích của literature review là cung cấp một bức tranh tổng quan về tình hình nghiên cứu hiện tại, các kiến thức đã biết, và các hạn chế trong lĩnh vực nghiên cứu cụ thể.
-
-Trong khi literature review tập trung vào việc tóm tắt, tổng hợp, và đánh giá các nghiên cứu đã được công bố trước đó, systematic review là một phương pháp nghiên cứu cụ thể để tổng hợp thông tin từ nhiều nghiên cứu khác nhau với một cách hệ thống và có phương pháp học thuật đặc biệt. Mục tiêu của systematic review là cung cấp một phân tích cơ bản và chất lượng cao về một chủ đề cụ thể, thường bằng cách sử dụng các phương pháp thống kê để kết hợp kết quả của nhiều nghiên cứu và đưa ra một kết luận toàn diện.
-
+Literature review (đánh giá về văn bản khoa học) là một phần quan trọng trong quá trình nghiên cứu, trong đó tác giả tập trung trình bày và tổng hợp thông tin từ các nguồn văn bản, bài báo khoa học, sách và các tài liệu khác liên quan đến chủ đề của họ. Mục đích của literature review là cung cấp một bức tranh tổng quan về tình hình nghiên cứu hiện tại, các kiến thức đã biết, và các hạn chế trong lĩnh vực nghiên cứu cụ thể. Trong khi literature review tập trung vào việc tóm tắt, tổng hợp, và đánh giá các nghiên cứu đã được công bố trước đó, systematic review là một phương pháp nghiên cứu cụ thể để tổng hợp thông tin từ nhiều nghiên cứu khác nhau với một cách hệ thống và có phương pháp học thuật đặc biệt. Mục tiêu của systematic review là cung cấp một phân tích cơ bản và chất lượng cao về một chủ đề cụ thể, thường bằng cách sử dụng các phương pháp thống kê để kết hợp kết quả của nhiều nghiên cứu và đưa ra một kết luận toàn diện.
 
 1. **Literature Review:**
    Trong một literature review về việc giảm độ trễ trong satellite network, tác giả có thể tập trung vào việc tổng hợp các phương pháp và kỹ thuật đã được đề xuất để cải thiện hiệu suất của mạng vệ tinh và giảm độ trễ. Nghiên cứu này có thể bao gồm các khía cạnh như:
