@@ -355,5 +355,53 @@ Viết báo thì cần lưu ý và nhớ rằng:
 * Dùng pdf lưu ảnh để load file dữ liệu
 * Thảo luận về kết quả chủ yếu mô tả và không phân tích sâu hoặc giải thích kết quả. Hơn nữa, thiếu hỗ trợ trực quan để minh họa kết quả. —> giải thích sâu hơn về kết quả, giải thích tại sao chúng xảy ra và ý nghĩa của chúng trong ngữ cảnh của mục tiêu nghiên cứu.
 
+Phân biệt giữa systematic review và literature review
+======
+
+Systematic review là phương pháp review có hệ thống, đáp ứng đủ 8 đặc tính của 1 bài nghiên cứu khoa học là tính mục tiêu, tinh khách quan, tính lặp lại, tính nghiêm ngặt, tính xác thực, tính khái quát hoá, tính chính xác, và tính tin cậy.
+
+1. Về tính mục tiêu, syst review luôn luôn yêu cầu reviewer phải xác định đối tượng và protocol nghiên cứu trước, có 2 thứ này thì ta mới formulate được hypothesis để dùng syst review mà chứng minh. Đồng thời, hiện nay các journal thường yêu cầu reviewer phải update liên tục quá trình review thông qua các trang đăng kí như PROSPERO, từ đó mà người khác có thể check được ta đã thực hiện reviewer đúng mục tiêu chưa, có sửa đổi gì không
+
+2. Về tính khách quan, bài syst review nào cũng bắt buộc có ít nhất 2 author đọc song song để chọn paper, đánh giá paper, và chiết xuất thông tin. Vì vậy, nếu thực hiện đúng protocol đề xuất cho syst review thì sẽ hạn chế được bias và tăng tính khách quan của bài review
+
+3. Về tính lặp lại, bài syst review luôn có mô tả rõ ràng phương pháp thực hiện review, và luôn report quá trình lựa chọn paper dưới dạng workflow, quá trình thực hiện review qua prospero, quá trình chiết thông tin và đánh giá bias thông qua các bảng data. Qua đó, nếu thực hiện đúng theo các khuyến nghị review thì ta thường sẽ lặp lại được data của syst review với độ lệch thấp. Đặc biệt, bài syst review rất dễ để người đọc phát hiện gian dối. Không như đa phần các nghiên cứu thực nghiệm cực kì khó để người ngoài check tính trung thực và chính xác của nghiên cứu.
+
+4. Về tính nghiêm ngặt, như đã đề cập, syst review luôn tuân theo quy trình được chuẩn hoá, và phải report hầu như mọi quá trình thực hiện. Vì vậy nên phương pháp thực hiện syst review khá nghiêm ngặt và đôi khi khá cứng nhắc.
+
+5. Về tính xác thực, do bài syst review là bằng chứng thực chứng, nghĩa là chứng minh giả thiết dựa trên 1 loạt bằng chứng nên rõ ràng phương pháp luận của syst review là phương pháp luận có tính xác thực cao. Khác với nhiều nghiên cứu kém chất lượng đưa ra giả thiết ko thể chứng minh ở thực tế
+
+6. Về tính khái quát hoá, do syst review tổng hợp dữ liệu từ các nghiên cứu đơn lẻ nên hiển nhiên syst review có tính khái quát kiến thức cao hơn các nghiên cứu đơn lẻ được dùng trong bài syst review
+
+7-8. Về tính chính xác và tính tin cậy, bài syst review do tổng hợp và làm rõ các conflict của các nghiên cứu đơn lẻ, vì vậy nó hạn chế và thường loại bỏ được confounding factor xuất hiện trong mô hình nghiên cứu. Do đó, các kết luận từ syst review thường chính xác hơn bài nghiên cứu đơn lẻ
+
+
+Literature review (đánh giá về văn bản khoa học) là một phần quan trọng trong quá trình nghiên cứu, trong đó tác giả tập trung trình bày và tổng hợp thông tin từ các nguồn văn bản, bài báo khoa học, sách và các tài liệu khác liên quan đến chủ đề của họ. Mục đích của literature review là cung cấp một bức tranh tổng quan về tình hình nghiên cứu hiện tại, các kiến thức đã biết, và các hạn chế trong lĩnh vực nghiên cứu cụ thể.
+
+Trong khi literature review tập trung vào việc tóm tắt, tổng hợp, và đánh giá các nghiên cứu đã được công bố trước đó, systematic review là một phương pháp nghiên cứu cụ thể để tổng hợp thông tin từ nhiều nghiên cứu khác nhau với một cách hệ thống và có phương pháp học thuật đặc biệt. Mục tiêu của systematic review là cung cấp một phân tích cơ bản và chất lượng cao về một chủ đề cụ thể, thường bằng cách sử dụng các phương pháp thống kê để kết hợp kết quả của nhiều nghiên cứu và đưa ra một kết luận toàn diện.
+
+
+1. **Literature Review:**
+   Trong một literature review về việc giảm độ trễ trong satellite network, tác giả có thể tập trung vào việc tổng hợp các phương pháp và kỹ thuật đã được đề xuất để cải thiện hiệu suất của mạng vệ tinh và giảm độ trễ. Nghiên cứu này có thể bao gồm các khía cạnh như:
+
+   - **Kỹ thuật truyền dẫn:** Tổng hợp các nghiên cứu về kỹ thuật truyền dẫn dữ liệu qua satellite như MIMO (Multiple Input Multiple Output) để tăng cường băng thông và giảm độ trễ.
+
+   - **Giao thức điều khiển truyền thông:** Đánh giá các giao thức điều khiển truyền thông mới như DVB-S2X (Digital Video Broadcasting - Satellite - Second Generation Extended) và SCTP (Stream Control Transmission Protocol) để tối ưu hóa việc truyền thông và giảm độ trễ.
+
+   - **Quản lý tài nguyên:** Xem xét cách các mô hình quản lý tài nguyên có thể được triển khai để đảm bảo sự hiệu quả cao và giảm độ trễ.
+
+   - **Thực nghiệm và kết quả:** Tổng hợp các nghiên cứu thực nghiệm trên các hệ thống thực tế hoặc mô phỏng để đánh giá hiệu suất và độ trễ trong các kịch bản thực tế.
+
+2. **Systematic Review:**
+   Trong một systematic review, tác giả sẽ thực hiện một quy trình hệ thống để chọn lọc, đánh giá chất lượng và tổng hợp kết quả từ nhiều nghiên cứu khác nhau liên quan đến giảm độ trễ trong satellite network. Đây có thể bao gồm:
+
+   - **Lựa chọn tiêu chí và nguồn nghiên cứu:** Xác định các tiêu chí bao gồm loại dữ liệu, kỹ thuật truyền dẫn, và phương pháp đánh giá độ trễ. Chọn các nguồn nghiên cứu thích hợp từ cơ sở dữ liệu uy tín.
+
+   - **Phương pháp hệ thống:** Áp dụng một phương pháp hệ thống để đánh giá chất lượng nghiên cứu, bao gồm đánh giá rủi ro nghiên cứu và chi tiết phương pháp nghiên cứu.
+
+   - **Tổng hợp kết quả:** Sử dụng phương pháp thống kê để tổng hợp kết quả từ các nghiên cứu, đưa ra một hiểu biết toàn diện về các biện pháp giảm độ trễ hiệu quả nhất.
+
+   - **Phân tích phụ thuộc vào ngữ cảnh:** Đánh giá cách mỗi nghiên cứu có thể áp dụng trong ngữ cảnh cụ thể, như loại hệ thống vệ tinh, mục tiêu truyền thông, và đặc điểm địa lý.
+
+Cả hai loại đánh giá đều cung cấp cái nhìn toàn diện về tình trạng hiện tại và tiến triển trong lĩnh vực giảm độ trễ trong satellite network, nhưng systematic review có nhiệm vụ chủ đạo hóa hơn và tuân thủ một quy trình hệ thống để đảm bảo tính minh bạch và khách quan.
 
 Hết.
