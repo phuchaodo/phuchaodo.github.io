@@ -18,6 +18,8 @@ My journey is guided by an insatiable curiosity for algorithms, the fundamental 
 ---------------------------------------------------------------
 📢 **NEWS**  
 
+🥳 2023/11/17: I’m excited to announce that our research paper titled Utilizing InfoGAN and PE Header Features for Synthetic Ransomware Image Generation: An Experimental Study has been published in the Springer book series Communications in Computer and Information Science (CCIS).
+
 ✍️ 2023/10/30: My new post on the my blog: [Understanding and Implementing Deep Learning Models with PyTorch](https://phuchaodo.github.io/posts/2023/10/30/understanding-and-implement-deep-learning-model-with-pytorch/)
 
 ✍️ 2023/10/20: My new post on the my blog: [Queuing Theory and Algorithms](https://phuchaodo.github.io/posts/2023/10/20/queueing-theory-and-algorithm-mot-so-khai-niem-co-ban/)
