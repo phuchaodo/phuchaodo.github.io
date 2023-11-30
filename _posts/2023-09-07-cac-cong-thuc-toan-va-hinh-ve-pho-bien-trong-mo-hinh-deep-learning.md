@@ -62,5 +62,26 @@ Một số hình mô phỏng với các nội dung sau
 
 [Sơ đồ hình vẽ](https://drive.google.com/file/d/13lb-TBRWO_hAw4igUb0lZSVvTdn-LLXp/view?usp=sharing)
 
+Thuật toán PSO
+======
+
++ PSO cho quá trình feature selection
+[PSO for feature selection](https://github.com/Anas1108/Particle-_Swarm_Optimization-PSO-_for_Feature_Selection)
+
++ PSO cài đặt ở dạng cơ bản
+[PSO cơ bản](https://github.com/ujjwalkhandelwal/pso_particle_swarm_optimization/tree/main)
+
+
+RL và DRL
+======
+
++ RL algorithm cơ bản
+[RL in python](https://github.com/sichkar-valentyn/Reinforcement_Learning_in_Python/tree/master)
+[RL basic](https://github.com/alibaba/EasyReinforcementLearning)
+
++ DRL algorithm (practical deep rl)
+[Practical DRL](https://github.com/IbrahimSobh/Practical-DRL)
+[DRL alorithm](https://github.com/derektan95/Deep-Reinforcement-Learning-Algorithms)
+
 
 Hết.
