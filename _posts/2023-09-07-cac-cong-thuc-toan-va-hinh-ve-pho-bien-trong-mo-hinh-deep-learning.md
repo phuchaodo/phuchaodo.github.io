@@ -84,4 +84,22 @@ RL và DRL
 [DRL alorithm](https://github.com/derektan95/Deep-Reinforcement-Learning-Algorithms)
 
 
+
+Smart city models
+======
+
+Một số link source cơ bản
+
+[traffic prediction deep learning](https://github.com/LeenaAAlQasem/Traffic-Prediction-DeepLearning)
+
+[traffic flow forecasting](https://github.com/topics/traffic-flow-forecasting)
+
+[Air pollution prediction](https://github.com/saniyaparveez/Air_pollution_prediction/tree/master)
+
+[Smartcities traffic prediction](https://github.com/mratsim/McKinsey-SmartCities-Traffic-Prediction)
+
+[air quality prediction](https://github.com/kadirkaynak/air-quality-prediction/tree/master)
+
+[smart cities pollution](https://github.com/mcf1110/smart-cities-pollution/tree/main)
+
 Hết.
