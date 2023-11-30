@@ -102,4 +102,14 @@ Một số link source cơ bản
 
 [smart cities pollution](https://github.com/mcf1110/smart-cities-pollution/tree/main)
 
+
+Các tham số để đánh giá mô hình prediction
+======
+
+- RMSE (root mean square error)
+- MAPE (Mean absolute percentage error)
+- Accuracy
+- Lossvalue
+
+
 Hết.
