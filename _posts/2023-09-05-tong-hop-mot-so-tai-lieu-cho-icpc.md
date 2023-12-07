@@ -250,6 +250,69 @@ for t in range(int(input())):
 ## Ngôn ngữ C++
 
 ```c++
+/* source for codeblocks */
+#define _GLIBCXX_FILESYSTEM
+#include <bits/stdc++.h>
+#define PI 3.141592653589793238462643383279502884197
+
+using namespace std;
+
+int x, y;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    cin >> x >> y;
+
+    if(x == 0) {
+        float hs = 0;
+
+        if(y > 0) {
+            hs = .5;
+        }
+        else if(y < 0) {
+            hs = 1.5;
+        }
+        float res = hs * PI;
+        printf("%.10f", res); return 0;
+    }
+    if(x > 0){
+        if(y > 0){
+            float tmp = atan(1.0 * y / x);
+            printf("%.10f", tmp);
+            return 0;
+        }
+        if(y < 0){
+            float tmp = atan(-1.0 * y / x);
+            printf("%.10f", (2 * PI - tmp));
+            return 0;
+        }
+
+        printf("%.10f", 0.0);
+        return 0;
+    }
+    if(x < 0){
+        if(y == 0){
+            printf("%.10f", PI); return 0;
+        }
+        if(y > 0){
+            float tmp = atan(-1.0 * y / x);
+            printf("%.10f", (PI - tmp));
+            return 0;
+        }
+        if(y < 0){
+            float tmp = atan(1.0 * y / x);
+            printf("%.10f", (PI + tmp));
+            return 0;
+        }
+    }
+
+    return 0;
+}
+```
+
+```c++
 #include <bits/stdc++.h>
 
 using namespace std;
