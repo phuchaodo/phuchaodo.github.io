@@ -158,30 +158,43 @@ Ref
 
 ● Labayen, Víctor, et al. "Online classification of user activities using machine learning on network traffic." Computer 
 Networks 181 (2020): 107557.
+
 ● Pacheco, Fannia, Ernesto Exposito, and Mathieu Gineste. "A framework to classify heterogeneous Internet traffic with 
 Machine Learning and Deep Learning techniques for satellite communications." Computer Networks 173 (2020): 107213.
+
 ● Lotfollahi, Mohammad, et al. "Deep packet: A novel approach for encrypted traffic classification using deep 
 learning." Soft Computing 24.3 (2020): 1999-2012.
+
 ● Ma, Zhuhong, et al. "Encrypted Traffic Classification Based on a Convolutional Neural Network." Journal of Physics: 
 Conference Series. Vol. 2400. No. 1. IOP Publishing, 2022.
+
 ● Pacheco, Fannia. Classification techniques for the management of the" Quality of Service" in Satellite Communication 
 systems. Diss. Université de Pau et des Pays de l'Adour, 2019.
+
 ● Sun, Weishi, et al. "A deep learning-based encrypted VPN traffic classification method using packet block 
 image." Electronics 12.1 (2022): 115.
+
 ● Pacheco, Fannia, Ernesto Exposito, and Mathieu Gineste. "A wearable Machine Learning solution for Internet traffic 
 classification in Satellite Communications." Service-Oriented Computing: 17th International Conference, ICSOC 2019, 
 Toulouse, France, October 28–31, 2019, Proceedings 17. Springer International Publishing, 2019.
+
 ● https://doi.org/10.1007/978-0-387-53991-1
+
 ● Bie, Yuxia, et al. "Queue Management Algorithm for Satellite Networks Based on Traffic 
 Prediction." IEEE Access 10 (2022): 54313-54324.
+
 ● Liu, Zhiguo, Yingru Jiang, and Junlin Rong. "Resource Allocation Strategy for Satellite Edge Computing 
 Based on Task Dependency." Applied Sciences 13.18 (2023): 10027.
+
 ● Yao, Chuting, Chenyang Yang, and I. Chih-Lin. "Data-driven resource allocation with traffic load 
 prediction." Journal of Communications and Information Networks 2.1 (2017): 52-65.
+
 ● Wayer, Shahaf I., and Arie Reichman. "Resource management in satellite communication systems: 
 heuristic schemes and algorithms." Journal of Electrical and Computer Engineering 2012 (2012): 2-2.
+
 ● Zhong, Xudong, et al. "Traffic Load Optimization for Multi-Satellite Relay Systems in Space 
 Information Network: A Proportional Fairness Approach." Sensors 22.22 (2022): 8806.
+
 ● Septiawan, Reza. Multiservice Traffic Allocation in LEO Satellite Communications. Diss. Bond 
 University, 2004.
 
