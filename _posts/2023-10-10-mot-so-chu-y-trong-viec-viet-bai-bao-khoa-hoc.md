@@ -400,4 +400,6 @@ Literature review (đánh giá về văn bản khoa học) là một phần quan
 
 Cả hai loại đánh giá đều cung cấp cái nhìn toàn diện về tình trạng hiện tại và tiến triển trong lĩnh vực giảm độ trễ trong satellite network, nhưng systematic review có nhiệm vụ chủ đạo hóa hơn và tuân thủ một quy trình hệ thống để đảm bảo tính minh bạch và khách quan.
 
+[Link về cách sử dụng AI để làm review paper](https://dauedu-my.sharepoint.com/:u:/g/personal/haodp_mi_dau_edu_vn/Ec67H5k92gpChXA4i-fiyk0Bd0fH1bCMAkmL-eFjf6DDJg?e=Ma7Pue)
+
 Hết.
