@@ -178,5 +178,12 @@ Web Developer: Develops and maintains dynamic website content.
 
 Social Media Manager: Develops and manages social media strategies and engagement.
 
+Ref
+======
+
+[Link tham khảo 01](https://g.co/bard/share/840d94b5c839)
+
+[Link tham khảo 01](https://www.overleaf.com/project/6575e05b1f840dc145ee6a02)
+
 
 Hết.
