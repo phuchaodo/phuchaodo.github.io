@@ -111,5 +111,10 @@ Các tham số để đánh giá mô hình prediction
 - Accuracy
 - Lossvalue
 
+Phần toán được cập nhật mới nhất
+======
+
+[Link phần toán quan trọng](https://drive.google.com/file/d/1YGU8FVFQ5wzshSj9Ya7JjjCnCTpBfQXn/view?usp=sharing)
+
 
 Hết.
