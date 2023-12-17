@@ -83,6 +83,8 @@ RL và DRL
 [Practical DRL](https://github.com/IbrahimSobh/Practical-DRL)
 [DRL alorithm](https://github.com/derektan95/Deep-Reinforcement-Learning-Algorithms)
 
++ Học tăng cường (RL)
+[Develop Your First AI Agent: Deep Q-Learning](https://towardsdatascience.com/develop-your-first-ai-agent-deep-q-learning-375876ee2472)
 
 
 Smart city models
