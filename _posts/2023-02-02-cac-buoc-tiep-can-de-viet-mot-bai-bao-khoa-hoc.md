@@ -49,6 +49,7 @@ Bước 04 (Methods)
 ======
 
 * quá trình thu thập dữ liệu hoặc sử dụng public data set
+* Phải vẽ luồng (figure) cho chi tiết và giải thích các thành phần và tham số.
 * luồng chính
 * các algorithm liên quan hoặc framework sẽ dùng
 * chi tiết p2 thực hiện.
