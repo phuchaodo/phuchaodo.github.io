@@ -48,5 +48,10 @@ Một số keywords quan tâm
 * Federated learning clusted
 * CGA and application its.
 
+Top scholar
+======
+
+[2024 - top scholar in networking - follow](https://drive.google.com/drive/u/0/folders/1Nxxc7FNuBCJE_caDcCOd6f0y5QEnHzcb)
+
 
 Hết.
