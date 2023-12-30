@@ -786,6 +786,115 @@ print(get(1, 1, n, 2, 5))
 
 ```
 
+Cách sử dụng vector
+======
+
+```c++
+
+#define _GLIBCXX_FILESYSTEM
+#include <bits/stdc++.h>
+
+using namespace std;
+#define int long long
+
+
+int32_t main() {
+    ios::sync_with_stdio(0); cin.tie(0);
+    int n;
+    cin >> n; vector<int> v(n);
+    for(int& x : v) cin >> x;
+
+    int res = 0;
+    for(int i = 1; i < n - 1; i++){
+        res = max(res, v[i+1] - v[i-1]);
+    }
+    cout << res;
+    return 0;
+}
+```
+
+Cách sử dụng lower_bound and upper_bound
+======
+
+```c++
+#define _GLIBCXX_FILESYSTEM
+#include <bits/stdc++.h>
+
+using namespace std;
+#define int long long
+
+int n, k;
+vector<int> v;
+
+int32_t main() {
+    ios::sync_with_stdio(0); cin.tie(0);
+
+    vector<int> vec = {1, 2, 4, 4, 4, 6, 7, 8, 9};
+
+    int x = 4;
+    auto it1 = upper_bound(vec.begin(), vec.end(), x);
+
+    if (it1 != vec.end()) {
+        cout << "First element greater than " << x << " is at position: " << distance(vec.begin(), it1) << ", and value = " << *it1 << ", and value1 = " << vec[distance(vec.begin(), it1)] << std::endl;
+    } else {
+        std::cout << "No element greater than " << x << " found." << std::endl;
+    }
+
+    auto it2 = std::lower_bound(vec.begin(), vec.end(), x);
+
+    if (it2 != vec.end()) {
+        std::cout << "First element not less than " << x << " is at position: " << std::distance(vec.begin(), it2) << ", and value = " << *it2 << ", and value1 = " << vec[distance(vec.begin(), it2)]  << std::endl;
+    } else {
+        std::cout << "No element not less than " << x << " found." << std::endl;
+    }
+
+
+
+    return 0;
+}
+```
+
+Code binary search cơ bản
+======
+
+```c++
+#define _GLIBCXX_FILESYSTEM
+#include <bits/stdc++.h>
+ 
+using namespace std;
+#define int long long
+ 
+int w, h, n;
+ 
+bool good(int x){
+    if((x / w) * (x / h) >= n) return true;
+    return false;
+}
+ 
+int32_t main() {
+    ios::sync_with_stdio(0); cin.tie(0);
+    cin >> w >> h >> n;
+    int l = 0, r = 1;
+    while(!good(r)) r *= 2;
+ 
+    while(r > l + 1){
+        int m = (l + r) / 2;
+        if(good(m)) {
+            r = m;
+        }
+        else {
+            l = m;
+        }
+    }
+    cout << r << endl;
+    return 0;
+}
+ 
+// x * 3 + y * 2 >= 10
+// 9/3 * 9/2 >= 10
+ 
+// k*k / (3*2) >= 10
+```
 
 
 Recursive Problems List
@@ -869,6 +978,39 @@ Tài liệu tham khảo
 * Tài liệu try hard code và Note book của ngthanhtrung23.github.io
 
 [Link tham khảo](https://drive.google.com/drive/u/0/folders/14YzYldXfRDTc2RS2YHlGjSSMxCLEsDkX)
+
+
+[Link 2](https://codelessons.dev/ru/set-i-multiset-v-c-chto-eto-takoe-i-kak-s-nimi-rabotat/)
+
+[Link 3](https://codeforces.com/blog/entry/18169)
+
+[Link 4](https://cp-algorithms.com/index.html)
+
+Một số Std C++ phổ biến:
+======
+
+Những thành phần phổ biến:  priority_queue, map, set, multiset
+
+[unorderd multiset 1](https://workat.tech/problem-solving/tutorial/cpp-stl-unordered-multiset-complete-guide-3p4zlex3ecgq)
+
+[unordered multiset 2](https://www.geeksforgeeks.org/cpp-unordered_multiset/)
+
+[std2 - top coder 1](https://www.topcoder.com/thrive/articles/Power%20up%20C++%20with%20the%20Standard%20Template%20Library%20Part%20One)
+
+[std2 - top coder 2](https://www.topcoder.com/thrive/articles/Power%20up%20C++%20with%20the%20Standard%20Template%20Library%20Part%20Two:%20Advanced%20Uses)
+
+Một số bài tập cần phải làm
+======
+
+Ref: (phải học, hiểu bản chất và code được)
+
+[cp algorithm](https://cp-algorithms.com/index.html)
+
+[cf education](https://codeforces.com/edu/course/2)
+
+[vnoid edu 1](https://oj.vnoi.info/problems/?category=22&point_start=&point_end=)
+
+[vnoid edu 2](https://oj.vnoi.info/problems/?category=28&point_start=&point_end=&page=2)
 
 
 Hết.
