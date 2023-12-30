@@ -16,6 +16,11 @@ Arcgis sử dụng cho ảnh satellite
 
 [Link2 SR for satellite](https://medium.com/geoai/satellite-image-super-resolution-with-sr3-bfcf8859bc0f)
 
+[Link 3](
+https://medium.com/@kaushik.koneripalli/satellite-image-data-augmentation-using-stable-diffusion-for-object-detection-segmentation-8b1fe87b969)
+
+[Link 4](https://medium.com/@northamericangeoscientistsorg/deep-learning-for-satellite-image-classification-with-python-ceff1cdf41fb)
+
 Một số ví dụ sử dụng opensand
 ======
 
