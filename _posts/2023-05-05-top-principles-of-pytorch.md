@@ -8,6 +8,16 @@ tags:
   - pytorch
 --- 
 
+Pytorch basic
+======
+
+[Introduction pytorch](https://pytorch.org/tutorials/beginner/basics/intro.html)
+
+[Series youtube pytorch](https://pytorch.org/tutorials/beginner/introyt.html)
+
+[Example pytorch](https://pytorch.org/tutorials/beginner/pytorch_with_examples.html)
+
+
 Principles of Pytorch
 ======
 
