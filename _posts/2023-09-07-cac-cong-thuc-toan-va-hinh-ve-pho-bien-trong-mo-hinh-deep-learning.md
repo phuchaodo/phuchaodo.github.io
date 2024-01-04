@@ -39,6 +39,8 @@ Link tham khảo
 
 [List tài liệu toán cho DL phổ biến](https://drive.google.com/file/d/1GakoqFTad7VJXAYReMet2gXMA0tTNiZe/view?usp=sharing)
 
+[link update 01](https://drive.google.com/file/d/1M026zZ08YpbLVqvGNGLTz88D2tGHWa0e/view?usp=sharing)
+
 
 Về tài liệu về DL (deep learning)
 ======
@@ -71,6 +73,10 @@ Thuật toán PSO
 + PSO cài đặt ở dạng cơ bản
 [PSO cơ bản](https://github.com/ujjwalkhandelwal/pso_particle_swarm_optimization/tree/main)
 
+Thuật toán Meta heuristic
+======
+
+[meta heuristic algorithm](https://dophuchao.github.io/2023/08/27/meta-heuristic-algorithm/)
 
 RL và DRL
 ======
