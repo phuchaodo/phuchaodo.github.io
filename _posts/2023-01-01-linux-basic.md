@@ -267,6 +267,6 @@ References
 
 [Link tham khảo 03](https://www.linkedin.com/learning/linux-shells-and-processes-14269702/be-more-productive-in-the-linux-shell?u=93557497)
 
-[Link tham khảo 03](https://www.linkedin.com/learning/learning-linux-command-line-14447912/learning-linux-command-line?u=93557497)
+[Link tham khảo 04](https://www.linkedin.com/learning/learning-linux-command-line-14447912/learning-linux-command-line?u=93557497)
 
 Hết.
