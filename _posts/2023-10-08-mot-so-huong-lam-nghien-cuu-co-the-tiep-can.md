@@ -440,4 +440,26 @@ Solutions
 
 In summary, AI and ML techniques can help greatly in optimizing procedural elements and resource usage at all levels of the satellite network stack to reduce latency. The solutions need to work around the extreme environment and challenges in space-based platforms.
 
+Các hướng và keywork có thể tiếp cận
+======
+
+1. **AI for Reducing Latency in Satellite Communication:** 
+- https://g.co/bard/share/17d812024ab1
+
+2. **Reinforcement learning for routing in satellite network:** 
+- https://g.co/bard/share/9ba625337f22
+
+3. **AI for securiry in satellite network:** 
+- https://g.co/bard/share/f48d9cfced7f
+
+4. **AI with quantum computing:** 
+- https://g.co/bard/share/241770bdb9f4
+
+5. **Edge computing with satellite network:** 
+- https://g.co/bard/share/f3ae4208a836
+
+6. **Federated learning in satellite network:** 
+- https://g.co/bard/share/204d84c70757
+
+
 Hết.
