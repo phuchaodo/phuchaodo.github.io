@@ -34,6 +34,26 @@ Phần nén dữ liệu dựa vào GNN methods (ý tưởng thú vị)
 [link data compression](https://github.com/BNN-UPC/Atom_Neural_Traffic_Compression)
 
 
+Các hướng và keywork có thể tiếp cận
+======
+
+1. **AI for Reducing Latency in Satellite Communication:** 
+- https://g.co/bard/share/17d812024ab1
+
+2. **Reinforcement learning for routing in satellite network:** 
+- https://g.co/bard/share/9ba625337f22
+
+3. **AI for securiry in satellite network:** 
+- https://g.co/bard/share/f48d9cfced7f
+
+4. **AI with quantum computing:** 
+- https://g.co/bard/share/241770bdb9f4
+
+5. **Edge computing with satellite network:** 
+- https://g.co/bard/share/f3ae4208a836
+
+6. **Federated learning in satellite network:** 
+- https://g.co/bard/share/204d84c70757
 
 Tài liệu tham khảo
 ======
