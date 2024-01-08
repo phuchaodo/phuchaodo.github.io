@@ -161,7 +161,7 @@ In general, the Rician model is preferred when there is a significant LOS compon
 
 [Link tham khảo](https://g.co/bard/share/58930650c5d5)
 
-(Open source intro to high performance computing (HPC) class in jupyter notebooks](https://github.com/benhg/intro-to-hpc)
+[Open source intro to high performance computing (HPC) class in jupyter notebooks](https://github.com/benhg/intro-to-hpc)
 
 Một số tên đề tài
 ======
