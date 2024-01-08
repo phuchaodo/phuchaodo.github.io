@@ -11,6 +11,157 @@ tags:
 
 Một số hướng làm nghiên cứu có thể tiếp cận
 
+Các khái niệm cần biết và quan trọng
+======
+
+Space-Air-Ground-Sea integrated networks (SAGSINs) are a revolutionary concept in telecommunications that aims to seamlessly connect users across various environments, including land, air, sea, and even space. Unlike traditional terrestrial networks that are constrained by physical infrastructure, SAGSINs harness the power of diverse communication platforms, including satellites, unmanned aerial vehicles (UAVs), high altitude platforms (HAPs), and cellular networks, to provide ubiquitous connectivity.
+
+**Key Benefits of SAGSINs:**
+
+* **Ubiquitous Coverage:** SAGSINs can provide connectivity to remote and underserved areas that are currently difficult or impossible to reach with traditional terrestrial networks. This includes rural areas, mountainous regions, and even the oceans and polar regions.
+
+* **Increased Capacity:** By combining the capabilities of multiple network segments, SAGSINs can theoretically offer a much higher bandwidth and data throughput compared to traditional terrestrial networks. This is crucial for supporting emerging applications such as high-definition video streaming, virtual reality, and real-time data analytics.
+
+* **Enhanced Resilience:** SAGSINs are inherently more resilient to disruptions compared to single-technology networks. If one segment fails, the network can seamlessly switch to another, ensuring uninterrupted connectivity.
+
+**Components of SAGSINs:**
+
+* **Satellites:** Satellites provide global coverage and can communicate with users even in remote areas without terrestrial infrastructure. They are particularly useful for rural areas, maritime communications, and disaster relief scenarios.
+
+* **Unmanned Aerial Vehicles (UAVs):** UAVs, also known as drones, can act as mobile communication relays, extending the reach of terrestrial networks to cover areas that are difficult or impossible to reach with fixed infrastructure. They can also provide on-demand connectivity for temporary events or emergencies.
+
+* **High-Altitude Platform Systems (HAPs):** HAPs are tethered aircraft that fly at altitudes of 18-26 km, providing a stable and high-altitude platform for communication. They can offer extended coverage and reduced latency compared to satellites and terrestrial networks.
+
+* **Terrestrial Networks:** Terrestrial networks, including cellular networks and fiber optic cables, provide the backbone of the SAGSIN infrastructure and connect devices within regions covered by the other network segments.
+
+**Potential Applications of SAGSINs:**
+
+* **Mobile Broadband:** SAGSINs can provide high-speed mobile broadband connectivity for smartphones, tablets, and other mobile devices, enabling seamless internet access across all environments.
+
+* **Internet of Things (IoT):** The wide coverage and low latency of SAGSINs make them ideal for connecting IoT devices in remote areas and enabling real-time monitoring and control of critical infrastructure.
+
+* **Emergency Response:** SAGSINs can be deployed rapidly in disaster zones to provide emergency communication services and support relief efforts.
+
+* **Military Applications:** SAGSINs can enhance military communication capabilities, enabling secure and reliable data transmission for command and control, reconnaissance, and battlefield coordination.
+
+**Challenges of SAGSINs:**
+
+* **Integration and Coordination:** Integrating multiple network segments from different technologies and vendors poses significant coordination challenges, requiring standardized protocols and efficient resource management.
+
+* **Security and Privacy:** SAGSINs need to address cybersecurity threats and protect user privacy, especially when connecting with sensitive data or critical infrastructure.
+
+* **Cost-Effectiveness:** The cost of deploying and maintaining a SAGSIN infrastructure needs to be carefully considered to ensure its long-term viability and affordability.
+
+Despite these challenges, SAGSINs hold immense potential to revolutionize the way we connect and communicate across the globe. As technology advancements and standardization efforts continue, SAGSINs are expected to play a crucial role in shaping the future of telecommunications, enabling seamless and secure connectivity for all.
+
+
+Space-Air-Ground-Sea integrated networks (SAGSINs) are a revolutionary concept in telecommunications that aims to seamlessly connect users across various environments, including land, air, sea, and even space. Unlike traditional terrestrial networks that are constrained by physical infrastructure, SAGSINs harness the power of diverse communication platforms, including satellites, unmanned aerial vehicles (UAVs), high altitude platforms (HAPs), and cellular networks, to provide ubiquitous connectivity.
+
+**Key Benefits of SAGSINs:**
+
+* **Ubiquitous Coverage:** SAGSINs can provide connectivity to remote and underserved areas that are currently difficult or impossible to reach with traditional terrestrial networks. This includes rural areas, mountainous regions, and even the oceans and polar regions.
+
+* **Increased Capacity:** By combining the capabilities of multiple network segments, SAGSINs can theoretically offer a much higher bandwidth and data throughput compared to traditional terrestrial networks. This is crucial for supporting emerging applications such as high-definition video streaming, virtual reality, and real-time data analytics.
+
+* **Enhanced Resilience:** SAGSINs are inherently more resilient to disruptions compared to single-technology networks. If one segment fails, the network can seamlessly switch to another, ensuring uninterrupted connectivity.
+
+**Components of SAGSINs:**
+
+* **Satellites:** Satellites provide global coverage and can communicate with users even in remote areas without terrestrial infrastructure. They are particularly useful for rural areas, maritime communications, and disaster relief scenarios.
+
+* **Unmanned Aerial Vehicles (UAVs):** UAVs, also known as drones, can act as mobile communication relays, extending the reach of terrestrial networks to cover areas that are difficult or impossible to reach with fixed infrastructure. They can also provide on-demand connectivity for temporary events or emergencies.
+
+* **High-Altitude Platform Systems (HAPs):** HAPs are tethered aircraft that fly at altitudes of 18-26 km, providing a stable and high-altitude platform for communication. They can offer extended coverage and reduced latency compared to satellites and terrestrial networks.
+
+* **Terrestrial Networks:** Terrestrial networks, including cellular networks and fiber optic cables, provide the backbone of the SAGSIN infrastructure and connect devices within regions covered by the other network segments.
+
+**Potential Applications of SAGSINs:**
+
+* **Mobile Broadband:** SAGSINs can provide high-speed mobile broadband connectivity for smartphones, tablets, and other mobile devices, enabling seamless internet access across all environments.
+
+* **Internet of Things (IoT):** The wide coverage and low latency of SAGSINs make them ideal for connecting IoT devices in remote areas and enabling real-time monitoring and control of critical infrastructure.
+
+* **Emergency Response:** SAGSINs can be deployed rapidly in disaster zones to provide emergency communication services and support relief efforts.
+
+* **Military Applications:** SAGSINs can enhance military communication capabilities, enabling secure and reliable data transmission for command and control, reconnaissance, and battlefield coordination.
+
+**Challenges of SAGSINs:**
+
+* **Integration and Coordination:** Integrating multiple network segments from different technologies and vendors poses significant coordination challenges, requiring standardized protocols and efficient resource management.
+
+* **Security and Privacy:** SAGSINs need to address cybersecurity threats and protect user privacy, especially when connecting with sensitive data or critical infrastructure.
+
+* **Cost-Effectiveness:** The cost of deploying and maintaining a SAGSIN infrastructure needs to be carefully considered to ensure its long-term viability and affordability.
+
+Despite these challenges, SAGSINs hold immense potential to revolutionize the way we connect and communicate across the globe. As technology advancements and standardization efforts continue, SAGSINs are expected to play a crucial role in shaping the future of telecommunications, enabling seamless and secure connectivity for all.
+
+
+
+Sure, here is a detailed explanation of the three channel models used in SAGSINs:
+
+**Point-to-Area (PPA) Model**
+
+The point-to-area (PPA) model is a commonly used model for describing the propagation characteristics between a terrestrial relay station (OS) and a user terminal (UT). It assumes that the UT is distributed uniformly within a circular area surrounding the OS, and the path loss is calculated using the Friis transmission formula.
+
+The PPA model is simple and computationally efficient, making it suitable for various network planning and performance analysis studies. However, it does not capture the effect of small-scale fading, which is the rapid variation of signal strength due to factors such as multipath propagation and shadowing.
+
+**Rician Model**
+
+The Rician model is a more sophisticated model that accounts for the presence of line-of-sight (LOS) propagation between the relay station (OS, TB, or HAP) and the user terminal (UT). It assumes that a fraction of the signal power travels in LOS, while the remaining power experiences multipath propagation.
+
+The Rician factor, denoted by K, determines the relative strength of the LOS and multipath components. A higher Rician factor indicates a stronger LOS component, leading to better signal quality and lower probability of deep fading.
+
+The Rician model is particularly suitable for modeling links in environments with relatively few obstacles, such as open fields or urban areas with tall buildings.
+
+**Shadowed-Rician Model**
+
+The shadowed-Rician model extends the Rician model by incorporating the effect of log-normal shadowing. This accounts for the fact that the overall path loss between the relay station (OS, TB, or HAP) and the user terminal (UT) can vary due to the presence of terrain features, buildings, and other obstructions.
+
+The shadowing factor, denoted by σ, represents the standard deviation of the log-normal distribution of path loss. A larger shadowing factor indicates greater variability in the path loss, leading to higher probability of deep fades and reduced signal reliability.
+
+The shadowed-Rician model is particularly useful for modeling links in environments with significant shadowing, such as urban canyons or mountainous regions.
+
+**Comparison of the Models**
+
+The choice of channel model depends on the specific application and the characteristics of the environment. The PPA model is appropriate for simple network planning and performance analysis, while the Rician and shadowed-Rician models provide more accurate representations of the propagation characteristics in environments with LOS and shadowing.
+
+In general, the Rician model is preferred when there is a significant LOS component, while the shadowed-Rician model is more suitable for environments with significant shadowing. The choice of model should be guided by field measurements or simulations to ensure that the model accurately reflects the actual propagation conditions.
+
+
+Sure, here is a detailed explanation of the three channel models used in SAGSINs:
+
+**Point-to-Area (PPA) Model**
+
+The point-to-area (PPA) model is a commonly used model for describing the propagation characteristics between a terrestrial relay station (OS) and a user terminal (UT). It assumes that the UT is distributed uniformly within a circular area surrounding the OS, and the path loss is calculated using the Friis transmission formula.
+
+The PPA model is simple and computationally efficient, making it suitable for various network planning and performance analysis studies. However, it does not capture the effect of small-scale fading, which is the rapid variation of signal strength due to factors such as multipath propagation and shadowing.
+
+**Rician Model**
+
+The Rician model is a more sophisticated model that accounts for the presence of line-of-sight (LOS) propagation between the relay station (OS, TB, or HAP) and the user terminal (UT). It assumes that a fraction of the signal power travels in LOS, while the remaining power experiences multipath propagation.
+
+The Rician factor, denoted by K, determines the relative strength of the LOS and multipath components. A higher Rician factor indicates a stronger LOS component, leading to better signal quality and lower probability of deep fading.
+
+The Rician model is particularly suitable for modeling links in environments with relatively few obstacles, such as open fields or urban areas with tall buildings.
+
+**Shadowed-Rician Model**
+
+The shadowed-Rician model extends the Rician model by incorporating the effect of log-normal shadowing. This accounts for the fact that the overall path loss between the relay station (OS, TB, or HAP) and the user terminal (UT) can vary due to the presence of terrain features, buildings, and other obstructions.
+
+The shadowing factor, denoted by σ, represents the standard deviation of the log-normal distribution of path loss. A larger shadowing factor indicates greater variability in the path loss, leading to higher probability of deep fades and reduced signal reliability.
+
+The shadowed-Rician model is particularly useful for modeling links in environments with significant shadowing, such as urban canyons or mountainous regions.
+
+**Comparison of the Models**
+
+The choice of channel model depends on the specific application and the characteristics of the environment. The PPA model is appropriate for simple network planning and performance analysis, while the Rician and shadowed-Rician models provide more accurate representations of the propagation characteristics in environments with LOS and shadowing.
+
+In general, the Rician model is preferred when there is a significant LOS component, while the shadowed-Rician model is more suitable for environments with significant shadowing. The choice of model should be guided by field measurements or simulations to ensure that the model accurately reflects the actual propagation conditions.
+
+
+[Link tham khảo](https://g.co/bard/share/58930650c5d5)
+
+(Open source intro to high performance computing (HPC) class in jupyter notebooks](https://github.com/benhg/intro-to-hpc)
 
 Một số tên đề tài
 ======
