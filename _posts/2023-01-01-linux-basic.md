@@ -265,6 +265,7 @@ Common Linux Commands Used by Programmers
 Let explore with different sections in Linux which is helps programmer to access necessary information from the machine.
 
 File and Directory Operations
+
 ✅ls (List):
 
 Usage: ls [options] [directory]
@@ -276,6 +277,7 @@ Options:
 -l: Long format, displaying detailed information.
 -a: Show hidden files.
 -h: Human-readable file sizes.
+
 ✅cd (Change Directory):
 
 Usage: cd [directory]
@@ -304,6 +306,7 @@ Options:
 
 -r: Copy directories recursively.
 -i: Prompt before overwriting.
+
 ✅mv (Move):
 
 Usage: mv [options] source destination
@@ -320,6 +323,7 @@ Options:
 
 -r: Remove directories and their contents recursively.
 -f: Force, ignore nonexistent files and do not prompt.
+
 ✅touch:
 
 Usage: touch [options] file
@@ -327,12 +331,17 @@ Usage: touch [options] file
 Description: Creates an empty file or updates the access and modification times of a file.
 
 User Management
+
 The sudo command in Unix-like operating systems is used to execute a command as a superuser or another user, as specified by the security policy configured in the sudoers file. Here's the basic usage of
 
 sudo [OPTION] COMMAND [ARGUMENTS...]
+
 OPTION: Optional flags or options for sudo.
+
 COMMAND: The command you want to execute with elevated privileges.
+
 ARGUMENTS: Any arguments or options required by the specified command.
+
 Usage Examples:
 
 1.Run a Command as Superuser:
@@ -361,6 +370,7 @@ sudo -u username command
 Use the -u option to run a command as a specified user. Replace username with the desired username.
 
 Text Manipulation
+
 ✅cat (Concatenate):
 
 Usage: cat [file]
@@ -383,6 +393,7 @@ Options:
 
 -i: Ignore case.
 -r: Search recursively in directories.
+
 ✅sed (Stream Editor):
 
 Usage: sed [options] 's/pattern/replacement/' file
@@ -398,6 +409,7 @@ Usage: awk 'pattern { action }' file
 Description: A pattern scanning and text processing tool.
 
 System Information
+
 ✅top or htop(Display real-time system statistics):
 
 Usage: top
@@ -423,6 +435,7 @@ Description: The df command shows the disk space usage of file systems. Adding t
 Example :df -h
 
 Process Management
+
 ✅ps: Display information about active processes:
 
 Usage:ps [options]
@@ -435,6 +448,7 @@ Common options include:
 -e: Display information for all processes.
 -f: Full-format listing.
 -u user: Display processes for a specific user.
+
 ✅kill: Send a signal to a process (e.g., terminate a process):
 
 Usage:kill [signal] PID
@@ -452,7 +466,9 @@ Description: The pkill command sends signals to processes based on their name. I
 Options: Common options include:
 
 -signal: Specify the signal to send.
+
 -u username: Limit the operation to processes owned by a specific user.
+
 Example: pkill -TERM firefox (Terminates all processes with the name 'firefox')
 
 ✅killall: Kill processes by name:
@@ -466,10 +482,13 @@ Options:
 Common options include:
 
 -signal: Specify the signal to send.
+
 -u username: Limit the operation to processes owned by a specific user.
+
 Example: killall -TERM chrome (Terminates all processes with the name 'chrome')
 
 SSH (Secure shell)
+
 ✅ssh: Connect to a remote server securely:
 
 Usage:ssh [user@]hostname [options]
@@ -480,6 +499,7 @@ Options:
 
 -p port: Specify the port to connect to (default is 22).
 -i identity_file: Specify the private key file for authentication.
+
 Example: ssh user@example.com (Connect to the remote server "example.com" as the user "user")
 
 ✅scp: Copy files between a local and remote machine over SSH:
@@ -493,13 +513,19 @@ Options:
 Common options include:
 -P port: Specify the port on the remote server.
 -r: Recursively copy entire directories.
+
 Examples:
 
 Copy local file to remote server:
+
 scp localfile.txt user@example.com:/path/to/destination/
+
 Copy from remote server to local machine:
+
 scp user@example.com:/path/to/remotefile.txt /local/destination/
+
 File Compression and Archiving
+
 ✅tar: Create and extract tar archives:
 
 Creation of Tar Archive:
@@ -516,6 +542,7 @@ Example:tar -cvf archive.tar file1.txt dir1/
 Extraction of Tar Archive:
 
 Usage:tar -xvf archive.tar [files/directories]
+
 Description: The tar command with different options (-x for extract) is used to extract files from a tar archive.
 
 Example: tar -xvf archive.tar
@@ -538,7 +565,6 @@ Description: Decompresses a file compressed with gzip.
 Example: gunzip myfile.txt.gz (Restores myfile.txt)
 
 These are common commands cover a broad range of Linux functionality and mastering them will help you effectively working on Linux os.
-
 
 
 References
