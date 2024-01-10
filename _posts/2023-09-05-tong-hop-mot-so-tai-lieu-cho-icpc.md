@@ -1012,5 +1012,10 @@ Ref: (phải học, hiểu bản chất và code được)
 
 [vnoid edu 2](https://oj.vnoi.info/problems/?category=28&point_start=&point_end=&page=2)
 
+Ref1: 
+
+[Link1](https://phuchaodo.github.io/posts/2023/09/05/tong-hop-mot-so-tai-lieu-cho-icpc/)
+
+[Link2](https://phuchaodo.github.io/posts/2023/09/01/mot-so-code-icpc-pho-bien/)
 
 Hết.
