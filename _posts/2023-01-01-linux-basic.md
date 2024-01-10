@@ -257,6 +257,289 @@ Here is a table summarizing the use cases for each job scheduling tool:
 
 
 
+Common Linux Commands Used by Programmers
+======
+
+(Link tham khảo)[https://ai.plainenglish.io/common-linux-commands-used-by-programmers-62a850156b97]
+
+Let explore with different sections in Linux which is helps programmer to access necessary information from the machine.
+
+File and Directory Operations
+✅ls (List):
+
+Usage: ls [options] [directory]
+
+Description: Lists the contents of a directory.
+
+Options:
+
+-l: Long format, displaying detailed information.
+-a: Show hidden files.
+-h: Human-readable file sizes.
+✅cd (Change Directory):
+
+Usage: cd [directory]
+
+Description: Changes the current working directory to the specified one.
+
+✅pwd (Print Working Directory):
+
+Usage: pwd
+
+Description: Prints the current working directory, showing the full path.
+
+✅mkdir (Make Directory):
+
+Usage: mkdir [directory]
+
+Description: Creates a new directory with the specified name.
+
+✅cp (Copy):
+
+Usage: cp [options] source destination
+
+Description: Copies files or directories from the source to the destination.
+
+Options:
+
+-r: Copy directories recursively.
+-i: Prompt before overwriting.
+✅mv (Move):
+
+Usage: mv [options] source destination
+
+Description: Moves files or directories from the source to the destination, or renames a file.
+
+✅rm (Remove):
+
+Usage: rm [options] file
+
+Description: Removes (deletes) files or directories.
+
+Options:
+
+-r: Remove directories and their contents recursively.
+-f: Force, ignore nonexistent files and do not prompt.
+✅touch:
+
+Usage: touch [options] file
+
+Description: Creates an empty file or updates the access and modification times of a file.
+
+User Management
+The sudo command in Unix-like operating systems is used to execute a command as a superuser or another user, as specified by the security policy configured in the sudoers file. Here's the basic usage of
+
+sudo [OPTION] COMMAND [ARGUMENTS...]
+OPTION: Optional flags or options for sudo.
+COMMAND: The command you want to execute with elevated privileges.
+ARGUMENTS: Any arguments or options required by the specified command.
+Usage Examples:
+
+1.Run a Command as Superuser:
+
+sudo ls /root
+This command runs the ls command with elevated privileges, allowing it to list the contents of the /root directory, which is typically restricted to the root user.
+
+2. Edit a System Configuration File:
+
+sudo nano /etc/nginx/nginx.conf
+This example opens the NGINX configuration file for editing with the Nano text editor. Editing system configuration files usually requires superuser privileges.
+
+3. Install Software:
+
+sudo apt-get install nginx
+The sudo command is often used with package management tools, such as apt-get on Debian-based systems, to install or remove software.
+
+4. Restart a System Service:
+
+sudo systemctl restart apache2
+Restarting a system service, like Apache, usually requires superuser privileges. sudo allows you to perform such actions.
+
+5. Run a Command as Another User:
+
+sudo -u username command
+Use the -u option to run a command as a specified user. Replace username with the desired username.
+
+Text Manipulation
+✅cat (Concatenate):
+
+Usage: cat [file]
+
+Description: Displays the content of a file.
+
+✅nano and vim:
+
+Usage: nano [file] or vim [file]
+
+Description: Text editors for creating or editing files. They have different user interfaces and capabilities.
+
+✅grep (Global Regular Expression Print):
+
+Usage: grep [options] pattern [file]
+
+Description: Searches for a pattern in files.
+
+Options:
+
+-i: Ignore case.
+-r: Search recursively in directories.
+✅sed (Stream Editor):
+
+Usage: sed [options] 's/pattern/replacement/' file
+
+Description: Filters and transforms text using patterns.
+
+Example: sed 's/old/new/' filename
+
+✅awk:
+
+Usage: awk 'pattern { action }' file
+
+Description: A pattern scanning and text processing tool.
+
+System Information
+✅top or htop(Display real-time system statistics):
+
+Usage: top
+
+Usage: htop
+
+Description: Both top and htop display real-time system statistics, including information about processes, CPU usage, memory usage, and system resource distribution.
+
+✅free(Display amount of free and used memory in the system):
+
+Usage: free [options]
+
+Description: The free command provides information about the system's memory usage, displaying the total, used, and free memory in kilobytes. Options like -h can be used for human-readable output.
+
+Example: free -h
+
+✅df: Display disk space usage:
+
+Usage :df [options] [file|directory]
+
+Description: The df command shows the disk space usage of file systems. Adding the -h option provides human-readable output.
+
+Example :df -h
+
+Process Management
+✅ps: Display information about active processes:
+
+Usage:ps [options]
+
+Description: The ps command provides a snapshot of currently running processes. It displays information such as process ID (PID), terminal associated with the process, CPU and memory usage, and the command that started the process.
+
+Options:
+
+Common options include:
+-e: Display information for all processes.
+-f: Full-format listing.
+-u user: Display processes for a specific user.
+✅kill: Send a signal to a process (e.g., terminate a process):
+
+Usage:kill [signal] PID
+
+Description: The kill command sends a signal to a process, allowing for various actions such as terminating, stopping, or reloading. The default signal is SIGTERM, which terminates the process gracefully. Use SIGKILL for forceful termination.
+
+Example:kill 1234 (Terminates the process with PID 1234)
+
+✅pkill: Kill processes based on name:
+
+Usage:pkill [options] pattern
+
+Description: The pkill command sends signals to processes based on their name. It terminates processes that match the specified pattern.
+
+Options: Common options include:
+
+-signal: Specify the signal to send.
+-u username: Limit the operation to processes owned by a specific user.
+Example: pkill -TERM firefox (Terminates all processes with the name 'firefox')
+
+✅killall: Kill processes by name:
+
+Usage:killall [options] process_name
+
+Description: The killall command sends signals to processes based on their name, similar to pkill. It terminates processes that match the specified name.
+
+Options:
+
+Common options include:
+
+-signal: Specify the signal to send.
+-u username: Limit the operation to processes owned by a specific user.
+Example: killall -TERM chrome (Terminates all processes with the name 'chrome')
+
+SSH (Secure shell)
+✅ssh: Connect to a remote server securely:
+
+Usage:ssh [user@]hostname [options]
+
+Description: The ssh command establishes a secure shell connection to a remote server. It prompts for the user's password or uses key-based authentication. Once connected, users can execute commands on the remote server's shell.
+
+Options:
+
+-p port: Specify the port to connect to (default is 22).
+-i identity_file: Specify the private key file for authentication.
+Example: ssh user@example.com (Connect to the remote server "example.com" as the user "user")
+
+✅scp: Copy files between a local and remote machine over SSH:
+
+Usage:scp [options] source destination
+
+Description: The scp command securely copies files between a local and a remote machine over an SSH connection. It supports copying to and from remote servers, as well as between two remote servers.
+
+Options:
+
+Common options include:
+-P port: Specify the port on the remote server.
+-r: Recursively copy entire directories.
+Examples:
+
+Copy local file to remote server:
+scp localfile.txt user@example.com:/path/to/destination/
+Copy from remote server to local machine:
+scp user@example.com:/path/to/remotefile.txt /local/destination/
+File Compression and Archiving
+✅tar: Create and extract tar archives:
+
+Creation of Tar Archive:
+
+Usage:tar -cvf archive.tar [files/directories]
+
+Description: The tar command is used to create tar archives. The options used here are:
+
+-c: Create a new archive.
+-v: Verbosely list the files processed.
+-f: Use archive file specified (in this case, "archive.tar").
+Example:tar -cvf archive.tar file1.txt dir1/
+
+Extraction of Tar Archive:
+
+Usage:tar -xvf archive.tar [files/directories]
+Description: The tar command with different options (-x for extract) is used to extract files from a tar archive.
+
+Example: tar -xvf archive.tar
+
+✅gzip (GNU Zip):
+
+Compression:
+
+Usage: gzip [options] file
+Description: gzip compresses files and replaces them with a compressed version with a .gz extension.
+
+Example: gzip myfile.txt (Creates myfile.txt.gz)
+
+Decompression:
+
+Usage: gzip -d file.gz or gunzip file.gz
+
+Description: Decompresses a file compressed with gzip.
+
+Example: gunzip myfile.txt.gz (Restores myfile.txt)
+
+These are common commands cover a broad range of Linux functionality and mastering them will help you effectively working on Linux os.
+
+
 
 References
 ======
