@@ -260,7 +260,7 @@ Here is a table summarizing the use cases for each job scheduling tool:
 Common Linux Commands Used by Programmers
 ======
 
-[Link tham khảo]([https://g.co/bard/share/265d74484112](https://ai.plainenglish.io/common-linux-commands-used-by-programmers-62a850156b97))
+[Link tham khảo](https://ai.plainenglish.io/common-linux-commands-used-by-programmers-62a850156b97)
 
 Let explore with different sections in Linux which is helps programmer to access necessary information from the machine.
 
