@@ -1355,6 +1355,12 @@ int main() {
 
 ```
 
+Ref1: 
+
+[Link1](https://phuchaodo.github.io/posts/2023/09/05/tong-hop-mot-so-tai-lieu-cho-icpc/)
+
+[Link2](https://phuchaodo.github.io/posts/2023/09/01/mot-so-code-icpc-pho-bien/)
+
 
 
 Hết.
