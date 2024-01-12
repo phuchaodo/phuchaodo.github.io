@@ -21,6 +21,8 @@ https://medium.com/@kaushik.koneripalli/satellite-image-data-augmentation-using-
 
 [Link 4](https://medium.com/@northamericangeoscientistsorg/deep-learning-for-satellite-image-classification-with-python-ceff1cdf41fb)
 
+[Link 5](https://blog.palantir.com/transfer-learning-5c9f9f9b076f)
+
 Một số ví dụ sử dụng opensand
 ======
 
