@@ -9,6 +9,11 @@ tags:
   - acm
 --- 
 
+FFT algorithm in competitive programming
+======
+
+[Một số ví dụ về FFT alogirtm](https://g.co/bard/share/29195cef124f)
+
 Thuật toán phổ biến
 ======
 
