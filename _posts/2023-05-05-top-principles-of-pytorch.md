@@ -8,6 +8,21 @@ tags:
   - pytorch
 --- 
 
+Numpy in python
+======
+
+[numpy basic](https://g.co/bard/share/0ced440bebeb)
+
+Pandas in python
+======
+
+[pandas cơ bản](https://g.co/bard/share/2538a0c50d6c)
+
+Tensor in python
+======
+
+[tensor basic](https://g.co/bard/share/babde03e3c82)
+
 Pytorch basic
 ======
 
