@@ -57,6 +57,10 @@ Các hướng và keywork có thể tiếp cận
 6. **Federated learning in satellite network:** 
 - https://g.co/bard/share/204d84c70757
 
+7. **Predict model**
+
+[GT-LSTM: A spatio-temporal ensemble network for traffic flow prediction](https://pubmed.ncbi.nlm.nih.gov/38103435/)
+
 Tài liệu tham khảo
 ======
 
