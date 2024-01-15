@@ -63,6 +63,10 @@ Các hướng và keywork có thể tiếp cận
 
 [GT-LSTM: A spatio-temporal ensemble network for traffic flow prediction](https://pubmed.ncbi.nlm.nih.gov/38103435/)
 
+[Federated split learning for sequential data in satellite–terrestrial integrated networks](https://www.sciencedirect.com/science/article/abs/pii/S1566253523004578)
+
+[Traffic-Predictive Routing Strategy for Satellite Networks](https://www.mdpi.com/2079-9292/13/1/6)
+
 Tài liệu tham khảo
 ======
 
