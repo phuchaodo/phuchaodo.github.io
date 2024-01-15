@@ -23,6 +23,8 @@ https://medium.com/@kaushik.koneripalli/satellite-image-data-augmentation-using-
 
 [Link 5](https://blog.palantir.com/transfer-learning-5c9f9f9b076f)
 
+[Link 6](https://github.com/geethen/geeconformal)
+
 Một số ví dụ sử dụng opensand
 ======
 
