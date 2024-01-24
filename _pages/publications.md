@@ -9,24 +9,25 @@ author_profile: true
 
 **UNDER REVIEW OR ACCEPTED**  
 
-[24] Nguyen Nang Hung Van, **Phuc Hao Do**, Van Nam Hoang, Aleksandr Borodko and Tran Duc Le. Leveraging FFT and Hybrid EfficientNet for Enhanced Action Recognition in Video Sequences. In SoICT, 2023. (Accepted)
 
-[23] **Do, Phuc Hao**, Pham, Van Quan,Le, Tran Duc, Dinh, Truong Duy, Nguyen, Nang Hung Van, Pham, Minh Tuan. Unveiling the Power of Pretrained Models for Neural Machine Translation in Vietnamese Language: A Comparative Analysis. In The 2023 RIVF International Conference on Computing and Communication Technologies, 2023. (Accepted)
+[24] **Do, Phuc Hao**, Pham, Van Quan,Le, Tran Duc, Dinh, Truong Duy, Nguyen, Nang Hung Van, Pham, Minh Tuan. Unveiling the Power of Pretrained Models for Neural Machine Translation in Vietnamese Language: A Comparative Analysis. In The 2023 RIVF International Conference on Computing and Communication Technologies, 2023. (Accepted)
 
-[22] Le, Viet Trung, **Do, Phuc Hao**, Uwizeyemungu, Sylvestre, Le-Dinh, Thang, Le, Tran Duc. Utilizing InfoGAN and PE Header Features for Synthetic Ransomware Image Generation: An Experimental Study. In The 10th International Conference on Future Data and Security Engineering (FDSE), Springer, 2023. (Accepted)
+[23] Le, Tran Duc, **Do, Phuc Hao**, Nguyen, Duc Tai, Phung, Van Thang, Nguyen, Cong Danh, Dinh, Truong Duy. Federated Learning for Linux Malware Detection: An Experimental Study. In EAI/Springer Innovations in Communication and Computing, Springer, 2023. (Accepted)
 
-[21] Truong, Cong Khoa, **Do, Phuc Hao**, Le, Tran Duc. A Comparative Analysis of E-mail Phishing Detection Methods: A Deep Learning Perspective. In IET/IEEE, 2023. (Accepted)
+[22] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Analysis of intelligent compression methods for traffic transmission in satellite communication channels. In EAI/Springer Innovations in Communication and Computing, Springer, 2023. (Accepted)
 
-[20] Le, Tran Duc, **Do, Phuc Hao**, Nguyen, Duc Tai, Phung, Van Thang, Nguyen, Cong Danh, Dinh, Truong Duy. Federated Learning for Linux Malware Detection: An Experimental Study. In EAI/Springer Innovations in Communication and Computing, Springer, 2023. (Accepted)
+[21] **Do, Phuc Hao**, Le, Tran Duc, Vishnevsky, Vladimir, Berezkin, Aleksandr, Kirichek, Ruslan. A Horizontal Federated Learning Approach to IoT Malware Traffic Detection: An Empirical Evaluation with N-BaIoT Dataset. ICACT Transactions on Advanced Communications Technology (ICACTTACT), IEEE, 2023. (Accepted)
 
-[19] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Analysis of intelligent compression methods for traffic transmission in satellite communication channels. In EAI/Springer Innovations in Communication and Computing, Springer, 2023. (Accepted)
-
-[18] **Do, Phuc Hao**, Le, Tran Duc, Vishnevsky, Vladimir, Berezkin, Aleksandr, Kirichek, Ruslan. A Horizontal Federated Learning Approach to IoT Malware Traffic Detection: An Empirical Evaluation with N-BaIoT Dataset. ICACT Transactions on Advanced Communications Technology (ICACTTACT), IEEE, 2023. (Accepted)
-
-[17] Nguyen Nang Hung Van, Ho Le Minh Nhat, Vo Duc Hoang, **Do Phuc Hao**. "Transforming enrollment advising in education with deep learning models and chatbots", Kỷ yếu Hội nghị KHCN Quốc gia lần thứ XIV về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR), 2023 (Accepted)
+[20] Nguyen Nang Hung Van, Ho Le Minh Nhat, Vo Duc Hoang, **Do Phuc Hao**. "Transforming enrollment advising in education with deep learning models and chatbots", Kỷ yếu Hội nghị KHCN Quốc gia lần thứ XIV về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR), 2023 (Accepted)
 
 
 **2023**
+
+[19] Truong, Cong Khoa, Do, Phuc Hao, Le, Tran Duc. A Comparative Analysis of E-mail Phishing Detection Methods: A Deep Learning Perspective. Artificial Intelligence for Biometrics and Cybersecurity: Technology and applications, Institution of Engineering and Technology (IET), 149–174, 2023.
+
+[18] Nguyen, Nang Hung Van, Do, Phuc Hao, Hoang, Van Nam, Borodko, Aleksandr, Le, Tran Duc. Leveraging FFT and Hybrid EfficientNet for Enhanced Action Recognition in Video Sequences. In Proceedings of the 12th International Symposium on Information and Communication Technology, SoICT 2023. ACM, 32-39, 2023.
+
+[17] Le, Viet Trung, Do, Phuc Hao, Uwizeyemungu, Sylvestre, Le-Dinh, Thang, Le, Tran Duc. Utilizing InfoGAN and PE Header Features for Synthetic Ransomware Image Generation: An Experimental Study. In Future Data and Security Engineering. Big Data, Security and Privacy, Smart City and Industry 4.0 Applications. FDSE 2023. Communications in Computer and Information Science, vol 1925. Springer, 226–239, 2023.
 
 [16] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Graph Neural Networks for Traffic Classification in Satellite Communication Channels: A Comparative Analysis. Proceedings of Telecommunication Universities, 9(3), 14-27, 2023.
 
