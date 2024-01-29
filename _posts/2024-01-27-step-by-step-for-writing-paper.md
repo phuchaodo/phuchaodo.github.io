@@ -346,11 +346,17 @@ Một số paper tham khảo cách viết (literature review, synthesis review, 
 ======
 
 2023 - A comprehensive survey on data aggregation techniques in UAV-enabled Internet of things 
+
 2021 - Graph Neural Network: A Comprehensive Review on Non-Euclidean Space
+
 2020 - A Comprehensive Survey on Graph Neural Networks
+
 2021 - Artificial Intelligence and Business Value: a Literature Review
+
 2023 - Educational Applications of the ChatGPT AI System: A Systematic Review Research
+
 2022 - Artifcial intelligence in online higher education: A systematic review of empirical research from 2011 to 2020
+
 2023 - Data compression techniques in IoT-enabled wireless body sensor networks: A systematic literature review and research trends for QoS improvement 
 
 
