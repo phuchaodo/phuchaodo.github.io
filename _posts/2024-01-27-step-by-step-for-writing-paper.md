@@ -14,85 +14,68 @@ Examples of ChatGPT Prompts
 ======
 
 Prompt 0
+
 There are occasional grammatical errors and awkward phrases that need to be smoothed out. I need your help check and repair correctly. Maintain the academic tone: Insert the passage from your academic paper here
 
 Prompt 1
+
 Now I will give you some text. Your task is to rewrite it with an academic tone and in a creative way to get rid of plagiarism. However, you must keep the main idea as in the original text and do not use complex vocabulary: Insert the passage from your academic paper here
 
 Prompt 2
+
 As ChatGPT, an AI language model with expertise in condensing text while preserving the main idea and maintaining an academic tone, I need your help shortening a passage from my academic paper without losing the main idea. Can you condense the following passage from my academic paper while preserving the main idea and keeping an academic tone? Please focus on reducing the word count, retaining the main idea, and ensuring a coherent and concise result. Maintain the academic tone: Insert the passage from your academic paper here]
 
 Prompt 3
+
 I want you to act as an English translator, spelling corrector and improver. I will speak to you in any language and you will detect the language, translate it and answer in the corrected and improved version of my text, in English. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same, but make them more literary. I want you to only reply the correction, the improvements and nothing else, do not write explanations. My first sentence is ‘istanbulu cok seviyom burada olmak cok guzel’
 
 Prompt 4
+
 Evaluate and analysis result with binary classification in IoT-botnet problem with this result. Table 1: Some metrics of binary classification Evaluation
 write conclusion with the name of paper: IoT Botnet Detection and Classification using Machine Learning Algorithms
 with result: compare between some ML algorithm: DT, kNN, RF, XGB and some result
 
-Prompt 5
-How can I structure my introduction for a research paper on [topic]?
+Prompt 5: How can I structure my introduction for a research paper on [topic]?
 
-Promnt 6
-What are some key arguments and evidence to support my thesis statement about [topic]?
+Promnt 6: What are some key arguments and evidence to support my thesis statement about [topic]?
 
-Prompt 7
-Can you suggest some reliable sources or studies related to [topic] that I can include in my literature review?
+Prompt 7: Can you suggest some reliable sources or studies related to [topic] that I can include in my literature review?
 
-Prompt 8
-What are the main limitations of the existing research on [topic], and how can I address them in my paper?
+Prompt 8: What are the main limitations of the existing research on [topic], and how can I address them in my paper?
 
-Prompt 9
-Could you provide me with a logical flow for organizing my research findings and analysis in the results section?
+Prompt 9: Could you provide me with a logical flow for organizing my research findings and analysis in the results section?
 
-Prompt 10
-Writing Assistance: “Can you help me rephrase this sentence/paragraph in a more academic tone?”
+Prompt 10: Writing Assistance: “Can you help me rephrase this sentence/paragraph in a more academic tone?”
 
-Promnpt 11
-Literature Review Assistance: “Can you summarize the key findings and arguments of [insert academic paper title]?”
+Promnpt 11: Literature Review Assistance: “Can you summarize the key findings and arguments of [insert academic paper title]?”
 
-Prompt 12
-Brainstorming Ideas: “I’m working on a research project about [insert topic]. Can you suggest some potential research questions or hypotheses?”
+Prompt 12: Brainstorming Ideas: “I’m working on a research project about [insert topic]. Can you suggest some potential research questions or hypotheses?”
 
-Prompt 13
-Methodology Suggestions: “What are some common research methods used in [insert field of study]?”
+Prompt 13: Methodology Suggestions: “What are some common research methods used in [insert field of study]?”
 
-Prompt 14
-Statistical Analysis: “Can you explain the difference between a t-test and an ANOVA?”
+Prompt 14: Statistical Analysis: “Can you explain the difference between a t-test and an ANOVA?”
 
-Prompt 15
-Writing Assistance: “Can you help me rephrase this sentence/paragraph in a more academic tone?”
+Prompt 15: Writing Assistance: “Can you help me rephrase this sentence/paragraph in a more academic tone?”
 
-Prompt 16
-Citation Guidance: “What is the correct way to cite a book in APA style?”
+Prompt 16: Citation Guidance: “What is the correct way to cite a book in APA style?”
 
-Prompt 17
-Historical Context: “Can you provide a brief overview of the history of [insert topic]?”
+Prompt 17: Historical Context: “Can you provide a brief overview of the history of [insert topic]?”
 
-Prompt 18
-Concept Explanation: “Can you explain the concept of [insert complex concept] in simple terms?”
+Prompt 18: Concept Explanation: “Can you explain the concept of [insert complex concept] in simple terms?”
 
-Prompt 19
-Paper Structuring: “What is the typical structure of a research paper in [insert field of study]?”
+Prompt 19: Paper Structuring: “What is the typical structure of a research paper in [insert field of study]?”
 
-Prompt 20
-Data Interpretation: “What conclusions might be drawn from a dataset where [insert observed trend]?”
+Prompt 20: Data Interpretation: “What conclusions might be drawn from a dataset where [insert observed trend]?”
 
-Prompt 21
-Ethical Considerations: “What are some ethical considerations when conducting research on [insert topic]?”
+Prompt 21: Ethical Considerations: “What are some ethical considerations when conducting research on [insert topic]?”
 
-Prompt 22
-Theory Application: “How might [insert theory] apply to a situation where [insert scenario]?”
+Prompt 22: Theory Application: “How might [insert theory] apply to a situation where [insert scenario]?”
 
-Prompt 23
-Research Proposal Feedback: “Here’s a brief outline of my research proposal on [insert topic]. Can you provide some feedback?”
+Prompt 23: Research Proposal Feedback: “Here’s a brief outline of my research proposal on [insert topic]. Can you provide some feedback?”
 
-Prompt 24
-Language Translation: “Can you translate this [insert language] phrase to English?”
+Prompt 24: Language Translation: “Can you translate this [insert language] phrase to English?”
 
-Prompt 25
-Proofreading: “Can you check this paragraph for grammatical errors?”
-
+Prompt 25: Proofreading: “Can you check this paragraph for grammatical errors?”
 
 Các bước tiếp cận để viết một bài báo khoa học
 ======
