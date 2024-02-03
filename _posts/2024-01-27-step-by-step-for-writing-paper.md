@@ -500,8 +500,92 @@ TITLE-ABS-KEY(
 
 Link youtube: https://youtu.be/la-HzhKdWUw
 
-
 An Analysis of AI Techniques to Improve Quality of Service in Low Earth Orbit Satellite Networks
+
+How to create research question
+======
+
+### Method 1: 
+
+As we know, SWOT stands for Strengths, Weaknesses, Opportunities, and Threats.
+Apply SWOT to write some research question and sub-research question for an article with the following name:  Artificial Intelligence or Machine Learning in Space-air-ground-sea integrated network (SAGSIN) networks
+
+### Method 2
+
+As we know, GQM stands for Goal, Question and Metric.
+Apply GQM to write some research question and sub-research question for an article with the following name: Artificial Intelligence or Machine Learning in Space-air-ground-sea integrated network (SAGSIN) networks
+
+### Example 1
+
+Certainly! SWOT analysis can help in framing research questions for your article on "Artificial Intelligence or Machine Learning in Space-air-ground-sea integrated network (SAGSIN) networks." Here are research questions and sub-research questions based on each aspect of the SWOT analysis:
+
+1. **Strengths:**
+   - Research Question: What are the key strengths of integrating Artificial Intelligence or Machine Learning in SAGSIN networks?
+   - Sub-Research Questions:
+     - How does AI/ML enhance the efficiency of communication within SAGSIN networks?
+     - What advantages does AI/ML bring to the real-time decision-making capabilities of SAGSIN systems?
+     - In what ways can AI/ML improve the overall resilience and adaptability of SAGSIN networks?
+
+2. **Weaknesses:**
+   - Research Question: What are the potential weaknesses and challenges associated with implementing AI or ML in SAGSIN networks?
+   - Sub-Research Questions:
+     - How do security and privacy concerns manifest in AI/ML-integrated SAGSIN networks?
+     - What are the limitations and vulnerabilities of AI/ML algorithms in the context of SAGSIN applications?
+     - How might the complexity of AI/ML integration impact the maintainability and scalability of SAGSIN systems?
+
+3. **Opportunities:**
+   - Research Question: What opportunities arise from the integration of AI or ML in SAGSIN networks, and how can they be leveraged for enhanced capabilities?
+   - Sub-Research Questions:
+     - How can AI/ML contribute to improved data analytics and pattern recognition in SAGSIN networks?
+     - What innovative applications and functionalities can be unlocked through AI/ML in the context of space, air, ground, and sea integration?
+     - How can AI/ML-driven automation create new possibilities for SAGSIN networks in various domains?
+
+4. **Threats:**
+   - Research Question: What threats and risks should be considered when implementing AI or ML in SAGSIN networks, and how can they be mitigated?
+   - Sub-Research Questions:
+     - How do potential biases in AI/ML algorithms impact decision-making processes in critical SAGSIN operations?
+     - What cybersecurity threats are associated with the integration of AI/ML in SAGSIN networks, and how can they be addressed?
+     - In what ways can ethical concerns related to AI/ML usage pose threats to the public perception and acceptance of SAGSIN technologies?
+
+These research questions and sub-questions can serve as a foundation for investigating the multifaceted aspects of integrating Artificial Intelligence or Machine Learning in Space-air-ground-sea integrated network (SAGSIN) networks.
+
+### Example 2
+
+Certainly! The GQM (Goal, Question, Metric) framework is a structured approach to defining research goals, associated questions, and metrics to measure progress. Here are research questions and sub-research questions based on GQM for your article on "Artificial Intelligence or Machine Learning in Space-air-ground-sea integrated network (SAGSIN) networks":
+
+1. **Goal:**
+   - **Research Goal:** To assess the impact and effectiveness of integrating Artificial Intelligence or Machine Learning in SAGSIN networks.
+
+2. **Questions:**
+   - **Main Research Question:** How does the integration of Artificial Intelligence or Machine Learning impact the performance and capabilities of Space-air-ground-sea integrated network (SAGSIN) networks?
+  
+   - **Sub-Research Questions:**
+     - *Q1:* What specific AI/ML techniques are most suitable for enhancing communication within SAGSIN networks?
+     - *Q2:* How does the incorporation of AI/ML contribute to real-time decision-making processes in SAGSIN systems?
+     - *Q3:* In what ways can AI/ML improve the overall resilience and adaptability of SAGSIN networks across different environments?
+
+3. **Metrics:**
+   - *Metric 1:* Measure the increase in communication efficiency within SAGSIN networks after AI/ML integration.
+   - *Metric 2:* Assess the speed and accuracy of decision-making processes in SAGSIN systems with AI/ML.
+   - *Metric 3:* Evaluate the overall resilience and adaptability improvement in SAGSIN networks through AI/ML.
+
+4. **Goal:**
+   - **Research Goal:** To identify and address potential challenges and risks associated with the implementation of AI or ML in SAGSIN networks.
+
+5. **Questions:**
+   - **Main Research Question:** What are the key challenges and risks in integrating Artificial Intelligence or Machine Learning into Space-air-ground-sea integrated network (SAGSIN) networks, and how can they be mitigated?
+
+   - **Sub-Research Questions:**
+     - *Q4:* What security and privacy concerns arise from the use of AI/ML in SAGSIN networks, and how can they be addressed?
+     - *Q5:* What are the limitations and vulnerabilities of AI/ML algorithms when applied to SAGSIN applications?
+     - *Q6:* How might the complexity of AI/ML integration impact the maintainability and scalability of SAGSIN systems?
+
+6. **Metrics:**
+   - *Metric 4:* Quantify the level of security and privacy risks associated with AI/ML integration in SAGSIN networks.
+   - *Metric 5:* Assess the impact of AI/ML limitations on the overall performance and reliability of SAGSIN systems.
+   - *Metric 6:* Measure the complexity and scalability of AI/ML-integrated SAGSIN networks.
+
+These research questions and associated sub-questions, along with corresponding metrics, provide a structured approach to investigating the integration of Artificial Intelligence or Machine Learning in Space-air-ground-sea integrated network (SAGSIN) networks.
 
 Continues....
 
