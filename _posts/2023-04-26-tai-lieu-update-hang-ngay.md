@@ -67,6 +67,11 @@ Các hướng và keywork có thể tiếp cận
 
 [Traffic-Predictive Routing Strategy for Satellite Networks](https://www.mdpi.com/2079-9292/13/1/6)
 
+Code mẫu về GA, PSO và DRL for RA
+======
+
+[Code mẫu](https://drive.google.com/drive/u/0/folders/1rdOC9hbdrIvih7BBy-WdfRPLc7KHlEjX)
+
 Tài liệu tham khảo
 ======
 
