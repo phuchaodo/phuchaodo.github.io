@@ -75,10 +75,15 @@ Two major kinds of distributions based on the type of likely values for the  var
 Different type of distribution of data: - 
 
 i. Bernoulli Distribution 
+
 ii. Uniform Distribution 
+
 iii. Binomial Distribution 
+
 iv. Normal or Gaussian Distribution 
+
 v. Exponential Distribution 
+
 vi. Poisson Distribution 
 
 
