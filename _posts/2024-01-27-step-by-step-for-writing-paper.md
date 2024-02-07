@@ -9,7 +9,7 @@ tags:
   - howto write
 ---
 
-Các outline gồm có:
+Các outline gồm những nội dung sau
 
 1. Làm sao để cải thiện chất lượng bài báo
    
