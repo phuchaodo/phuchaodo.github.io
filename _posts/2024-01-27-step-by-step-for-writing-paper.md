@@ -9,6 +9,43 @@ tags:
   - howto write
 ---
 
+Các outline gồm có:
+
+1. Làm sao để cải thiện chất lượng bài báo
+   
+2. Examples of ChatGPT Prompts
+   
+3. Các bước tiếp cận để viết một bài báo khoa học
+   
+4. Phương pháp đọc và tiếp cận việc viết báo
+   
+5. Tư duy để liệt kê danh sách các bài toán nghiên cứu cụ thể
+    
+6. Việc hướng dẫn sinh viên để tham gia nckh
+    
+7. Cách viết các bài analysis và survey "nhẹ nhàng" thì làm thế nào?
+    
+8. Chi tiết bài các loại review đi
+    
+9. To write a comprehensive survey paper on a particular concept, follow these steps
+    
+10. Một số paper tham khảo cách viết (literature review, synthesis review, survey) và thực hiện
+    
+11. How to use AI to conduct review
+    
+12. How to create research question
+    
+13. Research Methodology
+
+Làm sao để cải thiện chất lượng bài báo
+======
+
++ Chọn các bài báo ở journal xịn
++ Đọc kỹ các họ viết methodoloy
++ Xác định các RQ (research question)
++ Phong cách viết: Logic giữa các đoạn, cách trình bày contribution, các figure và table được trình bày.
++ Các kết quả thì nên "show" thế nào cho thấy "xịn"
++ Việc mô tả và giải thích kết quả đầy đủ.
 
 Examples of ChatGPT Prompts
 ======
@@ -145,13 +182,17 @@ Bước 07 (Conclusion)
 
 Bước 08 (Abstract)
 
-
 * vấn đề của bài toán
 * dùng phương pháp gì? giải quyết được vấn đề gì?
 * kết quả đạt được là gì?
 
 Các keywords (5) để làm nổi bật cho paper.
 
+Thường thì abstract cho paper sẽ được viết theo format sau:
++ Context: Trình bày ngữ cảnh (khoảng 3 câu)
++ Objective: Mục tiêu (khoảng 1 câu)
++ Method: Phương pháp thực hiện (2 câu)
++ Result: Kết quả đạt được của paper (2 câu)
 
 Phương pháp đọc và tiếp cận việc viết báo
 ======
@@ -188,8 +229,6 @@ Phương pháp đọc và tiếp cận việc viết báo
 * Phần thực nghiệm: thời gian, độ chính xác, mô tả kết quả, phân tích kết quả và cuối cùng là giải thích kết quả. Cách họ improve model hoặc fine tuning model ra sao?
 * Phần kết luận: đóng góp chính bài báo là gì? Công việc tương lai sẽ làm gì?
 * Viết abstract: Nó được viết cuối cùng? giới thiệu phương pháp và kết quả thực hiện.
-
-
 
 Tư duy để liệt kê danh sách các bài toán nghiên cứu cụ thể
 ======
