@@ -9,8 +9,9 @@ tags:
   - data structure
 ---
 
+Các nội dung liên quan về cấu trúc dữ liệu trong python
 
-1. Singly Linked List (SLL)
+Singly Linked List (SLL)
 ======
 
 ```python
@@ -128,7 +129,7 @@ if __name__ == '__main__':
     print('Tail [',sll.tail.data,']')
 ```
 
-2. Doubly Linked List (DLL)
+Doubly Linked List (DLL)
 ======
 
 ```python
