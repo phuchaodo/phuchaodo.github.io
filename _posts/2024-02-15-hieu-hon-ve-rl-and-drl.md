@@ -64,7 +64,6 @@ from this: https://github.com/Engineer1999/Double-Deep-Q-Learning-for-Resource-A
 
 from this: https://github.com/gundoganalperen/DIRAL/tree/main
 
-
 from this: https://github.com/xiangni/DREAM
 
 from this: https://github.com/davidtw0320/Resources-Allocation-in-The-Edge-Computing-Environment-Using-Reinforcement-Learning
@@ -76,7 +75,8 @@ from this: code xịn: https://github.com/datawhalechina/easy-rl/tree/master/not
 from this: https://github.com/omerbsezer/Reinforcement_learning_tutorial_with_demo
 
 
-Link ref: 
+Link ref
+======
 
 [Genetic algorithm](https://colab.research.google.com/drive/1LevKUHVljPtbE6MlBQsGmB2myI8kCdoa?usp=sharing)
 
@@ -84,8 +84,6 @@ Link ref:
 
 [DRL](https://colab.research.google.com/drive/1ZQY0O_irqi1FuX57H3IIWwtBgVh7XOdK?usp=drive_link)
 
-[Link 1](https://colab.research.google.com/drive/1_aDTl0VjSezW-syzHssqAK0-JXkboN8_?usp=sharing#scrollTo=3o1-KRDPcncA)
-
-
+[Colab link](https://colab.research.google.com/drive/1_aDTl0VjSezW-syzHssqAK0-JXkboN8_?usp=sharing#scrollTo=3o1-KRDPcncA)
 
 Hết.
