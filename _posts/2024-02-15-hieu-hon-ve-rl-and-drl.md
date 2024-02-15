@@ -9,6 +9,8 @@ tags:
   - DRL
 --- 
 
+Hiểu hơn về một số khái niệm và code về RL và DRL
+
 Outline
 ======
 
