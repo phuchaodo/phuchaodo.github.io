@@ -1200,8 +1200,55 @@ public:
     }
 };
 
-46. 
 
+46. https://leetcode.com/problems/next-permutation/
+
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        int n = nums.size();
+        int idx = -1;
+        for(int i = n - 2; i >= 0; i--){
+            if(nums[i] < nums[i+1]){
+                idx = i;
+                break;
+            }
+        }
+        if(idx != -1){
+            for(int j = n - 1; j >= idx + 1; j--){
+                if(nums[j] > nums[idx]){
+                    swap(nums[j], nums[idx]);
+                    break;
+                }
+            }
+        }
+        sort(nums.begin() + idx + 1, nums.end());
+    }
+};
+
+47. https://leetcode.com/problems/add-binary/description/
+class Solution {
+public:
+    string addBinary(string a, string b) {
+        string ans;
+        int na = a.size();
+        int nb = b.size();
+        int carry = 0;
+        int i = na - 1, j = nb - 1;
+        while(i >= 0 || j >= 0){
+            int sum = carry;
+            if(i >= 0) sum += (a[i--] - '0');
+            if(j >= 0) sum += (b[j--] - '0');
+            carry = sum > 1 ? 1 : 0;
+            ans += to_string(sum % 2);
+        }
+        if(carry) ans += to_string(carry);
+        reverse(ans.begin(), ans.end());
+        return ans;
+    }
+};
+
+48.
 ```
 
 
