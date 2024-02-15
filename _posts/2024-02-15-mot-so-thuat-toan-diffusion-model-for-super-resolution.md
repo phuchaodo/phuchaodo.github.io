@@ -7,6 +7,8 @@ tags:
   - proposal
   - diffusion model
 --- 
+
+Một số thuật toán diffusion model for super resolution (LDM, ISSR và ESGAN-SwinIR)
  
 List of algorithms for super resolution problem
 ======
