@@ -8,6 +8,8 @@ tags:
   - federated learning
 --- 
 
+Cách tiếp cận và cài đặt FL chi tiết
+
 Federated Learning
 ======
 
