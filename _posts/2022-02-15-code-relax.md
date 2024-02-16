@@ -1248,7 +1248,360 @@ public:
     }
 };
 
-48.
+
+48. https://leetcode.com/problems/binary-tree-level-order-traversal/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> ans;
+        if(root == NULL) {
+            return ans;
+        }
+        queue<TreeNode*> q;
+        q.push(root);
+        while(!q.empty()){
+            int levelSize = q.size();
+            vector<int> output;
+            for(int i = 0; i < levelSize; i++){
+                TreeNode* front = q.front();
+                q.pop();
+                output.push_back(front->val);
+
+                if(front->left != nullptr){
+                    q.push(front->left);
+                }
+                if(front->right != nullptr){
+                    q.push(front->right);
+                }
+            }
+            ans.push_back(output);
+        }
+        return ans;
+    }
+};
+49. https://leetcode.com/problems/symmetric-tree/description/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    bool check(TreeNode* left, TreeNode* right){
+        if(left == NULL && right == NULL) return true;
+        if(left == NULL || right == NULL) return false;
+        bool cond1 = (left->val == right->val) ? true : false;
+        bool cond2 = check(left->left, right->right);
+        bool cond3 = check(left->right, right->left);
+        return cond1 && cond2 && cond3;
+    }
+    bool isSymmetric(TreeNode* root) {
+        return check(root->left, root->right);
+    }
+};
+
+50. https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+        vector<vector<int>> ans;
+        queue<TreeNode*> q;
+        if(root == NULL) return ans;
+        q.push(root);
+        int sz = 0;
+        bool direction = 1;
+        while(!q.empty()){
+            sz = q.size();
+            vector<int> output;
+            while(sz-- > 0){
+                root = q.front();
+                q.pop();
+                if(root->left != nullptr){
+                    q.push(root->left);
+                }
+                if(root->right != nullptr){
+                    q.push(root->right);
+                }
+                output.push_back(root->val);
+            }
+            ans.push_back(output);
+            if(!direction) {
+                reverse(ans[ans.size() - 1].begin(), ans[ans.size() - 1].end());
+            }
+            direction = !direction;
+        }
+        return ans;
+    }
+};
+
+51.https://leetcode.com/problems/single-number/description/
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int n = nums.size();
+        unordered_map<int, int> mm;
+        for(int i = 0; i < n; i++){
+            if(mm.find(nums[i]) != mm.end()){
+                mm.erase(mm.find(nums[i]));
+                mm.insert(make_pair(nums[i], 2));
+            }
+            else {
+                mm.insert(make_pair(nums[i], 1));
+            }
+        }
+        int mn = -3 * 1e4;
+        int mx = 3 * 1e4;
+        for(int i = mn; i <= mx; i++){
+            if(mm.find(i) != mm.end()){
+                cout << mm.find(i)->first << ", " << mm.find(i)->second << endl;
+                if(mm.find(i)->second == 1){
+                    return mm.find(i)->first;
+                }
+            }
+        }
+        return 0;
+    }
+};
+52. https://leetcode.com/problems/single-number-ii/
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int n = nums.size();
+        unordered_map<int, int> mm;
+        for(int i = 0; i < n; i++){
+            if(mm.find(nums[i]) != mm.end()){
+                int val = mm.find(nums[i])->second;
+                mm.erase(mm.find(nums[i]));
+                mm.insert(make_pair(nums[i], val + 1));
+            }
+            else {
+                mm.insert(make_pair(nums[i], 1));
+            }
+        }
+        
+        for(int i = 0; i < n; i++){
+            if(mm.find(nums[i]) != mm.end()){
+                int val = mm.find(nums[i])->second;
+                if(val == 1){
+                    return nums[i];
+                }
+            }
+        }
+        
+        return 0;
+    }
+};
+53. https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/
+class Solution {
+public:
+    bool isValidSerialization(string s) {
+        stringstream ss(s);
+        string curr;
+        int nodes = 1;
+        while(getline(ss, curr, ',')){
+            nodes--;
+            if(nodes < 0) return false;
+            if(curr != "#") nodes += 2;
+        }
+        return nodes == 0;
+    }
+};
+54. https://leetcode.com/problems/binary-search-tree-iterator/description/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class BSTIterator {
+public:
+    stack<int> st;
+    void itr(TreeNode* root){
+        if(root == NULL) return;
+        if(root->right != NULL) itr(root->right);
+        st.push(root->val);
+        if(root->left != NULL) itr(root->left);
+    }  
+    int next(){
+        int val = st.top(); 
+        st.pop();
+        return val;
+    }  
+    bool hasNext(){
+        if(st.size() > 0) return true;
+        return false;
+    }
+    BSTIterator(TreeNode* root) {
+        itr(root);
+    }
+};
+
+/**
+ * Your BSTIterator object will be instantiated and called as such:
+ * BSTIterator* obj = new BSTIterator(root);
+ * int param_1 = obj->next();
+ * bool param_2 = obj->hasNext();
+ */
+55. https://leetcode.com/problems/binary-tree-right-side-view/description/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    void findRightSideView(TreeNode* node, vector<int>& ans){
+        if(node == NULL) return;
+        queue<pair<TreeNode*, int>> q;
+        int currL = -1;
+        q.push({node, 0});
+        while(!q.empty()){
+            auto element = q.front();
+            q.pop();
+            node = element.first;
+            int lvl = element.second;
+            if(currL < lvl){
+                ans.push_back(node->val);
+                currL = lvl;
+            }
+            if(node->right != nullptr) q.push({node->right, lvl + 1});
+            if(node->left != nullptr) q.push({node->left, lvl + 1});
+        }
+    }
+    vector<int> rightSideView(TreeNode* root) {
+        vector<int> ans;
+        findRightSideView(root, ans);
+        return ans;
+    }
+};
+56. https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    void inorder(TreeNode* root, vector<int>& ans){
+        if(root == NULL) return;
+        inorder(root->left, ans);
+        ans.emplace_back(root->val);
+        inorder(root->right, ans);
+    }
+    int kthSmallest(TreeNode* root, int k) {
+        vector<int> ans;
+        inorder(root, ans);
+        return ans[k-1];
+    }
+};
+57. https://leetcode.com/problems/single-number-iii/description/
+class Solution {
+public:
+    vector<int> singleNumber(vector<int>& nums) {
+        int n = nums.size();
+        unordered_map<int, int> mm;
+        for(int i = 0; i < n; i++){
+            auto tmp = mm.find(nums[i]);
+            if(tmp != mm.end()){
+                int val = tmp->second;
+                mm.erase(tmp);
+                mm.insert(make_pair(nums[i], val + 1));
+            }
+            else {
+                mm.insert(make_pair(nums[i], 1));
+            }
+        }
+        vector<int> ans;
+        for(int i = 0; i < n; i++){
+            auto tmp = mm.find(nums[i]);
+            if(tmp != mm.end()){
+                if(tmp->second == 1){
+                    ans.push_back(nums[i]);
+                }
+            }
+        }
+        return ans;
+    }
+};
+58. https://leetcode.com/problems/minimum-height-trees/description/
+class Solution {
+public:
+    vector<int> findMinHeightTrees(int n, vector<vector<int>>& edges) {
+        if(edges.size() == 0) return {0};
+        vector<int> ans;
+        vector<vector<int>> G(n);
+        for(auto& e : edges){
+            G[e[0]].push_back(e[1]);
+            G[e[1]].push_back(e[0]);
+        }
+        vector<int> newLeaves, inDegree;
+        for(int i = 0; i < n; i++){
+            if(G[i].size() == 1){
+                ans.push_back(i);
+            }
+            inDegree.push_back(G[i].size());
+        }
+        while(n > 2){
+            for(auto& leaf : ans){
+                for(auto& adj : G[leaf]){
+                    if(--inDegree[adj] == 1){
+                        newLeaves.push_back(adj);
+                    }
+                }
+            }
+            n -= ans.size();
+            ans = move(newLeaves);
+        }
+        return ans;
+    }
+};
+59. 
 ```
 
 
