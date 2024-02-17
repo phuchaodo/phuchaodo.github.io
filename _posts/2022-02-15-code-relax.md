@@ -1601,7 +1601,129 @@ public:
         return ans;
     }
 };
-59. 
+
+59. https://leetcode.com/problems/range-sum-query-mutable/
+class NumArray {
+public:
+    vector<int> seg;
+    int n;
+    void build(vector<int>& nums, int pos, int left, int right){
+        if(left == right){
+            seg[pos] = nums[left];
+            return;
+        }
+        int mid = (left + right) / 2;
+        build(nums, 2 * pos + 1, left, mid);
+        build(nums, 2 * pos + 2, mid + 1, right);
+        seg[pos] = seg[2 * pos + 1] + seg[2 * pos + 2];
+    }
+    void update(int pos, int left, int right, int idx, int val){
+        if(idx < left || idx > right) return;
+        if(left == right){
+            if(left == idx) {
+                seg[pos] = val;
+            }
+            return;
+        }
+        int mid = (left + right) / 2;
+        update(2 * pos + 1, left, mid, idx, val);
+        update(2 * pos + 2, mid + 1, right, idx, val);
+        seg[pos] = seg[2 * pos + 1] + seg[2 * pos + 2];
+    }
+    int sum(int queryL, int queryH, int left, int right, int pos){
+        if(queryL <= left && queryH >= right) {
+            return seg[pos];
+        }
+        if(queryL > right || queryH < left) {
+            return 0;
+        }
+        int mid = (left + right) / 2;
+        return sum(queryL, queryH, left, mid, 2 * pos + 1) + sum(queryL, queryH, mid + 1, right, 2 * pos + 2);
+    }
+    NumArray(vector<int>& nums) {
+        if(nums.size() > 0){
+            n = nums.size();
+            seg.resize(4 * n, 0);
+            build(nums, 0, 0, n - 1);
+        }
+    }
+    
+    void update(int index, int val) {
+        if(n == 0) return;
+        update(0, 0, n - 1, index, val);
+    }
+    
+    int sumRange(int left, int right) {
+        if(n == 0) return 0;
+        return sum(left, right, 0, n - 1, 0);
+    }
+};
+
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * NumArray* obj = new NumArray(nums);
+ * obj->update(index,val);
+ * int param_2 = obj->sumRange(left,right);
+ */
+ 
+ 60. https://leetcode.com/problems/range-frequency-queries/
+ class RangeFreqQuery {
+public:
+    vector<unordered_map<int, int>> tree;
+    int n = 0;
+    void build(vector<int>& nums, int pos, int left, int right){
+        if(left > right) return;
+        if(left == right) {
+            tree[pos].insert({nums[left], 1});
+            return;
+        }
+        int mid = (left + right) / 2;
+        build(nums, 2 * pos + 1, left, mid);
+        build(nums, 2 * pos + 2, mid + 1, right);
+        for(auto itr : tree[2 * pos + 1]){
+            tree[pos][itr.first] += itr.second;
+        }
+        for(auto itr : tree[2 * pos + 2]){
+            tree[pos][itr.first] += itr.second;
+        }
+    }
+    RangeFreqQuery(vector<int>& arr) {
+        if(arr.size() > 0){
+            n = arr.size();
+            int x = int(ceil(log2(n)));
+            int mx_size = 2 * int(pow(2, x)) - 1;
+            tree.resize(mx_size);
+            build(arr, 0, 0, n - 1);
+        }
+    }
+    int frequency(int pos, int left, int right, int queryL, int queryH, int val){
+        if(queryL > right || queryH < left) return 0;
+        if(queryL <= left && queryH >= right){
+            return tree[pos].find(val) != tree[pos].end() ? tree[pos][val] : 0;
+        }
+        int mid = (left + right) / 2;
+        return frequency(2 * pos + 1, left, mid, queryL, queryH, val) + frequency(2 * pos + 2, mid + 1, right, queryL, queryH, val);
+    }
+    int query(int left, int right, int value) {
+        return frequency(0, 0, n - 1, left, right, value);
+    }
+};
+
+/**
+ * Your RangeFreqQuery object will be instantiated and called as such:
+ * RangeFreqQuery* obj = new RangeFreqQuery(arr);
+ * int param_1 = obj->query(left,right,value);
+ */
+ 
+ 61. https://leetcode.com/problems/count-of-range-sum/description/
+ 62. https://leetcode.com/problems/queue-reconstruction-by-height/description/
+ 63. https://leetcode.com/problems/reverse-pairs/description/
+ 64. https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
+ 65. https://leetcode.com/problems/falling-squares/description/
+ 66. https://leetcode.com/problems/range-module/description/
+ 67. https://leetcode.com/problems/my-calendar-i/description/
+ 68. https://leetcode.com/problems/my-calendar-ii/description/
+ 69. https://leetcode.com/problems/my-calendar-iii/description/
 ```
 
 
