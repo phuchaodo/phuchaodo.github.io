@@ -1715,6 +1715,171 @@ public:
  * int param_1 = obj->query(left,right,value);
  */
  
+ 61. https://leetcode.com/problems/balanced-binary-tree/description/
+ /**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int getHeight(TreeNode* root){
+        if(root == nullptr) return 0;
+        int leftH = getHeight(root->left);
+        int rightH = getHeight(root->right);
+        if(leftH == -1 || rightH == -1 || abs(leftH - rightH) > 1) return -1;
+        int h = 1 + max(leftH, rightH);
+        return h;
+    }
+    bool isBalanced(TreeNode* root) {
+        if(root == nullptr) return true;
+        if(getHeight(root) == -1) return false;
+        return true;
+    }
+};
+62. https://leetcode.com/problems/minimum-depth-of-binary-tree/description/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    void solve(TreeNode* root, int& ans, int tmp){
+        if(root == NULL) return;
+        if(root->left == NULL && root->right == NULL){
+            ans = min(ans, tmp);
+            tmp = 0;
+        }
+        tmp++;
+        solve(root->left, ans, tmp);
+        solve(root->right, ans, tmp);
+        return;
+    }
+    int minDepth(TreeNode* root) {
+        if(root == NULL) return 0;
+        int ans = INT_MAX;
+        int tmp = 1;
+        solve(root, ans, tmp);
+        return ans;
+    }
+};
+63. https://leetcode.com/problems/path-sum/description/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    bool hasPathSum(TreeNode* root, int targetSum) {
+        if(root == nullptr) return false;
+        if(root->left == NULL && root->right == NULL){
+            return root->val == targetSum;
+        }
+        bool left_sum = hasPathSum(root->left, targetSum - root->val);
+        bool right_sum = hasPathSum(root->right, targetSum - root->val);
+        return left_sum || right_sum;
+    }
+};
+64. https://leetcode.com/problems/path-sum-ii/description/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    void solve(TreeNode* root, int targetSum, vector<vector<int>>& ans, vector<int> tmp, int sum){
+        if(root == NULL) return;
+        sum += root->val;
+        tmp.push_back(root->val);
+        if(root->left == NULL && root->right == NULL){
+            if(sum == targetSum){
+                ans.push_back(tmp);
+            }
+            else {
+                return;
+            }
+        }
+        solve(root->left, targetSum, ans, tmp, sum);
+        solve(root->right, targetSum, ans, tmp, sum);
+        return;
+    }
+    vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
+        vector<vector<int>> ans;
+        vector<int> tmp;
+        int sum = 0;
+        solve(root, targetSum, ans, tmp, sum);
+        return ans;
+    }
+};
+65. https://leetcode.com/problems/count-primes/description/
+class Solution {
+public:
+    int countPrimes(int n) {
+        if(n <= 1) return 0;
+        vector<bool> primes(n + 1, 1);
+        primes[0] = primes[1] = false;
+        int cnt = 1;
+        int sqrt_n = sqrt(n);
+        for(int i = 2; i <= sqrt_n; i++){
+            if(primes[i]) {
+                for(int j = i * i; j < n; j+=i){
+                    if(primes[j]) cnt++;
+                    primes[j] = false;
+                }
+            }
+        }
+        return n - cnt - 1;
+    }
+};
+66. https://leetcode.com/problems/add-digits/description/
+class Solution {
+public:
+    int addDigits(int num) {
+        if(num == 0) return 0;
+        else if(num % 9 == 0) return 9;
+        return num % 9;
+    }
+};
+
+ 
+ 61. https://leetcode.com/problems/count-of-range-sum/description/
+ 62. https://leetcode.com/problems/queue-reconstruction-by-height/description/
+ 63. https://leetcode.com/problems/reverse-pairs/description/
+ 64. https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
+ 65. https://leetcode.com/problems/falling-squares/description/
+ 66. https://leetcode.com/problems/range-module/description/
+ 67. https://leetcode.com/problems/my-calendar-i/description/
+ 68. https://leetcode.com/problems/my-calendar-ii/description/
+ 69. https://leetcode.com/problems/my-calendar-iii/description/
+ 
+ 
  61. https://leetcode.com/problems/count-of-range-sum/description/
  62. https://leetcode.com/problems/queue-reconstruction-by-height/description/
  63. https://leetcode.com/problems/reverse-pairs/description/
