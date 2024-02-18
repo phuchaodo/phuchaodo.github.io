@@ -1868,6 +1868,406 @@ public:
     }
 };
 
+67. https://leetcode.com/problems/clone-graph/
+/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    vector<Node*> neighbors;
+    Node() {
+        val = 0;
+        neighbors = vector<Node*>();
+    }
+    Node(int _val) {
+        val = _val;
+        neighbors = vector<Node*>();
+    }
+    Node(int _val, vector<Node*> _neighbors) {
+        val = _val;
+        neighbors = _neighbors;
+    }
+};
+*/
+
+class Solution {
+public:
+    Node* dfs(Node* curr, unordered_map<Node*, Node*>& mm){
+        vector<Node*> neighbour;
+        Node* clone = new Node(curr->val);
+        mm[curr] = clone;
+        for(auto it : curr->neighbors){
+            if(mm.find(it) != mm.end()){
+                neighbour.push_back(mm[it]);
+            }
+            else {
+                neighbour.push_back(dfs(it, mm));
+            }
+        }
+        clone->neighbors = neighbour;
+        return clone;
+    }
+    Node* cloneGraph(Node* node) {
+        unordered_map<Node*, Node*> mm;
+        if(node == NULL) return NULL;
+        if(node->neighbors.size() == 0){
+            Node* clone = new Node(node->val);
+            return clone;
+        }
+        return dfs(node, mm);
+    }
+};
+68. https://leetcode.com/problems/minimum-absolute-difference-in-bst/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    vector<int> nodes;
+    void inorder_dfs(TreeNode* root){
+        if(root == NULL) return;
+        inorder_dfs(root->left);
+        nodes.push_back(root->val);
+        inorder_dfs(root->right);
+    }
+    int getMinimumDifference(TreeNode* root) {
+        inorder_dfs(root);
+        int n = nodes.size();
+        int ans = nodes[n - 1];
+        for(int i = 1; i < n; i++){
+            ans = min(ans, nodes[i] - nodes[i-1]);
+        }
+        return ans;
+    }
+};
+69. https://leetcode.com/problems/subsets/
+class Solution {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> ans;
+        int n = pow(2, nums.size()) - 1;
+        for(int i = 0; i <= n; i++){
+            vector<int> tmp;
+            int idx = 0, res = n & i;
+            while(idx < nums.size() && res){
+                cout << res << endl;
+                if((res & 1) == 1) {
+                    tmp.push_back(nums[idx]);
+                }
+                res >>= 1;
+                idx++;
+            }
+            ans.push_back(tmp);
+        }
+        return ans;
+    }
+};
+70. https://leetcode.com/problems/subsets-ii/
+class Solution {
+public:
+    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        int n = nums.size();
+        sort(nums.begin(), nums.end());
+        vector<vector<int>> ans;
+        unordered_set<string> seen;
+        for(int mask = 0, sz = 1 << n; mask < sz; mask++){
+            vector<int> subset;
+            string hashcode = "";
+            for(int i = 0; i < n; i++){
+                int bit = (mask >> i) & 1;
+                if(bit == 1){
+                    subset.push_back(nums[i]);
+                    hashcode += to_string(nums[i]) + ",";
+                }
+            }
+            if(seen.count(hashcode) == 0){
+                ans.push_back(subset);
+                seen.insert(hashcode);
+            }
+        }
+        return ans;
+    }
+};
+71. https://leetcode.com/problems/counting-bits/
+class Solution {
+public:
+    int solve(int num){
+        int ans = 0;
+        while(num > 0){
+            if(num & 1 == 1) ans++;
+            num >>= 1;
+        }
+        return ans;
+    }
+    vector<int> countBits(int n) {
+        vector<int> ans;
+        for(int i = 0; i <= n; i++){
+            ans.push_back(solve(i));
+        }
+        return ans;
+    }
+};
+72. https://leetcode.com/problems/power-of-four/
+class Solution {
+public:
+    bool isPowerOfFour(int n) {
+        if(n <= 0) return 0;
+        int numOfbit1 = __builtin_popcount(n);
+        int numOftrailingZero = __builtin_ctz(n);
+        if(numOfbit1  == 1 && numOftrailingZero % 2 == 0){
+            return 1;
+        }
+        return 0;
+    }
+};
+73. https://leetcode.com/problems/sum-of-two-integers/
+class Solution {
+public:
+    int getSum(int a, int b) {
+        while(b != 0){
+            int carry = a & b;
+            a = a ^ b;
+            b = carry << 1;
+        }
+        return a;
+    }
+};
+74. https://leetcode.com/problems/repeated-dna-sequences/
+class Solution {
+public:
+    vector<string> findRepeatedDnaSequences(string s) {
+        int n = s.size();
+        vector<string> ans;
+        unordered_map<string, int> mm;
+        for(int i = 0; i < n - 9; i++){
+            string tmp = s.substr(i, 10);
+            auto it = mm.find(tmp);
+            if(it != mm.end()){
+                int val = it->second;
+                mm.erase(it);
+                mm.insert(make_pair(tmp, val + 1));
+            }
+            else {
+                mm.insert(make_pair(tmp, 1));
+            }
+        }
+        for(auto& x : mm){
+            if(x.second > 1){
+                ans.push_back(x.first);
+            }
+        }
+        return ans;
+    }
+};
+75. https://leetcode.com/problems/reverse-bits/
+class Solution {
+public:
+    uint32_t reverseBits(uint32_t n) {
+        uint32_t ans = 0;
+        for(int i = 0; i < 32; i++){
+            ans <<= 1;
+            ans |= (n & 1);
+            n >>= 1;
+        }
+        return ans;
+    }
+};
+76. https://leetcode.com/problems/number-of-1-bits/
+class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        return __builtin_popcount(n);
+    }
+};
+class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        int ans = 0;
+        while(n){
+            ans += (n % 2);
+            n >>= 1;
+        }
+        return ans;
+    }
+};
+77. https://leetcode.com/problems/bitwise-and-of-numbers-range/description/
+class Solution {
+public:
+    int rangeBitwiseAnd(int left, int right) {
+        int cnt = 0;
+        while(left != right){
+            left >>= 1;
+            right >>= 1;
+            cnt++;
+        }
+        int ans = left << cnt;
+        return ans;
+    }
+};
+78. https://leetcode.com/problems/count-complete-tree-nodes/
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int countNodes(TreeNode* root) {
+        if(root == nullptr) return 0;
+        int lH = 0, rH = 0;
+        TreeNode* leftNode = root;
+        TreeNode* rightNode = root;
+        while(leftNode != nullptr){
+            leftNode = leftNode->left;
+            lH++;
+        }
+        while(rightNode != nullptr){
+            rightNode = rightNode->right;
+            rH++;
+        }
+        if(lH == rH){
+            return pow(2, lH) - 1;
+        }
+        return 1 + countNodes(root->left) + countNodes(root->right);
+    }
+};
+79. https://leetcode.com/problems/find-the-duplicate-number/
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int n = nums.size();
+        unordered_map<int, int> mm;
+        for(int i = 0; i < n; i++){
+            auto it = mm.find(nums[i]);
+            if(it != mm.end()){
+                int val = it->second;
+                mm.erase(it);
+                mm.insert(make_pair(nums[i], val + 1));
+            }
+            else {
+                mm.insert(make_pair(nums[i], 1));
+            }
+        }
+        for(auto& x : mm){
+            if(x.second > 1){
+                return x.first;
+            }
+        }
+        return 0;
+    }
+};
+80. https://leetcode.com/problems/maximum-product-of-word-lengths/
+class Solution {
+public:
+    bool check(vector<int>& a, vector<int>& b){
+        int n = 26;
+        for(int i = 0; i < n; i++){
+            if(a[i] > 0 && b[i] > 0){
+                return true;
+            }
+        }
+        return false;
+    }
+    int maxProduct(vector<string>& words) {
+        int n = words.size();
+        int ans = 0;
+        vector<vector<int>> v(n, vector<int>(26, 0));
+        for(int i = 0; i < n; i++){
+            string tmp = words[i];
+            for(auto ch : tmp){
+                v[i][ch - 'a']++;
+            }
+            for(int j = 0; j < i; j++){
+                if(!check(v[i], v[j])){
+                    int sz = words[i].size() * words[j].size();
+                    ans = max(ans, sz);
+                }
+            }
+        }
+        return ans;
+    }
+};
+81. https://leetcode.com/problems/find-if-path-exists-in-graph/
+class Solution {
+public:
+    void dfs(int node, vector<vector<int>>& adj, vector<int>& vis){
+        vis[node] = 1;
+        for(auto it : adj[node]){
+            if(!vis[it]){
+                dfs(it, adj, vis);
+            }
+        }
+    }
+    bool validPath(int n, vector<vector<int>>& edges, int source, int destination) {
+        vector<vector<int>> adj(n);
+        for(auto it : edges){
+            adj[it[0]].push_back(it[1]);
+            adj[it[1]].push_back(it[0]);
+        }
+        vector<int> vis(n, 0);
+        dfs(source, adj, vis);
+        if(vis[destination] == 0){
+            return false;
+        }
+        return true;
+    }
+};
+82. https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/
+#define ll long long int
+#define pll pair<ll, ll>
+#define MOD (int)(1e9 + 7)
+
+class Solution {
+public:
+    int dijk(const vector<vector<pll>>& graph, int n, int src){
+        vector<ll> dist(n, LONG_MAX);
+        vector<ll> ways(n);
+        ways[src] = 1;
+        dist[src] = 0;
+        priority_queue<pll, vector<pll>, greater<>> minHeap;
+        minHeap.push({0, 0});
+        while(!minHeap.empty()){
+            auto [d, u] = minHeap.top(); minHeap.pop();
+            if(d  > dist[u]) continue;
+            for(auto [v, time] : graph[u]){
+                if(dist[v] > d + time){
+                    dist[v] = d + time;
+                    ways[v] = ways[u];
+                    minHeap.push({dist[v], v});
+                }
+                else if(dist[v] == d + time) {
+                    ways[v] = (ways[v] + ways[u]) % MOD;
+                }
+            }
+        }
+        return ways[n-1] % MOD;
+    }
+
+    int countPaths(int n, vector<vector<int>>& roads) {
+        vector<vector<pll>> graph(n);
+        for(auto& road : roads){
+            ll u = road[0], v = road[1], time = road[2];
+            graph[u].push_back({v, time});
+            graph[v].push_back({u, time});
+        }
+        return dijk(graph, n, 0);
+    }
+};
+83. 
  
  61. https://leetcode.com/problems/count-of-range-sum/description/
  62. https://leetcode.com/problems/queue-reconstruction-by-height/description/
@@ -1880,15 +2280,6 @@ public:
  69. https://leetcode.com/problems/my-calendar-iii/description/
  
  
- 61. https://leetcode.com/problems/count-of-range-sum/description/
- 62. https://leetcode.com/problems/queue-reconstruction-by-height/description/
- 63. https://leetcode.com/problems/reverse-pairs/description/
- 64. https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
- 65. https://leetcode.com/problems/falling-squares/description/
- 66. https://leetcode.com/problems/range-module/description/
- 67. https://leetcode.com/problems/my-calendar-i/description/
- 68. https://leetcode.com/problems/my-calendar-ii/description/
- 69. https://leetcode.com/problems/my-calendar-iii/description/
 ```
 
 
