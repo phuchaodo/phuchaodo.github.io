@@ -2267,7 +2267,179 @@ public:
         return dijk(graph, n, 0);
     }
 };
-83. 
+
+83. https://leetcode.com/problems/find-pivot-index/
+class Solution {
+public:
+    int pivotIndex(vector<int>& nums) {
+        int sum = 0;
+        int leftS = 0;
+        for(int i = 0; i < nums.size(); i++){
+            sum += nums[i];
+        }
+        for(int i = 0; i < nums.size(); i++){
+            sum -= nums[i];
+            if(sum == leftS) {
+                return i;
+            }
+            leftS += nums[i];
+        }
+        return -1;
+    }
+};
+84. https://leetcode.com/problems/check-if-all-the-integers-in-a-range-are-covered/
+class Solution {
+public:
+    bool isCovered(vector<vector<int>>& ranges, int left, int right) {
+        int n = ranges.size();
+        for(int i = left; i <= right; i++){
+            bool seen = false;
+            for(int j = 0; j < n && !seen; j++){
+                if(i >= ranges[j][0] && i <= ranges[j][1]) {
+                    seen = true;
+                    break;
+                }
+            }
+            if(!seen) return 0;
+        }
+        return 1;
+    }
+};
+85. https://leetcode.com/problems/minimum-size-subarray-sum/
+class Solution {
+public:
+    int minSubArrayLen(int target, vector<int>& nums) {
+        int n = nums.size();
+        int ans = INT_MAX;
+        long long sum = 0;
+        int idx = 0;
+        for(int i = 0; i < n; i++){
+            sum += nums[i];
+            while(sum - nums[idx] >= target){
+                sum -= nums[idx];
+                idx++;
+            }
+            if(sum >= target){
+                ans = min(ans, i - idx + 1);
+            }
+        }
+        return ans == INT_MAX ? 0 : ans;
+    }
+};
+86. https://leetcode.com/problems/product-of-array-except-self/
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> ans(n, 1);
+        int prefix = 1;
+        for(int i = 0; i < n; i++){
+            ans[i] = prefix;
+            prefix *= nums[i];
+        }
+        
+        int postfix = 1;
+        for(int i = n - 1; i >= 0; i--){
+            ans[i] *= postfix;
+            postfix *= nums[i];
+        }
+
+        return ans;
+    }
+};
+87. https://leetcode.com/problems/range-sum-query-immutable/
+class NumArray {
+private:
+    vector<int> prefixSum;
+public:
+    NumArray(vector<int>& nums) {
+        prefixSum.resize(nums.size());
+        prefixSum[0] = nums[0];
+        for(int i = 1; i < nums.size(); i++){
+            prefixSum[i] = prefixSum[i-1] + nums[i];
+        }
+    }
+    
+    int sumRange(int left, int right) {
+        if(left == 0){
+            return prefixSum[right];
+        }
+        return prefixSum[right] - prefixSum[left-1];
+    }
+};
+
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * NumArray* obj = new NumArray(nums);
+ * int param_1 = obj->sumRange(left,right);
+ */
+ 88. https://leetcode.com/problems/range-sum-query-2d-immutable/
+ class NumMatrix {
+private:
+    int row, col;
+    vector<vector<int>> sums;
+public:
+    NumMatrix(vector<vector<int>>& matrix) {
+        row = matrix.size();
+        col = row > 0 ? matrix[0].size() : 0;
+        sums = vector<vector<int>>(row + 1, vector<int>(col+1, 0));
+        for(int i = 1; i <= row; i++){
+            for(int j = 1; j <= col; j++){
+                sums[i][j] = matrix[i-1][j-1] + sums[i-1][j] + sums[i][j-1] - sums[i-1][j-1];
+            }
+        }
+    }
+    
+    int sumRegion(int row1, int col1, int row2, int col2) {
+        return sums[row2 + 1][col2 + 1] - sums[row2 + 1][col1] - sums[row1][col2 + 1] + sums[row1][col1];
+    }
+};
+
+/**
+ * Your NumMatrix object will be instantiated and called as such:
+ * NumMatrix* obj = new NumMatrix(matrix);
+ * int param_1 = obj->sumRegion(row1,col1,row2,col2);
+ */
+ 89. https://leetcode.com/problems/subarray-sum-equals-k/
+ class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+        int n = nums.size();
+        unordered_map<int, int> mm;
+        mm[0] = 1;
+        int cnt = 0;
+        int prefixSum = 0;
+        for(int i = 0; i < n; i++){
+            prefixSum += nums[i];
+            int toRemove = prefixSum - k;
+            cnt += mm[toRemove];
+            mm[prefixSum]++;
+        }
+        return cnt;
+    }
+};
+90. https://leetcode.com/problems/contiguous-array/
+class Solution {
+public:
+    int findMaxLength(vector<int>& nums) {
+        int n = nums.size();
+        unordered_map<int, int> mm;
+        mm[0] = -1;
+        int sum = 0, ans = 0;
+        for(int i = 0; i < n; i++){
+            sum += (nums[i] == 0) ? -1 : 1;
+            auto it = mm.find(sum);
+            if(it != mm.end()){
+                ans = max(ans, i - mm[sum]);
+            }
+            else {
+                mm[sum] = i;
+            }
+        }
+        return ans;
+    }
+};
+91. 
  
  61. https://leetcode.com/problems/count-of-range-sum/description/
  62. https://leetcode.com/problems/queue-reconstruction-by-height/description/
