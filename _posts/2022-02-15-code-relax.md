@@ -2439,19 +2439,49 @@ public:
         return ans;
     }
 };
-91. 
- 
- 61. https://leetcode.com/problems/count-of-range-sum/description/
- 62. https://leetcode.com/problems/queue-reconstruction-by-height/description/
- 63. https://leetcode.com/problems/reverse-pairs/description/
- 64. https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
- 65. https://leetcode.com/problems/falling-squares/description/
- 66. https://leetcode.com/problems/range-module/description/
- 67. https://leetcode.com/problems/my-calendar-i/description/
- 68. https://leetcode.com/problems/my-calendar-ii/description/
- 69. https://leetcode.com/problems/my-calendar-iii/description/
- 
- 
+
+
+94. https://leetcode.com/problems/count-of-range-sum/description/
+95. https://leetcode.com/problems/queue-reconstruction-by-height/description/
+96. https://leetcode.com/problems/reverse-pairs/description/
+97. https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
+class Solution {
+public:
+    int findNumberOfLIS(vector<int>& nums) {
+        int ans = INT_MIN;
+        int n = nums.size();
+        vector<pair<int, int>> dp (n, {1, 1});
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < i; j++){
+                if(nums[i] > nums[j]){
+                    if(dp[i].first < dp[j].first + 1) {
+                        dp[i].second = 0;
+                    }
+                    dp[i].first = max(dp[i].first, dp[j].first + 1);
+                    if(dp[i].first <= dp[j].first + 1){
+                        dp[i].second += dp[j].second;
+                    }
+                    ans = max(ans, dp[i].first);
+                }
+            }
+        }
+        if(ans == INT_MIN) return n;
+        int cnt = 0;
+        for(auto [sub, count] : dp){
+            if(sub == ans){
+                cnt += count;
+            }
+        }
+        return cnt;
+    }
+};
+98. https://leetcode.com/problems/falling-squares/description/
+99. https://leetcode.com/problems/range-module/description/
+100. https://leetcode.com/problems/my-calendar-i/description/
+101. https://leetcode.com/problems/my-calendar-ii/description/
+102. https://leetcode.com/problems/my-calendar-iii/description/
+
+
 ```
 
 
