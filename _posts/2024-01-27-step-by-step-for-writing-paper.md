@@ -38,6 +38,8 @@ Các outline gồm những nội dung sau
 13. Research Methodology
 
 14. Prompts For Academic Writing To Enhance Academic Writing Skills
+    
+16. How to reading a scientific paper for newbie
 
 
 Làm sao để cải thiện chất lượng bài báo
@@ -1147,5 +1149,64 @@ Generate a list of references in the Harvard referencing style for the books, jo
 Organize the reference list alphabetically by the author’s last name and chronologically by publication date for the sources used in your thesis.
 
 Ensure proper citation and referencing of primary and secondary sources in your annotated bibliography for the research conducted on [research topic].
+
+How to reading a scientific paper for newbie
+======
+
+Đầu tiên: tìm những bài báo có ranking cao, bài viết chất lượng mà đọc.
+
+1. Tìm kiếm nội dung chính
+   
+***Nội dung chính bao gồm những gì?
+- Ý tưởng chính: bài toán nghiên cứu thực hiện (research problem)
+- Giải pháp thực hiện (research method)
+- Tính hiệu quả của giải pháp (Efficiency)
+  
+***Nội dung chi tiết bao gồm những gì?
+- Giới thiệu, nghiên cứu khác liên quan, lý thuyết cơ bản, tham số, biến độ
+- Những vấn đề đã giải quyết được, những vấn đề chưa được giải quyết
+- Phụ lục, kết luận
+***Nội dung chính thì nằm ở đâu?
+
+2. Kiểm nghiệm & phát triển ý tưởng
+   
+***Phân tích các giả thuyết trọng hệ thống và mô hình
+- Tính thực tế của mô hình: có đủ gần thực tế, phản ánh nguyên lý quan trọng của bài toán thực tế liên quan
+- Tính khả thi của giải pháp trong thực tế
+  
+***Phân tích tính khoa học trong giải pháp
+- Kiểm tra các bước biến đổi, công thức, ký hiệu
+- Tính hợp lý, nền tảng, cơ sở lý thuyết (không nhất thiết được trình bày trong bài báo đang đọc)
+  
+***Phân tích hiệu quả, kết quả
+- Giải thích về kết quả
+- So sánh hiệu quả của các giải pháp với những giải pháp khác
+- Chạy lại thí nghiệm, thử thêm các tham số và thí nghiệm mới.
+
+3. Phát triển ký tưởng mới
+   
+*** Đúc kết những hạn chế hoặc giới hạn trong nghiên cứu đang đọc
+- Nhiều trường hợp thực tế chưa được thử nghiệm
+- Hiệu quả giải pháp sử dụng chưa cao, có thể có giải pháp tốt hơn
+- Các giải thuyết và mô hình có thể được điều chỉnh, mở rộng tốt hơn.
+  
+***Giải pháp
+- Tự đặt câu hỏi / trao đổi trong nhóm nghiên cứu cho mình về những giả thuyết và tính hợp lý của giải pháp đưa ra.
+- Tìm thêm các bài báo liên quan.
+  
+***Phát triển
+- Phát triển giải pháp và bài toán mới tốt hơn
+- Phát triển bài toán trên những khía cạnh bài toán đang đọc chưa giải quyết được.
+  
+***Dựa trên những kết luận, kết quả mới tìm được hoặc giải pháp mới đưa ra:
+- Cần thử nghiệm giải pháp cho bài toán nghiên cứu liên quan đang muốn giải quyết.
+- Mở rộng thử nghiệm
+- Điều chỉnh giải pháp phù hợp với bài toán muốn giải quyết.
+  
+***Phát triển bài toán mới
+- Các giả thuyết không còn phù hợp
+- Nhu cầu mới và vấn đề đã thay đổi
+- Mục tiêu mới quan trọng hơn của hệ thống.
+
 
 Hết.
