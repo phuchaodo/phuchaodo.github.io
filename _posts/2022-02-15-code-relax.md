@@ -2686,6 +2686,57 @@ public:
 };
 
 
+105. https://leetcode.com/problems/largest-triangle-area/description/
+class Solution {
+public:
+    double dis(vector<int>& A, vector<int>& B){
+        return sqrt(pow(A[0] - B[0], 2) + pow(A[1] - B[1], 2));
+    }
+    double area(vector<int>& A, vector<int>& B, vector<int>& C){
+        double a = dis(A, B);
+        double b = dis(A, C);
+        double c = dis(B, C);
+        double p = (a + b + c)/2;
+        double res = sqrt(p * (p - a) * (p - b) * (p - c));
+        return res;
+    }
+    double largestTriangleArea(vector<vector<int>>& points) {
+        int n = points.size();
+        double ans = 0;
+        for(int i = 0; i < n - 2; i++){
+            for(int j = i + 1; j < n - 1; j++){
+                for(int k = j + 1; k < n; k++){
+                    ans = max(ans, area(points[i], points[j], points[k]));
+                }
+            }
+        }
+        return ans;
+    }
+};
+106. https://leetcode.com/problems/rectangle-overlap/description/
+class Solution {
+public:
+    bool isRectangleOverlap(vector<int>& rec1, vector<int>& rec2) {
+        int f_x1 = rec1[0], f_y1 = rec1[1];
+        int f_x2 = rec1[2], f_y2 = rec1[3];
+        
+        int s_x1 = rec2[0], s_y1 = rec2[1];
+        int s_x2 = rec2[2], s_y2 = rec2[3];
+        
+        if((s_y1 >= f_y2) || (f_y1 >= s_y2) || (f_x1 >= s_x2) || (f_x2 <= s_x1)){
+            return false;
+        }
+        return true;
+    }
+};
+107. https://leetcode.com/problems/projection-area-of-3d-shapes/description/
+108. https://leetcode.com/problems/surface-area-of-3d-shapes/description/
+109. https://leetcode.com/problems/matrix-cells-in-distance-order/description/
+110. https://leetcode.com/problems/valid-boomerang/description/
+111. https://leetcode.com/problems/check-if-it-is-a-straight-line/description/
+112. https://leetcode.com/problems/minimum-time-visiting-all-points/description/
+113. https://leetcode.com/problems/minimum-cuts-to-divide-a-circle/description/
+
 ```
 
 
