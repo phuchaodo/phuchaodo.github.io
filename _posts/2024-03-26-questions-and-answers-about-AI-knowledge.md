@@ -13,61 +13,63 @@ Questions and answers about AI knowledge
 
 ## List question
 
-1. Khi loss function nó giảm nhưng lâu lâu lại tăng đột ngột  thì xảy ra hiên tượng gì. Cách khắc phục.
+Short and easy to understand explanation:
 
-2. hàm ReLU dùng để làm gì? Hàm sigmoid để làm gì? Sự khác nhau của nó?
+1. When the loss function decreases but occasionally increases suddenly, what phenomenon occurs? How to remedy it?
 
-3. Matrix giả nghịch đảo để làm gì
+2. What is the purpose of the ReLU function? What about the sigmoid function? How do they differ?
 
-4. Relu có ưu điểm gì,thay bằng sigmoid có dc ko
+3. What is the inverse matrix used for?
 
-5. Nhược điểm lớn nhất của linear regession
+4. What are the advantages of ReLU, and can it be replaced by sigmoid?
 
-6. Làm sao tìm dc global mininum khi có nhiều local minimum.
+5. What is the biggest drawback of linear regression?
 
-7. Kiểm định chi-square dùng để làm gì, nguồn gốc của phân phối chi-square
+6. How to find the global minimum when there are many local minimums?
 
-8. P value là gì, giá trị bao nhiêu là tốt(cho con số cụ thể)
+7. What is the chi-square test used for, and what is the origin of the chi-square distribution?
 
-9. Trình bày ý nghĩa của Batch Normalization
+8. What is P-value, and what value is considered good (provide a specific number)?
 
-10. Trình bày khái niệm và mối quan hệ đánh đổi giữa bias và variance?
+9. Explain the significance of Batch Normalization.
 
-11. Giả sử sau mô hình Deep Learning tìm được 10 triệu vector khuôn mặt. Làm sao tìm query khuôn mặt mới nhanh nhất.
+10. Explain the concept and trade-off relationship between bias and variance?
 
-12. Với bài toán classification, chỉ số accuracy có hoàn toàn tin tưởng được không. Bạn thường sử dụng các độ đo nào để đánh giá mô hình của mình ?
+11. Assuming a Deep Learning model finds 10 million face vectors. How to find a new face query the fastest?
 
-13. Bạn hiểu như thế nào về Backpropagation? Giải thích cơ chế hoạt động?
+12. For the classification problem, is the accuracy index entirely reliable? What evaluation metrics do you usually use for your model?
 
-14. Ý nghĩa của hàm activation function là gì? Thế nào là điểm bão hòa của các activation functions?
+13. How do you understand Backpropagation? Explain its mechanism.
 
-15. Hyperparameters của mô hình là gì? Khác với parameters như thế nào?
+14. What is the significance of the activation function? What is the saturation point of activation functions?
 
-16. Điều gì xảy ra khi learning rate quá lớn hoặc quá nhỏ?
+15. What are the hyperparameters of a model? How do they differ from parameters?
 
-17. Khi kích thước ảnh đầu vào tăng gấp đôi thì số lượng tham số của CNN tăng lên bao nhiêu lần? Tại sao?
+16. What happens when the learning rate is too large or too small?
 
-18. Với những tập dữ liệu bị imbalance thì có những cách xử lý nào?
+17. When the input image size doubles, how much does the number of parameters of CNN increase? Why?
 
-19. Các khái niệm Epoch, Batch và Iteration có ý nghĩa gì khi training mô hình Deep Learning
+18. What are some ways to handle imbalanced datasets?
 
-20. Khái niệm Data Generator là gì? Cần dùng nó khi nào?
+19. What do the concepts of Epoch, Batch, and Iteration mean when training a Deep Learning model?
 
-21. Phân biệt scalars, vectors, ma trận, và tensors?
+20. What is the concept of a Data Generator? When should it be used?
 
-22. Chuẩn norm của vecto và ma trận là gì?
+21. Differentiate between scalars, vectors, matrices, and tensors.
 
-23. Đạo hàm là gì?
+22. What are the norms of vectors and matrices?
 
-24. Trị riêng và vecto riêng là gì? Nêu một vài tính chất của chúng.
+23. What is the derivative? What are its applications in AI algorithms?
 
-25. Xác suất là gì? Tại sao nên sử dụng xác suất trong machine learning?
+24. What are eigenvalues and eigenvectors? List some properties of them.
 
-26. Biến ngẫu nhiên là gì? Nó khác gì so với biến đại số thông thường?
+25. What is probability? Why should we use probability in machine learning?
 
-27. Xác suất có điều kiện là gì? Cho ví dụ?
+26. What is a random variable? How is it different from a regular algebraic variable?
 
-28. Khái niệm về kỳ vọng, phương sai và ý nghĩa của chúng?
+27. What is conditional probability? Provide an example.
+
+28. What are the concepts of expectation, variance, and their significance?
 
 ## Question from chatgpt
 
