@@ -2774,6 +2774,96 @@ int32_t main(){
     return 0;
 }
 
+115. https://bkdnoj.com/problem/CSES43_SUMOFTHREEVALUES
+https://bkdnoj.com/problem/CSES44_SUMOFFOURVALUES
+#define _GLIBCXX_FILESYSTEM
+#include <bits/stdc++.h>
+
+using namespace std;
+#define int long long int
+
+void solve3(vector<pair<int, int>>& arr, int targetSum) {
+    sort(arr.begin(), arr.end());
+    int n = arr.size();
+    for (int i = 0; i < n - 2; ++i) {
+        int left = i + 1, right = n - 1;
+        while (left < right) {
+            int currentSum = arr[i].first + arr[left].first + arr[right].first;
+
+            if (currentSum == targetSum) {
+                vector<int> res;
+                res.push_back(arr[i].second);
+                res.push_back(arr[left].second);
+                res.push_back(arr[right].second);
+                sort(res.begin(), res.end());
+                for(auto val : res){
+                    cout << val << " ";
+                }
+                return;
+            } else if (currentSum < targetSum) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+    }
+    cout << "IMPOSSIBLE" << endl;
+}
+
+
+void solve4(vector<pair<int, int>>& arr, int targetSum) {
+    sort(arr.begin(), arr.end());
+    int n = arr.size();
+    for (int i = 0; i < n - 3; ++i) {
+        for(int j = i + 1; j < n - 2; j++){
+            int left = j + 1, right = n - 1;
+            while (left < right) {
+                int currentSum = arr[i].first + arr[j].first + arr[left].first + arr[right].first;
+
+                if (currentSum == targetSum) {
+                    vector<int> res;
+                    res.push_back(arr[i].second);
+                    res.push_back(arr[j].second);
+                    res.push_back(arr[left].second);
+                    res.push_back(arr[right].second);
+                    sort(res.begin(), res.end());
+                    for(auto val : res){
+                        cout << val << " ";
+                    }
+                    return;
+                } else if (currentSum < targetSum) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+    }
+    cout << "IMPOSSIBLE" << endl;
+}
+
+int32_t main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n, x;
+    cin >> n >> x;
+
+    vector<pair<int, int>> vp(n);
+
+    for(int i = 0; i < n; i++) {
+        int tmp; cin >> tmp;
+        vp[i] = make_pair(tmp, i + 1);
+    }
+
+
+    solve4(vp, x);
+
+    return 0;
+}
+
+
+
+116. 
 ```
 
 
