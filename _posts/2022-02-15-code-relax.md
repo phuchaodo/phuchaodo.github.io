@@ -2737,6 +2737,43 @@ public:
 112. https://leetcode.com/problems/minimum-time-visiting-all-points/description/
 113. https://leetcode.com/problems/minimum-cuts-to-divide-a-circle/description/
 
+114. https://bkdnoj.com/problem/CSES47_SUBARRAYSUMSII
+
+#define _GLIBCXX_FILESYSTEM
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long int
+
+int solve(vector<int>& arr, int targetSum) {
+    unordered_map<int, int> prefixSumFreq;
+    prefixSumFreq[0] = 1;
+    int currentSum = 0;
+    int count = 0;
+
+    for (int num : arr) {
+        currentSum += num;
+        if (prefixSumFreq.find(currentSum - targetSum) != prefixSumFreq.end()) {
+            count += prefixSumFreq[currentSum - targetSum];
+        }
+        prefixSumFreq[currentSum]++;
+    }
+
+    return count;
+}
+
+int32_t main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n, x;
+    cin >> n >> x;
+    vector<int> v(n);
+    for(int i = 0; i < n; i++) {
+        cin >> v[i];
+    }
+    cout << solve(v, x) << endl;
+    return 0;
+}
+
 ```
 
 
