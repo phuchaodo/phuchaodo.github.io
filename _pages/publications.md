@@ -9,29 +9,31 @@ author_profile: true
 
 **UNDER REVIEW OR ACCEPTED**  
 
+[24] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Analysis of intelligent compression methods for traffic transmission in satellite communication channels. In EAI/Springer Innovations in Communication and Computing, Springer, 2023. (Accepted)
 
-[24] **Do, Phuc Hao**, Pham, Van Quan,Le, Tran Duc, Dinh, Truong Duy, Nguyen, Nang Hung Van, Pham, Minh Tuan. Unveiling the Power of Pretrained Models for Neural Machine Translation in Vietnamese Language: A Comparative Analysis. In The 2023 RIVF International Conference on Computing and Communication Technologies, 2023. (Accepted)
 
-[23] Le, Tran Duc, **Do, Phuc Hao**, Nguyen, Duc Tai, Phung, Van Thang, Nguyen, Cong Danh, Dinh, Truong Duy. Federated Learning for Linux Malware Detection: An Experimental Study. In EAI/Springer Innovations in Communication and Computing, Springer, 2023. (Accepted)
+**2024**  
 
-[22] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Analysis of intelligent compression methods for traffic transmission in satellite communication channels. In EAI/Springer Innovations in Communication and Computing, Springer, 2023. (Accepted)
+[23] Nguyen Nang Hung Van, Ho Le Minh Nhat, Vo Duc Hoang, **Do Phuc Hao**. Transforming enrollment advising in education with deep learning models and chatbots, Kỷ yếu Hội nghị KHCN Quốc gia lần thứ XIV về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR), 2023 (Accepted)
 
-[21] **Do, Phuc Hao**, Le, Tran Duc, Vishnevsky, Vladimir, Berezkin, Aleksandr, Kirichek, Ruslan. A Horizontal Federated Learning Approach to IoT Malware Traffic Detection: An Empirical Evaluation with N-BaIoT Dataset. ICACT Transactions on Advanced Communications Technology (ICACTTACT), IEEE, 2023. (Accepted)
+[22] **Do, Phuc Hao**, Pham, Van Quan, Le, Tran Duc, Dinh, Truong Duy, Nguyen, Nang Hung Van, Pham, Minh Tuan. [Unveiling the Power of Pretrained Models for Neural Machine Translation in Vietnamese Language: A Comparative Analysis](https://ieeexplore.ieee.org/document/10471832). _In The 2023 RIVF International Conference on Computing and Communication Technologies_, IEEE, 452-457, 2024. 
 
-[20] Nguyen Nang Hung Van, Ho Le Minh Nhat, Vo Duc Hoang, **Do Phuc Hao**. "Transforming enrollment advising in education with deep learning models and chatbots", Kỷ yếu Hội nghị KHCN Quốc gia lần thứ XIV về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR), 2023 (Accepted)
+[21] **Do, Phuc Hao**, Le, Tran Duc, Vishnevsky, Vladimir, Berezkin, Aleksandr, Kirichek, Ruslan. [A Horizontal Federated Learning Approach to IoT Malware Traffic Detection: An Empirical Evaluation with N-BaIoT Dataset](https://ieeexplore.ieee.org/document/10471929). _ICACT-Transactions on Advanced Communications Technology (TACT)_, IEEE, Vol. 12, Issue 3, 1494-1506, 2024. 
 
 
 **2023**
 
-[19] Truong, Cong Khoa, Do, Phuc Hao, Le, Tran Duc. A Comparative Analysis of E-mail Phishing Detection Methods: A Deep Learning Perspective. Artificial Intelligence for Biometrics and Cybersecurity: Technology and applications, Institution of Engineering and Technology (IET), 149–174, 2023.
+[20] Le, Tran Duc, **Do, Phuc Hao**, Nguyen, Duc Tai, Phung, Van Thang, Nguyen, Cong Danh, Dinh, Truong Duy. [Federated Learning for Linux Malware Detection: An Experimental Study](https://link.springer.com/chapter/10.1007/978-3-031-51097-7_6?fbclid=IwAR3I7ykdEHTVezfT1DR80u6HgSKVSldb1b1pZ2g3ZSP9FgNkHUJXY15bpsA). _EAI/Springer Innovations in Communication and Computing. Springer, Cham._, 63-75, 2023.  
 
-[18] Nguyen, Nang Hung Van, Do, Phuc Hao, Hoang, Van Nam, Borodko, Aleksandr, Le, Tran Duc. Leveraging FFT and Hybrid EfficientNet for Enhanced Action Recognition in Video Sequences. In Proceedings of the 12th International Symposium on Information and Communication Technology, SoICT 2023. ACM, 32-39, 2023.
+[19] Truong, Cong Khoa, **Do, Phuc Hao**, Le, Tran Duc. [A Comparative Analysis of E-mail Phishing Detection Methods: A Deep Learning Perspective](https://digital-library.theiet.org/content/books/10.1049/pbse020e_ch7;jsessionid=829ik2rri6qqo.x-iet-live-01). _Artificial Intelligence for Biometrics and Cybersecurity: Technology and applications_, Institution of Engineering and Technology (IET), 149–174, 2023. 
 
-[17] Le, Viet Trung, Do, Phuc Hao, Uwizeyemungu, Sylvestre, Le-Dinh, Thang, Le, Tran Duc. Utilizing InfoGAN and PE Header Features for Synthetic Ransomware Image Generation: An Experimental Study. In Future Data and Security Engineering. Big Data, Security and Privacy, Smart City and Industry 4.0 Applications. FDSE 2023. Communications in Computer and Information Science, vol 1925. Springer, 226–239, 2023.
+[18] Nguyen, Nang Hung Van, **Do, Phuc Hao**, Hoang, Van Nam, Borodko, Aleksandr, Le, Tran Duc. [Leveraging FFT and Hybrid EfficientNet for Enhanced Action Recognition in Video Sequences](https://dl.acm.org/doi/abs/10.1145/3628797.3628827). In _Proceedings of the 12th International Symposium on Information and Communication Technology, SoICT 2023_. ACM, 32-39, 2023.
 
-[16] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Graph Neural Networks for Traffic Classification in Satellite Communication Channels: A Comparative Analysis. Proceedings of Telecommunication Universities, 9(3), 14-27, 2023.
+[17] Le, Viet Trung, **Do, Phuc Hao**, Uwizeyemungu, Sylvestre, Le-Dinh, Thang, Le, Tran Duc. [Utilizing InfoGAN and PE Header Features for Synthetic Ransomware Image Generation: An Experimental Study](https://link.springer.com/chapter/10.1007/978-981-99-8296-7_16). In _Future Data and Security Engineering. Big Data, Security and Privacy, Smart City and Industry 4.0 Applications. FDSE 2023. Communications in Computer and Information Science_, vol 1925. Springer, 226–239, 2023.  
 
-[15] **Do, Phuc Hao**, Le, Tran Duc, Vishnevsky, Vladimir, Berezkin, Aleksandr, Kirichek, Ruslan. A Horizontal Federated-Learning Model for Detecting Abnormal Traffic Generated by Malware in IoT Networks. In 2023 25th International Conference on Advanced Communication Technology (ICACT), IEEE, 28-36.
+[16] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. [Graph Neural Networks for Traffic Classification in Satellite Communication Channels: A Comparative Analysis](https://tuzs.sut.ru/jour/article/view/476). _Proceedings of Telecommunication Universities_, 9(3), 14-27, 2023.  
+
+[15] **Do, Phuc Hao**, Le, Tran Duc, Vishnevsky, Vladimir, Berezkin, Aleksandr, Kirichek, Ruslan. [A Horizontal Federated-Learning Model for Detecting Abnormal Traffic Generated by Malware in IoT Networks](https://ieeexplore.ieee.org/document/10079624). _In 2023 25th International Conference on Advanced Communication Technology (ICACT)_, IEEE, 28-36.
 
 [14] Van Quan Pham, Van Uc Ngo, **Phuc Hao Do**, Nang Hung Van Nguyen. IoT Botnet Detection and Classification using Machine Learning Algorithms. Tập 2023 Số 1: Các công trình nghiên cứu, phát triển và ứng dụng Công nghệ Thông tin và Truyền thông, 38-49, 2023
 
@@ -42,30 +44,30 @@ author_profile: true
 
 **2021**
 
-[12] **Do, Phuc Hao**, Dinh, Truong Duy, Le, Tran Duc, Myrova, Lyudmila, Kirichek, Ruslan. An Efficient Feature Extraction Method for Attack Classification in IoT Networks. In 2021 13th International Congress on Ultra Modern Telecommunications and Control Systems and Workshops (ICUMT), IEEE, 194-199, 2021.
+[12] **Do, Phuc Hao**, Dinh, Truong Duy, Le, Tran Duc, Myrova, Lyudmila, Kirichek, Ruslan. [An Efficient Feature Extraction Method for Attack Classification in IoT Networks](https://ieeexplore.ieee.org/document/9631726). _In 2021 13th International Congress on Ultra Modern Telecommunications and Control Systems and Workshops (ICUMT)_, IEEE, 194-199, 2021.  
 
-[11] Pham, Van Dai, **Do, Phuc Hao**, Le, Tran Duc, Kirichek, Ruslan. LoRa Link Quality Estimation Based on Support Vector Machine. Lecture Notes in Computer Science, vol. 13144, Springer, 92-102, 2021.
+[11] Pham, Van Dai, **Do, Phuc Hao**, Le, Tran Duc, Kirichek, Ruslan. [LoRa Link Quality Estimation Based on Support Vector Machine](https://link.springer.com/chapter/10.1007/978-3-030-92507-9_9). _Lecture Notes in Computer Science_, vol. 13144, Springer, 92-102, 2021.  
 
-[10] Pham, Van Dai, **Do, Phuc Hao**, Le, Tran Duc, Kirichek, Ruslan. A Method for Link Quality Estimation in LoRa Network based on Support Vector Machine. Distributed Computer and Communication Networks: Control, Computation, Communications: 24th International Conference, 401-408, 2021.
+[10] Pham, Van Dai, **Do, Phuc Hao**, Le, Tran Duc, Kirichek, Ruslan. [A Method for Link Quality Estimation in LoRa Network based on Support Vector Machine](https://dl.acm.org/doi/abs/10.1007/978-3-030-92507-9_9). _Distributed Computer and Communication Networks: Control, Computation, Communications: 24th International Conference_, 401-408, 2021.
 
-[9] Van, Nguyen Nang Hung, Pham Minh Tuan, and Kanta Tachibana, **Do Phuc Hao**. "Lstm for human activity recognition based on feature extraction method using conformal geometric algebra.", Kỷ yếu Hội nghị KHCN Quốc gia lần thứ XIV về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR), 2021
+[9] Van, Nguyen Nang Hung, Pham Minh Tuan, and Kanta Tachibana, **Do Phuc Hao**. [Lstm for human activity recognition based on feature extraction method using conformal geometric algebra.](http://vap.ac.vn/Portals/0/TuyenTap/2021/12/22/1ecec417207345d595e011cb434f7fe8/22_FAIR2021_paper_145.pdf), Kỷ yếu Hội nghị KHCN Quốc gia lần thứ XIV về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR), 2021
 
 
 **2020**
 
-[8] Nguyen Nang Hung Van, Pham Minh Tuan, **Do Phuc Hao**, Pham Cong Thang, and Tachibana Kanta. "Human action recognition method based on conformal geometric algebra and recurrent neural network" Information and management systems, no. 5 (108), 2020, pp. 2-11. (Scopus Q4)
+[8] Nguyen Nang Hung Van, Pham Minh Tuan, **Do Phuc Hao**, Pham Cong Thang, and Tachibana Kanta. [Human action recognition method based on conformal geometric algebra and recurrent neural network](https://cyberleninka.ru/article/n/human-action-recognition-method-based-on-conformal-geometric-algebra-and-recurrent-neural-network) Information and management systems, no. 5 (108), 2020, pp. 2-11. (Scopus Q4)
 
 
 **2018**
 
-[7] Pham, T. M., **Do, H. P.**, Doan, D. C., & Nguyen, H. V. (2018). Fast gaussian distribution based adaboost algorithm for face detection. Tạp chí Khoa học và Công nghệ. Đại học Đà Nẵng, 45-50.
+[7] Pham, T. M., **Do, H. P.**, Doan, D. C., & Nguyen, H. V. (2018). [Fast gaussian distribution based adaboost algorithm for face detection](https://jst-ud.vn/jst-ud/article/download/397/397/5844). Tạp chí Khoa học và Công nghệ. Đại học Đà Nẵng, 45-50.
 
 
 **2016**
 
-[6] Van Nguyen, Nang Hung, Minh Tuan Pham, and **Phuc Hao Do**. "Marker selection for human activity recognition using combination of conformal geometric algebra and principal component regression." Proceedings of the 7th Symposium on Information and Communication Technology. 2016.
+[6] Van Nguyen, Nang Hung, Minh Tuan Pham, and **Phuc Hao Do**. [Marker selection for human activity recognition using combination of conformal geometric algebra and principal component regression.](https://dl.acm.org/doi/10.1145/3011077.3011133) Proceedings of the 7th Symposium on Information and Communication Technology. 2016.
 
-[5] Pham, Minh Tuan, **Phuc Hao Do**, and Kanta Tachibana. "Feature extraction for classification method using principal component based on conformal geometric algebra." 2016 International joint conference on neural networks (IJCNN). IEEE, 2016.
+[5] Pham, Minh Tuan, **Phuc Hao Do**, and Kanta Tachibana. [Feature extraction for classification method using principal component based on conformal geometric algebra.](https://ieeexplore.ieee.org/document/7727735) 2016 International joint conference on neural networks (IJCNN). IEEE, 2016.
 
 
 **IN RUSSIAN LANGUAGES**  
