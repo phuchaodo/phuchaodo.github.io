@@ -41,6 +41,7 @@ Các outline gồm những nội dung sau
     
 16. How to reading a scientific paper for newbie
 
+17. How to build mathematical formula (from natural idea)
 
 Làm sao để cải thiện chất lượng bài báo
 ======
@@ -1207,6 +1208,54 @@ How to reading a scientific paper for newbie
 - Các giả thuyết không còn phù hợp
 - Nhu cầu mới và vấn đề đã thay đổi
 - Mục tiêu mới quan trọng hơn của hệ thống.
+
+17. How to build mathematical formula (from natural idea)
+======
+
+prompt:
+As you are an optimization expert, now I have an idea, I want you to express that idea in a mathematical formula.
+
+Given N cells at ground level, with K beams at satellite. I want to write an optimization function to minimize the energy needed to transmit at each beam, knowing that the traffic demand at each cell N_i is different. The total energy of the beams does not exceed P.
+
+
+
+How you can represent your optimization problem idea with formulas, constraints, and potential implementation:
+
+Formulas:
+
+Objective Function: This formula represents the quantity you want to optimize, either maximize (profit) or minimize (cost). It will involve your variables and mathematical operations.
+
+Variable Definitions: Define each variable used in the objective function and any other relevant formulas. Specify their units if applicable.
+
+Constraints:
+
+These formulas represent limitations or restrictions on your variables. They ensure your solution makes sense in the real world. Constraints can be expressed as:
+
+Equality Constraints: These enforce an exact relationship between variables (e.g., total resources = used resources + remaining resources).
+Inequality Constraints: These specify limitations or boundaries for variables (e.g., production time cannot be negative).
+Implementation:
+
+Here are some ways to implement your optimization problem depending on its complexity:
+
+Manual Calculation: For simple problems, you can directly solve the formulas and constraints to find the optimal solution.
+Spreadsheet Software: Spreadsheets like Excel can be used to set up your objective function and constraints as formulas in cells. You can then use built-in solver functions to find the optimal values for your variables.
+Optimization Software: For more complex problems, specialized optimization software exists (e.g., LINGO, Gurobi). These can handle a wider range of functions, constraints, and variable types.
+
+--------------------------
+
+Let's say you want to optimize the production of two products (A and B) to maximize profit.
+
+Formulas:
+Objective Function (Profit): Profit = (Price_A * Units_A) + (Price_B * Units_B)
+Variable Definitions: Units_A (number of product A units), Units_B (number of product B units), Price_A (price per unit A), Price_B (price per unit B)
+Constraints:
+Resource Constraint (limited material): Material_A * Units_A + Material_B * Units_B <= Total_Material (inequality)
+Production Time Constraint (limited time): Time_A * Units_A + Time_B * Units_B <= Total_Production_Time (inequality)
+Implementation:
+You can solve this manually for small problems.
+Use a spreadsheet with formulas in each cell and the solver function to find the optimal production levels for A and B that maximize profit within the constraints.
+For larger problems with many variables and constraints, consider using optimization software.
+
 
 
 Hết.
