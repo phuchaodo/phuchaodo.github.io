@@ -1209,7 +1209,8 @@ How to reading a scientific paper for newbie
 - Nhu cầu mới và vấn đề đã thay đổi
 - Mục tiêu mới quan trọng hơn của hệ thống.
 
-17. How to build mathematical formula (from natural idea)
+
+How to build mathematical formula (from natural idea)
 ======
 
 prompt:
