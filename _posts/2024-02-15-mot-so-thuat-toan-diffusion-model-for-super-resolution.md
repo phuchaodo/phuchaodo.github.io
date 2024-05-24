@@ -24,7 +24,7 @@ o	pip install einops
 o	pip install pytorch_lightning==1.6.5
 o	pip install ipywidgets omegaconf>=2.0.0 pytorch-lightning>=1.0.8 torch-fidelity einops
 -	Code implemented in ipynb (LDM.ipynb) for reference on how to run the superresolution model.
--	Link download: https://drive.google.com/drive/folders/1FaBXwa4ScvRc7czDoYGlplRJthPElU-m?usp=sharing
+-	Link download: [Link](https://drive.google.com/drive/folders/1FaBXwa4ScvRc7czDoYGlplRJthPElU-m?usp=sharing)
 
 2.	ISSR algoritm (Image-Super-Resolution-via-Iterative-Refinement algorithm)
 -	It is one of the models of diffusion model 
@@ -36,7 +36,7 @@ o	pip install tensorboardx
 -	Run file sr.py to train. Run file infer.py to run the results.
 -	Read more carefully in the README.md file in the root directory.
 -	Code implemented using ipynb (ISSR.ipynb) to see how to infer data. 
--	Link download: https://drive.google.com/drive/folders/1tO17L5RHo3W15JfsQsNSGZyb3g_wYClX
+-	Link download:  [Link](https://drive.google.com/drive/folders/1tO17L5RHo3W15JfsQsNSGZyb3g_wYClX)
 
 3.	SwinIR and ESRGAN algorithm
 -	It is one of the GAN algorithms 
@@ -53,12 +53,12 @@ o	!pip install timm
 -	For ESRGAN model, run file inference_realesrgan.py of folder esrgan_root_path or file inference_realesrgan_video.py (if you want to test on video). You should read the file esrgan_root_path/README.md to better understand the parameters.
 -	Pretrained models are saved in esrgan_root_path/pretrained_models
 -	Code implemented with ipynb (esrgan_root_path /SwinIR_and_ESRGAN.ipynb) to see how to infer data. 
--	Link download: https://drive.google.com/drive/folders/1Efv3lbSwbdDQvB_9BPQKJD8cwMfdbYqh?usp=sharing
+-	Link download:  [Link](https://drive.google.com/drive/folders/1Efv3lbSwbdDQvB_9BPQKJD8cwMfdbYqh?usp=sharing)
  
 Link original source: 
 + https://github.com/JingyunLiang/SwinIR
 + https://github.com/xinntao/ESRGAN
-+ https://github.com/Janspiry/Image-Super-Resolution-via-Iterative-Refinement
++  [Link](https://github.com/Janspiry/Image-Super-Resolution-via-Iterative-Refinement)
 + https://github.com/IceClear/LDM-SRtuning/tree/main
 
 
