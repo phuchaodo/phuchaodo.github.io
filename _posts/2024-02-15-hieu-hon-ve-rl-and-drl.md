@@ -62,19 +62,20 @@ Remember, the specific details of input, output, processing, and evaluation vary
 RL in RA
 ======
 
-from this: https://github.com/Engineer1999/Double-Deep-Q-Learning-for-Resource-Allocation
+from this:  [Link](https://github.com/Engineer1999/Double-Deep-Q-Learning-for-Resource-Allocation)
 
-from this: https://github.com/gundoganalperen/DIRAL/tree/main
+from this:  [Link](https://github.com/gundoganalperen/DIRAL/tree/main)
 
-from this: https://github.com/xiangni/DREAM
+from this:  [Link](https://github.com/xiangni/DREAM)
 
-from this: https://github.com/davidtw0320/Resources-Allocation-in-The-Edge-Computing-Environment-Using-Reinforcement-Learning
+from this: 
+ [Link](https://github.com/davidtw0320/Resources-Allocation-in-The-Edge-Computing-Environment-Using-Reinforcement-Learning)
 
-from this: https://github.com/wn-upf/decentralized_qlearning_resource_allocation_in_wns/tree/master
+from this:  [Link](https://github.com/wn-upf/decentralized_qlearning_resource_allocation_in_wns/tree/master)
 
-from this: code xịn: https://github.com/datawhalechina/easy-rl/tree/master/notebooks
+from this: code xịn:  [Link](https://github.com/datawhalechina/easy-rl/tree/master/notebooks)
 
-from this: https://github.com/omerbsezer/Reinforcement_learning_tutorial_with_demo
+from this:  [Link](https://github.com/omerbsezer/Reinforcement_learning_tutorial_with_demo)
 
 
 Link ref
