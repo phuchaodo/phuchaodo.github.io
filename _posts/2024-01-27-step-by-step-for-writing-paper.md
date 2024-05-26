@@ -39,11 +39,13 @@ Các outline gồm những nội dung sau
 
 14. Prompts For Academic Writing To Enhance Academic Writing Skills
     
-16. How to reading a scientific paper for newbie
+15. How to reading a scientific paper for newbie
 
-17. How to build mathematical formula (from natural idea)
+16. How to build mathematical formula (from natural idea)
+    
+17. Hiểu hơn cách sử dụng prompt phù hợp
 
-Làm sao để cải thiện chất lượng bài báo
+1.Làm sao để cải thiện chất lượng bài báo
 ======
 
 + Chọn các bài báo ở journal xịn
@@ -53,7 +55,7 @@ Làm sao để cải thiện chất lượng bài báo
 + Các kết quả thì nên "show" thế nào cho thấy "xịn"
 + Việc mô tả và giải thích kết quả đầy đủ.
 
-Examples of ChatGPT Prompts
+2.Examples of ChatGPT Prompts
 ======
 
 Prompt 0
@@ -120,7 +122,7 @@ Prompt 24: Language Translation: “Can you translate this [insert language] phr
 
 Prompt 25: Proofreading: “Can you check this paragraph for grammatical errors?”
 
-Các bước tiếp cận để viết một bài báo khoa học
+3.Các bước tiếp cận để viết một bài báo khoa học
 ======
 
 Bước 01 (Xác định tên của paper)
@@ -200,7 +202,7 @@ Thường thì abstract cho paper sẽ được viết theo format sau:
 + Method: Phương pháp thực hiện (2 câu)
 + Result: Kết quả đạt được của paper (2 câu)
 
-Phương pháp đọc và tiếp cận việc viết báo
+4.Phương pháp đọc và tiếp cận việc viết báo
 ======
 
 ### Xác định loại làm nghiên cứu
@@ -236,7 +238,7 @@ Phương pháp đọc và tiếp cận việc viết báo
 * Phần kết luận: đóng góp chính bài báo là gì? Công việc tương lai sẽ làm gì?
 * Viết abstract: Nó được viết cuối cùng? giới thiệu phương pháp và kết quả thực hiện.
 
-Tư duy để liệt kê danh sách các bài toán nghiên cứu cụ thể
+5.Tư duy để liệt kê danh sách các bài toán nghiên cứu cụ thể
 ======
 
 ### Về nguyên tắc để liệt kê các bài báo cần viết
@@ -258,7 +260,7 @@ Tư duy để liệt kê danh sách các bài toán nghiên cứu cụ thể
 * Chia nhỏ từng phần cho dễ đọc và dễ focus hơn. Lúc này bài trình bày sẽ rõ ràng hơn rất nhiều.
 
 
-Việc hướng dẫn sinh viên để tham gia nckh
+6.Việc hướng dẫn sinh viên để tham gia nckh
 ======
 
 Cần xác định một số nội dung sau: 
@@ -277,7 +279,7 @@ Viết báo thì cần lưu ý và nhớ rằng:
 * Thảo luận về kết quả chủ yếu mô tả và không phân tích sâu hoặc giải thích kết quả. Hơn nữa, thiếu hỗ trợ trực quan để minh họa kết quả. —> giải thích sâu hơn về kết quả, giải thích tại sao chúng xảy ra và ý nghĩa của chúng trong ngữ cảnh của mục tiêu nghiên cứu.
 
 
-Cách viết các bài analysis và survey "nhẹ nhàng" thì làm thế nào? 
+7.Cách viết các bài analysis và survey "nhẹ nhàng" thì làm thế nào? 
 ======
 
 * Ví dụ tên bài báo: An Analysis of AI Techniques to Improve Quality of Service in Low Earth Orbit Satellite Networks
@@ -310,7 +312,7 @@ Cách viết các bài analysis và survey "nhẹ nhàng" thì làm thế nào?
 * Bảng so sánh cần thể hiện (paper nào, ảnh hưởng đến qos - nội dung chính, liên quan AI nào (kỹ thuật chính), các tiêu chí đánh giá mô hình AI)
 
 
-Chi tiết bài các loại review đi
+8.Chi tiết bài các loại review đi
 ======
 
 Systematic Review:
@@ -383,7 +385,7 @@ In summary, while both systematic reviews and literature reviews involve a revie
 Systematic reviews are more structured and focused, while literature reviews are often broader and more narrative in nature.
 
 
-To write a comprehensive survey paper on a particular concept, follow these steps:
+9.To write a comprehensive survey paper on a particular concept, follow these steps:
 ======
 
 1. **Choose a topic**: Select a specific concept or research area that you want to explore in your survey paper[1].
@@ -408,7 +410,7 @@ To write a comprehensive survey paper on a particular concept, follow these step
 
 Remember to use a concise research question to guide your paper and ensure that your survey paper is focused and well-structured[1].
 
-Một số paper tham khảo cách viết (literature review, synthesis review, survey) và thực hiện:
+10.Một số paper tham khảo cách viết (literature review, synthesis review, survey) và thực hiện:
 ======
 
 2023 - A comprehensive survey on data aggregation techniques in UAV-enabled Internet of things 
@@ -426,7 +428,7 @@ Một số paper tham khảo cách viết (literature review, synthesis review, 
 2023 - Data compression techniques in IoT-enabled wireless body sensor networks: A systematic literature review and research trends for QoS improvement 
 
 
-How to use AI to conduct review
+11.How to use AI to conduct review
 ======
 
 For this demonstration, we will use the topic: “Artificial Intelligence or Machine Learning in Space-air-ground-sea integrated network (SAGSIN) networks”. 
@@ -547,7 +549,7 @@ Link youtube: https://youtu.be/la-HzhKdWUw
 
 An Analysis of AI Techniques to Improve Quality of Service in Low Earth Orbit Satellite Networks
 
-How to create research question
+12.How to create research question
 ======
 
 ### Method 1: 
@@ -632,7 +634,7 @@ Certainly! The GQM (Goal, Question, Metric) framework is a structured approach t
 
 These research questions and associated sub-questions, along with corresponding metrics, provide a structured approach to investigating the integration of Artificial Intelligence or Machine Learning in Space-air-ground-sea integrated network (SAGSIN) networks.
 
-Research Methodology
+13.Research Methodology
 ======
 
 ### What is Research Methodology?
@@ -735,7 +737,7 @@ Research Methodology for "Artificial Intelligence or Machine Learning in Space-A
 * Present your findings with clear explanations and impactful conclusions.
 
 
-Prompts For Academic Writing To Enhance Academic Writing Skills
+14.Prompts For Academic Writing To Enhance Academic Writing Skills
 ======
 
 Exploring the Academic Writing Process: Five Prompts to Enhance Your Skills
@@ -1151,7 +1153,7 @@ Organize the reference list alphabetically by the author’s last name and chron
 
 Ensure proper citation and referencing of primary and secondary sources in your annotated bibliography for the research conducted on [research topic].
 
-How to reading a scientific paper for newbie
+15.How to reading a scientific paper for newbie
 ======
 
 Đầu tiên: tìm những bài báo có ranking cao, bài viết chất lượng mà đọc.
@@ -1210,7 +1212,7 @@ How to reading a scientific paper for newbie
 - Mục tiêu mới quan trọng hơn của hệ thống.
 
 
-How to build mathematical formula (from natural idea)
+16.How to build mathematical formula (from natural idea)
 ======
 
 prompt:
@@ -1242,8 +1244,6 @@ Manual Calculation: For simple problems, you can directly solve the formulas and
 Spreadsheet Software: Spreadsheets like Excel can be used to set up your objective function and constraints as formulas in cells. You can then use built-in solver functions to find the optimal values for your variables.
 Optimization Software: For more complex problems, specialized optimization software exists (e.g., LINGO, Gurobi). These can handle a wider range of functions, constraints, and variable types.
 
---------------------------
-
 Let's say you want to optimize the production of two products (A and B) to maximize profit.
 
 Formulas:
@@ -1257,6 +1257,78 @@ You can solve this manually for small problems.
 Use a spreadsheet with formulas in each cell and the solver function to find the optimal production levels for A and B that maximize profit within the constraints.
 For larger problems with many variables and constraints, consider using optimization software.
 
+17.Hiểu hơn cách sử dụng prompt phù hợp
+======
+
+1. Structure of a prompt
+   
+Role + Context + Task + Requirements + Output + Example + Tone
+
+exp 1 - Role: “As an expert in…”, “You are a researcher…”, “Act as a businessman…”
+
+exp 2 - Context: “In the context of…”, “In cybersecurity field…”, “In Small and Medium-sized Enterprises…”, “Considering the large enterprises…”
+
+exp 3 - Task: “Suggest a research title…”, “Draft a comprehensive text for…”, “Create a tabular format of…”
+
+exp 4 - Requirements: “Use only the provided information…”, “do not include…”, “focus on….”, “follow the example…”, “Use English…”
+
+exp 5 - Output: “The output should be in format of a research paper…”, “The expected outcome is…”
+
+exp 6 - Example: “For example, you might analyze…”, “ Here is an example to follow…”
+
+exp 7 - Tone: “Maintain a formal and academic tone“ , “"Use a persuasive and evidence-supported voice."
+
+2. Process
+
+- step 1: Research Title
+
++ DEFINE RESEARCH TITLE
+you are an expert and researcher in "circular economy and sustannable development. 
+You will help me to develop my systematic literature review paper focusing on the topic
+related to the integration and role of IoT in Circular Economy.
+Please suggest 5 research title related to that topic.
+
+- step 2: Research goals, Research questions (RQs), sub-Research questions (Sub-RQs)
+
++ DEFINE RESEARCH
+I choose the research paper title: "Leveraging IoT technologies for Enhancing Circular
+Economy Practices: A systematic literature review".
+Could you please suggest specific and detailed research goals for this paper?
+The research goals must be clear, specific, detailed and not vague.
+Present the research goals in a list format, using a formal and academic tone.
+
++ DEFINE RESEARCH QUESTION:
+Here are the research goals for my research titled "Leveraging IoT technologies for Enhancing Circular
+Economy Practices: A systematic literature review".
+"copy paste output o DEFINE RESEARCH"
+Based on this information, could you suggest several research question (RQs)
+that align with these research goals? Please ensure the research question are specific,
+detailed, and suitable for an academic context.
+
+Continues....
+
+- step 3: Keywords & Synonyms
+
+- step 4: Research Outline
+
+
+3. example
+   
+Prompt 1: Suggest a research title for digital technologies in circular economy.
+
+Prompt 2: As an expert in sustainability and digital innovation, you will help me conduct research on digital technologies in promoting a circular economy. 
+In the context of enhancing resource efficiency and sustainability, could you suggest a research title? 
+Please ensure the title reflects the integration of digital technologies with circular economy principles, highlights potential benefits, 
+and indicates the transformative impact on sustainability practices. 
+The output should be in a formal and academic tone. For example, a title might explore how blockchain can enhance transparency in recycling processes.
+
+Prompt 3: You are an AI expert and AI researcher. You usually build up the mathematic models from python code.
+Below is the python code of FastKAN model.
+Please build up the mathematic formulas for FastKAN.
+You can use markdown or latex to present the formulas.
+
+Prompt 4: 
+Now I am going to provide with you the python code of JacobiKAN. Your task is to build up the mathematic model of JacobiKAN for me.
 
 
 Hết.
