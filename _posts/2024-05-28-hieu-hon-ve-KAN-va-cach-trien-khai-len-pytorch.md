@@ -9,7 +9,7 @@ tags:
 
 Hiểu hơn về KAN và cách triển khai lên pytorch
 
-1. MLP
+MLP
 ======
 
 ```python
@@ -158,7 +158,7 @@ print(f"Training time: {training_time:.2f} seconds")
 
 ```
 
-2. DL (CNN, LSTM and GRU)
+DL (CNN, LSTM and GRU)
 ======
 
 CNN model
