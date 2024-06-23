@@ -19,7 +19,6 @@ My journey is guided by an insatiable curiosity for algorithms, the fundamental 
 📢 **NEWS**  
 
 🥳 2024/06/21: I'm excited to announce that our paper "_Advancing Satellite Communications: Multi-Objective Optimization with Genetic Algorithms_" has been accepted to be presented at the [27th International Conference on Distributed Computer and Communication Networks: Control, Computation, Communications (DCCN2024)](https://dccn.ru/), Moscow, Russia, 23-27 September 2024.
-[24] BEREZKIN A.A., PHUC H.DO., KIRICHEK R.V, ZAHAROV A.A. ANALYSIS OF ULTRA-HIGH RESOLUTION NEURAL NETWORK MODELS IN THE UAV VIDEO STREAM COMPRESSION SYSTEM . ЭЛЕКТРОСВЯЗЬ, 35-43, 2024.
 
 🥳 2024/03/26: I'm excited to announce that our paper "_ANALYSIS OF ULTRA-HIGH RESOLUTION NEURAL NETWORK MODELS IN THE UAV VIDEO STREAM COMPRESSION SYSTEM_" has been published in the _ЭЛЕКТРОСВЯЗЬ_ journal.
 
