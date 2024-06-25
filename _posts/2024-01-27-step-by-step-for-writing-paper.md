@@ -45,6 +45,8 @@ Các outline gồm những nội dung sau
     
 17. Hiểu hơn cách sử dụng prompt phù hợp
 
+18. Các hình ảnh và bảng biểu cần có trong một paper
+
 1.Làm sao để cải thiện chất lượng bài báo
 ======
 
@@ -1329,6 +1331,58 @@ You can use markdown or latex to present the formulas.
 
 Prompt 4: 
 Now I am going to provide with you the python code of JacobiKAN. Your task is to build up the mathematic model of JacobiKAN for me.
+
+18.Các hình ảnh và bảng biểu cần có trong một paper
+======
+
+**Phần Related Work:**
+
+* **Figures:** 
+    * **Sơ đồ tư duy:** Sơ đồ tóm tắt các nghiên cứu liên quan, thể hiện mối quan hệ giữa các nghiên cứu.
+    * **Biểu đồ thời gian:**  Biểu đồ thể hiện sự phát triển của lĩnh vực nghiên cứu theo thời gian,  cho thấy sự tiến bộ và những đóng góp quan trọng.
+* **Tables:**
+    * **Bảng so sánh:** So sánh các nghiên cứu liên quan dựa trên các tiêu chí chính, ví dụ: phương pháp, kết quả, điểm mạnh, điểm yếu.
+    * **Bảng tóm tắt:**  Tóm tắt các thông tin chính của các nghiên cứu liên quan.
+
+**Phần Method:**
+
+* **Figures:**
+    * **Sơ đồ khối:** Sơ đồ khối thể hiện cấu trúc của hệ thống, thuật toán hoặc mô hình được đề xuất.
+    * **Hình ảnh minh họa:** Hình ảnh minh họa các bước trong phương pháp, thuật toán hoặc mô hình.
+    * **Biểu đồ luồng:**  Biểu đồ thể hiện luồng dữ liệu hoặc luồng xử lý trong phương pháp.
+    * **Hình ảnh chi tiết:**  Hình ảnh chi tiết về cấu trúc, thành phần của hệ thống, thuật toán hoặc mô hình. 
+* **Tables:**
+    * **Bảng tham số:** Bảng liệt kê các tham số của hệ thống, thuật toán hoặc mô hình.
+    * **Bảng so sánh:**  So sánh các phương pháp khác nhau được sử dụng trong nghiên cứu.
+    * **Bảng thông tin chi tiết:** Bảng cung cấp thông tin chi tiết về các thành phần, bước trong phương pháp, thuật toán hoặc mô hình.
+
+**Phần Experiment and Result:**
+
+* **Figures:**
+    * **Biểu đồ:**  Biểu đồ thể hiện kết quả của các thí nghiệm, bao gồm:
+        * Biểu đồ cột (Bar chart)
+        * Biểu đồ đường (Line chart)
+        * Biểu đồ phân tán (Scatter plot)
+        * Biểu đồ hộp (Box plot)
+        * Biểu đồ nhiệt độ (Heat map)
+        * Biểu đồ mạng (Network graph)
+    * **Hình ảnh kết quả:**  Hình ảnh thể hiện kết quả của các thí nghiệm, ví dụ: hình ảnh xử lý ảnh, kết quả mô phỏng, kết quả phân loại.
+    * **Hình ảnh so sánh:** Hình ảnh so sánh kết quả của các phương pháp khác nhau hoặc kết quả của nghiên cứu với các nghiên cứu khác.
+* **Tables:**
+    * **Bảng kết quả:** Bảng thể hiện kết quả của các thí nghiệm.
+    * **Bảng so sánh:**  So sánh kết quả của nghiên cứu với các nghiên cứu khác.
+    * **Bảng thống kê:** Bảng thể hiện các chỉ số thống kê liên quan đến kết quả.
+    * **Bảng độ chính xác:**  Bảng thể hiện độ chính xác của mô hình, thuật toán hoặc phương pháp (nếu áp dụng).
+
+**Phần Discussion:**
+
+* **Figures:** 
+    * **Hình ảnh minh họa:** Hình ảnh minh họa cho các điểm chính trong phần thảo luận.
+    * **Biểu đồ so sánh:** So sánh kết quả với các nghiên cứu khác.
+* **Tables:**
+    * **Bảng so sánh:**  So sánh kết quả của nghiên cứu với các nghiên cứu khác.
+    * **Bảng tóm tắt:** Tóm tắt những kết quả chính của nghiên cứu.
+
 
 
 Hết.
