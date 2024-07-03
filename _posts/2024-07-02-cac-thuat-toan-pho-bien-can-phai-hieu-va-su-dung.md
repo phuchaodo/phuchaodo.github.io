@@ -9,480 +9,560 @@ tags:
 
 Hiểu hơn về các thuật toán phổ biến cần phải biết và sử dụng
 
+Các thuật toán phổ biến của mạng nơ-ron đồ thị (Graph Neural Networks - GNNs) bao gồm nhiều phương pháp khác nhau, nhưng hai phương pháp cơ bản nhất là Graph Convolutional Network (GCN) và Graph Attention Network (GAT). Dưới đây là một trình bày chi tiết về cách thực hiện và mã nguồn Python sử dụng thư viện PyTorch cho hai thuật toán này.
 
-Các thuật toán phổ biến của GAN (Generative Adversarial Networks) là các biến thể và cải tiến của mô hình GAN gốc. Dưới đây là một số thuật toán nổi bật và một ví dụ cụ thể về cách triển khai chúng bằng Python và framework PyTorch.
+### 1. Graph Convolutional Network (GCN)
 
-### 1. GAN (Generative Adversarial Networks)
-- **Ý tưởng**: Bao gồm hai mạng: một mạng Generative (G) và một mạng Discriminative (D) cạnh tranh với nhau. Mạng G cố gắng tạo ra dữ liệu giả mạo để lừa mạng D, trong khi mạng D cố gắng phân biệt giữa dữ liệu thật và giả.
+GCN là một trong những mô hình đơn giản nhất và phổ biến nhất trong lớp mạng nơ-ron đồ thị. Nó sử dụng phép tích chập trên đồ thị để cập nhật các đặc trưng của đỉnh.
 
-**Code ví dụ trong PyTorch**:
+**Mã nguồn Python sử dụng PyTorch cho GCN:**
+
 ```python
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
+from torch_geometric.nn import GCNConv
 
-# Generator definition
-class Generator(nn.Module):
-    def __init__(self, input_dim, output_dim):
-        super(Generator, self).__init__()
-        self.fc = nn.Sequential(
-            nn.Linear(input_dim, 128),
-            nn.ReLU(),
-            nn.Linear(128, output_dim),
-            nn.Tanh()
-        )
+class GCN(nn.Module):
+    def __init__(self, num_features, hidden_size, num_classes):
+        super(GCN, self).__init__()
+        self.conv1 = GCNConv(num_features, hidden_size)
+        self.conv2 = GCNConv(hidden_size, num_classes)
     
-    def forward(self, x):
-        x = self.fc(x)
-        return x
-
-# Discriminator definition
-class Discriminator(nn.Module):
-    def __init__(self, input_dim):
-        super(Discriminator, self).__init__()
-        self.fc = nn.Sequential(
-            nn.Linear(input_dim, 128),
-            nn.ReLU(),
-            nn.Linear(128, 1),
-            nn.Sigmoid()
-        )
-    
-    def forward(self, x):
-        x = self.fc(x)
-        return x
-
-# Example usage
-z_dim = 100  # Dimension of the latent space
-data_dim = 784  # Dimension of the generated data (e.g., MNIST images)
-G = Generator(z_dim, data_dim)
-D = Discriminator(data_dim)
+    def forward(self, x, edge_index):
+        x = self.conv1(x, edge_index)
+        x = F.relu(x)
+        x = F.dropout(x, p=0.5, training=self.training)
+        x = self.conv2(x, edge_index)
+        return F.log_softmax(x, dim=1)
 ```
 
-### 2. DCGAN (Deep Convolutional GAN)
-- **Ý tưởng**: Sử dụng mạng neural network tích chập sâu cho cả Generator và Discriminator để cải thiện chất lượng ảnh được tạo ra.
+**Giải thích:**
+- `GCNConv`: Lớp convolutional trên đồ thị từ thư viện `torch_geometric.nn`.
+- `GCN` là một `nn.Module` trong PyTorch, bao gồm hai lớp convolution (`conv1` và `conv2`) và các lớp activation và dropout giữa chúng.
+- `forward` function thực hiện lan truyền thuận của mô hình, sử dụng hàm kích hoạt ReLU và hàm dropout giữa các lớp.
 
-**Code ví dụ trong PyTorch**:
+### 2. Graph Attention Network (GAT)
+
+GAT là một biến thể nâng cao của GCN, tập trung vào sự chú ý của các đỉnh trong đồ thị để cải thiện hiệu suất.
+
+**Mã nguồn Python sử dụng PyTorch cho GAT:**
+
 ```python
-import torch
-import torch.nn as nn
+from torch_geometric.nn import GATConv
 
-# Generator definition
-class Generator(nn.Module):
-    def __init__(self, z_dim, image_channels, hidden_dim=64):
-        super(Generator, self).__init__()
-        self.main = nn.Sequential(
-            nn.ConvTranspose2d(z_dim, hidden_dim * 8, kernel_size=4, stride=1, padding=0, bias=False),
-            nn.BatchNorm2d(hidden_dim * 8),
-            nn.ReLU(True),
-            nn.ConvTranspose2d(hidden_dim * 8, hidden_dim * 4, kernel_size=4, stride=2, padding=1, bias=False),
-            nn.BatchNorm2d(hidden_dim * 4),
-            nn.ReLU(True),
-            nn.ConvTranspose2d(hidden_dim * 4, hidden_dim * 2, kernel_size=4, stride=2, padding=1, bias=False),
-            nn.BatchNorm2d(hidden_dim * 2),
-            nn.ReLU(True),
-            nn.ConvTranspose2d(hidden_dim * 2, hidden_dim, kernel_size=4, stride=2, padding=1, bias=False),
-            nn.BatchNorm2d(hidden_dim),
-            nn.ReLU(True),
-            nn.ConvTranspose2d(hidden_dim, image_channels, kernel_size=4, stride=2, padding=1, bias=False),
-            nn.Tanh()
-        )
-
-    def forward(self, x):
-        return self.main(x)
-
-# Discriminator definition
-class Discriminator(nn.Module):
-    def __init__(self, image_channels, hidden_dim=64):
-        super(Discriminator, self).__init__()
-        self.main = nn.Sequential(
-            nn.Conv2d(image_channels, hidden_dim, kernel_size=4, stride=2, padding=1, bias=False),
-            nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(hidden_dim, hidden_dim * 2, kernel_size=4, stride=2, padding=1, bias=False),
-            nn.BatchNorm2d(hidden_dim * 2),
-            nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(hidden_dim * 2, hidden_dim * 4, kernel_size=4, stride=2, padding=1, bias=False),
-            nn.BatchNorm2d(hidden_dim * 4),
-            nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(hidden_dim * 4, hidden_dim * 8, kernel_size=4, stride=2, padding=1, bias=False),
-            nn.BatchNorm2d(hidden_dim * 8),
-            nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(hidden_dim * 8, 1, kernel_size=4, stride=1, padding=0, bias=False),
-            nn.Sigmoid()
-        )
-
-    def forward(self, x):
-        return self.main(x)
-
-# Example usage
-z_dim = 100  # Dimension of the latent space
-image_channels = 1  # For grayscale images (e.g., MNIST)
-G = Generator(z_dim, image_channels)
-D = Discriminator(image_channels)
+class GAT(nn.Module):
+    def __init__(self, num_features, hidden_size, num_classes, num_heads=1):
+        super(GAT, self).__init__()
+        self.conv1 = GATConv(num_features, hidden_size, heads=num_heads)
+        self.conv2 = GATConv(hidden_size * num_heads, num_classes, heads=1)
+    
+    def forward(self, x, edge_index):
+        x = self.conv1(x, edge_index)
+        x = F.elu(x)  # ELU activation
+        x = F.dropout(x, p=0.6, training=self.training)
+        x = self.conv2(x, edge_index)
+        return F.log_softmax(x, dim=1)
 ```
 
-### 3. CGAN (Conditional GAN)
-- **Ý tưởng**: Mở rộng GAN để cho phép điều khiển dữ liệu được tạo bằng cách cung cấp thông tin điều kiện (ví dụ: nhãn lớp).
+**Giải thích:**
+- `GATConv`: Lớp attention trên đồ thị từ `torch_geometric.nn`.
+- `GAT` là một `nn.Module` trong PyTorch, bao gồm hai lớp attention (`conv1` và `conv2`) với số lượng head (num_heads).
+- `forward` function thực hiện lan truyền thuận của mô hình, sử dụng hàm kích hoạt ELU và hàm dropout giữa các lớp.
 
-**Code ví dụ trong PyTorch**:
+### Lưu ý:
+- Cả hai mô hình đều sử dụng `torch_geometric`, một thư viện hỗ trợ các phép toán trên đồ thị trong PyTorch.
+- Mã nguồn trên chỉ là ví dụ cơ bản để giới thiệu cách triển khai GCN và GAT. Các siêu tham số như số lượng lớp, kích thước ẩn, số lượng head, hàm kích hoạt, và xử lý dữ liệu có thể được điều chỉnh để phù hợp với bài toán cụ thể của bạn.
+
+
+Ngoài Graph Convolutional Network (GCN) và Graph Attention Network (GAT), còn có nhiều thuật toán khác trong lớp mạng nơ-ron đồ thị (Graph Neural Networks - GNNs), mỗi thuật toán có những đặc điểm riêng biệt và cách hoạt động khác nhau. Dưới đây là một số thuật toán phổ biến khác và mã nguồn Python sử dụng PyTorch cho mỗi thuật toán đó.
+
+### 1. GraphSAGE (Graph Sample and Aggregate)
+
+GraphSAGE là một phương pháp mở rộng cho các mô hình GNN bằng cách lấy mẫu và tổng hợp thông tin từ các hàng xóm của mỗi đỉnh.
+
+**Mã nguồn Python sử dụng PyTorch cho GraphSAGE:**
+
 ```python
-import torch
-import torch.nn as nn
+from torch_geometric.nn import SAGEConv
 
-# Generator definition
-class Generator(nn.Module):
-    def __init__(self, z_dim, c_dim, output_dim):
-        super(Generator, self).__init__()
-        self.fc = nn.Sequential(
-            nn.Linear(z_dim + c_dim, 128),
-            nn.ReLU(),
-            nn.Linear(128, output_dim),
-            nn.Tanh()
-        )
+class GraphSAGE(nn.Module):
+    def __init__(self, num_features, hidden_size, num_classes):
+        super(GraphSAGE, self).__init__()
+        self.conv1 = SAGEConv(num_features, hidden_size)
+        self.conv2 = SAGEConv(hidden_size, num_classes)
     
-    def forward(self, z, c):
-        x = torch.cat([z, c], dim=1)
-        x = self.fc(x)
-        return x
-
-# Discriminator definition
-class Discriminator(nn.Module):
-    def __init__(self, input_dim, c_dim):
-        super(Discriminator, self).__init__()
-        self.fc = nn.Sequential(
-            nn.Linear(input_dim + c_dim, 128),
-            nn.ReLU(),
-            nn.Linear(128, 1),
-            nn.Sigmoid()
-        )
-    
-    def forward(self, x, c):
-        x = torch.cat([x, c], dim=1)
-        x = self.fc(x)
-        return x
-
-# Example usage
-z_dim = 100  # Dimension of the latent space
-c_dim = 10  # Dimension of the condition vector (e.g., number of classes)
-data_dim = 784  # Dimension of the generated data (e.g., MNIST images)
-G = Generator(z_dim, c_dim, data_dim)
-D = Discriminator(data_dim, c_dim)
+    def forward(self, x, edge_index):
+        x = F.relu(self.conv1(x, edge_index))
+        x = F.relu(self.conv2(x, edge_index))
+        return F.log_softmax(x, dim=1)
 ```
 
-Các ví dụ trên chỉ là các mô hình cơ bản. Các thuật toán GAN tiến tiến hơn như WGAN, WGAN-GP, CycleGAN, etc., cũng có thể triển khai tương tự nhưng có thêm các điều chỉnh riêng để cải thiện tính ổn định và chất lượng của mô hình.
+### 2. Gated Graph Neural Networks (GGNN)
+
+GGNN sử dụng cơ chế cổng để điều chỉnh cách thông tin được truyền tải trong mạng nơ-ron đồ thị, phù hợp cho các tác vụ yêu cầu xử lý chuỗi dữ liệu trên đồ thị.
+
+**Mã nguồn Python sử dụng PyTorch cho GGNN:**
+
+```python
+from torch_geometric.nn import GatedGraphConv
+
+class GGNN(nn.Module):
+    def __init__(self, num_features, hidden_size, num_classes):
+        super(GGNN, self).__init__()
+        self.conv1 = GatedGraphConv(num_features, hidden_size)
+        self.conv2 = GatedGraphConv(hidden_size, num_classes)
+    
+    def forward(self, x, edge_index):
+        x = F.relu(self.conv1(x, edge_index))
+        x = F.relu(self.conv2(x, edge_index))
+        return F.log_softmax(x, dim=1)
+```
+
+### 3. Graph Isomorphism Network (GIN)
+
+GIN tập trung vào tính toán độ tương tự giữa các đồ thị để học các biểu diễn đồ thị không phụ thuộc vào cấu trúc.
+
+**Mã nguồn Python sử dụng PyTorch cho GIN:**
+
+```python
+from torch_geometric.nn import GINConv
+
+class GIN(nn.Module):
+    def __init__(self, num_features, hidden_size, num_classes):
+        super(GIN, self).__init__()
+        self.conv1 = GINConv(nn.Sequential(
+            nn.Linear(num_features, hidden_size),
+            nn.ReLU(),
+            nn.Linear(hidden_size, hidden_size)
+        ))
+        self.conv2 = GINConv(nn.Sequential(
+            nn.Linear(hidden_size, hidden_size),
+            nn.ReLU(),
+            nn.Linear(hidden_size, num_classes)
+        ))
+    
+    def forward(self, x, edge_index):
+        x = F.relu(self.conv1(x, edge_index))
+        x = F.relu(self.conv2(x, edge_index))
+        return F.log_softmax(x, dim=1)
+```
+
+### Lưu ý:
+
+- Các mô hình trên sử dụng các lớp convolutional trên đồ thị từ `torch_geometric.nn` và có cấu trúc tương tự như GCN và GAT.
+- Mỗi thuật toán có những điểm mạnh và yếu khác nhau, phù hợp với các bài toán và dữ liệu khác nhau.
+- Để triển khai các thuật toán này, bạn cần cài đặt thư viện `torch_geometric` và xử lý dữ liệu đồ thị phù hợp trước khi đưa vào mô hình.
 
 
-Dưới đây là một ví dụ cụ thể về cách triển khai mô hình DCGAN (Deep Convolutional GAN) bằng PyTorch. Trong ví dụ này, chúng ta sẽ sử dụng dữ liệu từ bộ dữ liệu MNIST để huấn luyện mô hình.
+Để minh họa cách thực hiện các thuật toán mạng nơ-ron đồ thị (GNNs) cho các bài toán cụ thể như phân loại đỉnh (node classification) và phân loại đồ thị (graph classification), chúng ta sẽ sử dụng các ví dụ cụ thể và mã nguồn Python sử dụng thư viện PyTorch và Torch Geometric.
 
-### DCGAN (Deep Convolutional GAN)
+### 1. Node Classification
 
-DCGAN là một biến thể của GAN sử dụng mạng tích chập sâu cho cả Generator và Discriminator để cải thiện chất lượng ảnh được tạo ra. Đây là một trong những thuật toán GAN phổ biến và hiệu quả trong thực tế.
+#### Bài toán:
+Phân loại các đỉnh trong đồ thị thành các lớp nhất định dựa trên các đặc trưng của đỉnh và cấu trúc của đồ thị.
 
-#### Cài đặt mô hình trong PyTorch
+#### Mã nguồn Python:
 
 ```python
 import torch
 import torch.nn as nn
-import torch.optim as optim
-from torchvision import datasets, transforms
-from torch.utils.data import DataLoader
-import torchvision.utils as vutils
-import numpy as np
+import torch.nn.functional as F
+from torch_geometric.datasets import Planetoid
+import torch_geometric.transforms as T
+from torch_geometric.nn import GCNConv
+
+# Load dataset (cora dataset as an example)
+dataset = Planetoid(root='data/', name='Cora', transform=T.NormalizeFeatures())
+data = dataset[0]
+
+class GCN(nn.Module):
+    def __init__(self, num_features, hidden_size, num_classes):
+        super(GCN, self).__init__()
+        self.conv1 = GCNConv(num_features, hidden_size)
+        self.conv2 = GCNConv(hidden_size, num_classes)
+    
+    def forward(self, x, edge_index):
+        x = self.conv1(x, edge_index)
+        x = F.relu(x)
+        x = F.dropout(x, p=0.5, training=self.training)
+        x = self.conv2(x, edge_index)
+        return F.log_softmax(x, dim=1)
+
+# Initialize model
+model = GCN(num_features=dataset.num_features, hidden_size=16, num_classes=dataset.num_classes)
+
+# Define optimizer and loss function
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+criterion = nn.NLLLoss()
+
+# Training
+def train_model(model, data, optimizer, criterion, epochs=200):
+    model.train()
+    for epoch in range(epochs):
+        optimizer.zero_grad()
+        output = model(data.x, data.edge_index)
+        loss = criterion(output[data.train_mask], data.y[data.train_mask])
+        loss.backward()
+        optimizer.step()
+        if epoch % 20 == 0:
+            print(f'Epoch {epoch}, Loss: {loss.item()}')
+
+train_model(model, data, optimizer, criterion)
+
+# Evaluation
+def evaluate_model(model, data):
+    model.eval()
+    with torch.no_grad():
+        logits = model(data.x, data.edge_index)
+        pred = logits.argmax(dim=1)
+        acc = (pred[data.test_mask] == data.y[data.test_mask]).sum().item() / data.test_mask.sum().item()
+        print(f'Test Accuracy: {acc:.4f}')
+
+evaluate_model(model, data)
+```
+
+#### Giải thích:
+- Đoạn mã trên sử dụng tập dữ liệu Cora từ `torch_geometric.datasets.Planetoid` làm ví dụ. Tập dữ liệu Cora bao gồm các đặc trưng đỉnh, cạnh và nhãn lớp cho mỗi đỉnh.
+- Mô hình `GCN` được triển khai bằng cách sử dụng lớp `GCNConv` từ `torch_geometric.nn`, bao gồm hai lớp convolutional trên đồ thị và hàm kích hoạt ReLU.
+- Quá trình huấn luyện và đánh giá mô hình được thực hiện thông qua hàm `train_model` và `evaluate_model`.
+
+### 2. Graph Classification
+
+#### Bài toán:
+Phân loại toàn bộ đồ thị thành các lớp nhất định dựa trên các đặc trưng toàn cục của đồ thị.
+
+#### Mã nguồn Python:
+
+```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch_geometric.datasets import TUDataset
+from torch_geometric.data import DataLoader
+from torch_geometric.nn import GCNConv
+from torch_scatter import scatter_mean
+
+# Load dataset (MUTAG dataset as an example)
+dataset = TUDataset(root='data/', name='MUTAG', use_node_attr=True)
+loader = DataLoader(dataset, batch_size=32, shuffle=True)
+
+class GCN(torch.nn.Module):
+    def __init__(self, num_features, hidden_size, num_classes):
+        super(GCN, self).__init__()
+        self.conv1 = GCNConv(num_features, hidden_size)
+        self.conv2 = GCNConv(hidden_size, num_classes)
+
+    def forward(self, data):
+        x, edge_index, batch = data.x, data.edge_index, data.batch
+        x = self.conv1(x, edge_index)
+        x = F.relu(x)
+        x = scatter_mean(x, batch, dim=0)  # Global pooling over the nodes in each graph
+        x = self.conv2(x, edge_index)
+        return F.log_softmax(x, dim=1)
+
+# Initialize model
+model = GCN(num_features=dataset.num_node_features, hidden_size=32, num_classes=dataset.num_classes)
+
+# Define optimizer and loss function
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+criterion = nn.NLLLoss()
+
+# Training
+def train_model(model, loader, optimizer, criterion, epochs=50):
+    model.train()
+    for epoch in range(epochs):
+        total_loss = 0
+        for data in loader:
+            optimizer.zero_grad()
+            output = model(data)
+            loss = criterion(output, data.y)
+            loss.backward()
+            optimizer.step()
+            total_loss += loss.item() * data.num_graphs
+        if epoch % 10 == 0:
+            print(f'Epoch {epoch}, Loss: {total_loss / len(loader.dataset)}')
+
+train_model(model, loader, optimizer, criterion)
+
+# Evaluation
+def evaluate_model(model, loader):
+    model.eval()
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for data in loader:
+            output = model(data)
+            pred = output.argmax(dim=1)
+            correct += (pred == data.y).sum().item()
+            total += data.num_graphs
+    print(f'Test Accuracy: {correct / total:.4f}')
+
+evaluate_model(model, loader)
+```
+
+#### Giải thích:
+- Đoạn mã trên sử dụng tập dữ liệu MUTAG từ `torch_geometric.datasets.TUDataset` làm ví dụ. Tập dữ liệu này chứa các đồ thị nhỏ với đặc trưng nút và nhãn lớp đồ thị.
+- Mô hình `GCN` được triển khai với lớp convolutional trên đồ thị và pooling toàn cục (`scatter_mean`) để tính toán đặc trưng toàn cục của đồ thị.
+- Quá trình huấn luyện và đánh giá mô hình được thực hiện thông qua hàm `train_model` và `evaluate_model`, với việc sử dụng `DataLoader` để tải và chia dữ liệu thành các batch.
+
+### Lưu ý:
+- Để chạy các ví dụ trên, bạn cần cài đặt thư viện `torch`, `torch_geometric`, và `torch_scatter`.
+- Các mô hình và cài đặt có thể được điều chỉnh tùy thuộc vào yêu cầu cụ thể của bài toán và tập dữ liệu.
+- Các ví dụ trên chỉ là một phần nhỏ trong một loạt các ứng dụng của mạng nơ-ron đồ thị, và có thể được mở rộng và tinh chỉnh để phù hợp với các tác vụ khác nhau.
+
+
+Dưới đây là thêm một số ví dụ khác về cách thực hiện mạng nơ-ron đồ thị (GNNs) cho các bài toán cụ thể khác nhau như dự đoán cạnh (link prediction) và phân cụm đồ thị (graph clustering), sử dụng thư viện PyTorch và Torch Geometric.
+
+### 3. Link Prediction
+
+#### Bài toán:
+Dự đoán sự tồn tại hoặc không tồn tại của các cạnh giữa các cặp đỉnh trong đồ thị.
+
+#### Mã nguồn Python:
+
+```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch_geometric.datasets import KarateClub
+from torch_geometric.nn import GCNConv
+from sklearn.metrics import roc_auc_score
+
+# Load dataset (Karate club dataset as an example)
+dataset = KarateClub()
+data = dataset[0]
+
+class LinkPredictionGCN(nn.Module):
+    def __init__(self, num_features, hidden_size):
+        super(LinkPredictionGCN, self).__init__()
+        self.conv1 = GCNConv(num_features, hidden_size)
+        self.conv2 = GCNConv(hidden_size, hidden_size)
+
+    def forward(self, x, edge_index):
+        x = self.conv1(x, edge_index)
+        x = F.relu(x)
+        x = self.conv2(x, edge_index)
+        return x
+
+# Initialize model
+model = LinkPredictionGCN(num_features=dataset.num_features, hidden_size=16)
+
+# Edge indices for positive and negative samples
+pos_edge_index = data.edge_index[:, data.train_pos_edge_index]
+neg_edge_index = data.edge_index[:, data.train_neg_edge_index]
+
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+
+# Training
+def train_link_prediction(model, pos_edge_index, neg_edge_index, optimizer, epochs=200):
+    model.train()
+    for epoch in range(epochs):
+        optimizer.zero_grad()
+        pos_output = model(data.x, pos_edge_index)
+        neg_output = model(data.x, neg_edge_index)
+        pos_scores = (pos_output[0, :] * pos_output[1, :]).sum(dim=-1)
+        neg_scores = (neg_output[0, :] * neg_output[1, :]).sum(dim=-1)
+        scores = torch.cat([pos_scores, neg_scores], dim=0)
+        targets = torch.cat([torch.ones(pos_scores.size(0)), torch.zeros(neg_scores.size(0))]).to(scores.device)
+        loss = F.binary_cross_entropy_with_logits(scores, targets)
+        loss.backward()
+        optimizer.step()
+        if epoch % 20 == 0:
+            print(f'Epoch {epoch}, Loss: {loss.item()}')
+
+train_link_prediction(model, pos_edge_index, neg_edge_index, optimizer)
+
+# Evaluation (using ROC AUC score)
+def evaluate_link_prediction(model, pos_edge_index, neg_edge_index):
+    model.eval()
+    with torch.no_grad():
+        pos_output = model(data.x, pos_edge_index)
+        neg_output = model(data.x, neg_edge_index)
+        pos_scores = (pos_output[0, :] * pos_output[1, :]).sum(dim=-1).sigmoid().cpu().numpy()
+        neg_scores = (neg_output[0, :] * neg_output[1, :]).sum(dim=-1).sigmoid().cpu().numpy()
+        y_true = torch.cat([torch.ones(pos_scores.shape[0]), torch.zeros(neg_scores.shape[0])]).numpy()
+        y_pred = np.concatenate([pos_scores, neg_scores])
+        roc_auc = roc_auc_score(y_true, y_pred)
+        print(f'ROC AUC Score: {roc_auc:.4f}')
+
+evaluate_link_prediction(model, data.test_pos_edge_index, data.test_neg_edge_index)
+```
+
+#### Giải thích:
+- Đoạn mã trên sử dụng tập dữ liệu Karate Club từ `torch_geometric.datasets.KarateClub` làm ví dụ. Đây là một tập dữ liệu nhỏ với đồ thị của một câu lạc bộ karate, mục đích là dự đoán cạnh giữa các cặp đỉnh.
+- Mô hình `LinkPredictionGCN` được triển khai bằng cách sử dụng hai lớp `GCNConv` từ `torch_geometric.nn`.
+- Quá trình huấn luyện và đánh giá được thực hiện thông qua hàm `train_link_prediction` và `evaluate_link_prediction`, sử dụng hàm mất mát `binary_cross_entropy_with_logits` và đánh giá bằng ROC AUC score.
+
+### 4. Graph Clustering
+
+#### Bài toán:
+Phân cụm các đỉnh trong đồ thị thành các nhóm dựa trên cấu trúc của đồ thị.
+
+#### Mã nguồn Python:
+
+```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch_geometric.datasets import TUDataset
+from torch_geometric.data import DataLoader
+from torch_geometric.nn import GCNConv
+from torch_geometric.utils import to_networkx
+import networkx as nx
 import matplotlib.pyplot as plt
 
-# Set random seed for reproducibility
-manual_seed = 999
-torch.manual_seed(manual_seed)
+# Load dataset (MUTAG dataset as an example)
+dataset = TUDataset(root='data/', name='MUTAG', use_node_attr=True)
+data = dataset[0]
 
-# Hyperparameters
-batch_size = 128
-image_size = 28
-z_dim = 100
-num_epochs = 50
-lr = 0.0002
-beta1 = 0.5
+class GraphClusteringGCN(nn.Module):
+    def __init__(self, num_features, hidden_size, num_clusters):
+        super(GraphClusteringGCN, self).__init__()
+        self.conv1 = GCNConv(num_features, hidden_size)
+        self.conv2 = GCNConv(hidden_size, hidden_size)
+        self.fc = nn.Linear(hidden_size, num_clusters)
 
-# Download MNIST dataset
-transform = transforms.Compose([
-    transforms.Resize(image_size),
-    transforms.ToTensor(),
-    transforms.Normalize((0.5,), (0.5,))
-])
+    def forward(self, x, edge_index):
+        x = self.conv1(x, edge_index)
+        x = F.relu(x)
+        x = self.conv2(x, edge_index)
+        x = self.fc(x)
+        return F.log_softmax(x, dim=1)
 
-dataset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
-dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=2)
+# Initialize model
+model = GraphClusteringGCN(num_features=dataset.num_node_features, hidden_size=32, num_clusters=2)
 
-# Generator definition
-class Generator(nn.Module):
-    def __init__(self, z_dim, image_channels, hidden_dim=64):
-        super(Generator, self).__init__()
-        self.main = nn.Sequential(
-            nn.ConvTranspose2d(z_dim, hidden_dim * 4, 4, 1, 0, bias=False),
-            nn.BatchNorm2d(hidden_dim * 4),
-            nn.ReLU(True),
-            nn.ConvTranspose2d(hidden_dim * 4, hidden_dim * 2, 3, 2, 1, bias=False),
-            nn.BatchNorm2d(hidden_dim * 2),
-            nn.ReLU(True),
-            nn.ConvTranspose2d(hidden_dim * 2, hidden_dim, 4, 2, 1, bias=False),
-            nn.BatchNorm2d(hidden_dim),
-            nn.ReLU(True),
-            nn.ConvTranspose2d(hidden_dim, image_channels, 4, 2, 1, bias=False),
-            nn.Tanh()
-        )
+# Define optimizer and loss function
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+criterion = nn.NLLLoss()
 
-    def forward(self, x):
-        return self.main(x)
+# Training
+def train_graph_clustering(model, data, optimizer, criterion, epochs=50):
+    model.train()
+    for epoch in range(epochs):
+        optimizer.zero_grad()
+        output = model(data.x, data.edge_index)
+        loss = criterion(output, data.y)
+        loss.backward()
+        optimizer.step()
+        if epoch % 10 == 0:
+            print(f'Epoch {epoch}, Loss: {loss.item()}')
 
-# Discriminator definition
-class Discriminator(nn.Module):
-    def __init__(self, image_channels, hidden_dim=64):
-        super(Discriminator, self).__init__()
-        self.main = nn.Sequential(
-            nn.Conv2d(image_channels, hidden_dim, 4, 2, 1, bias=False),
-            nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(hidden_dim, hidden_dim * 2, 4, 2, 1, bias=False),
-            nn.BatchNorm2d(hidden_dim * 2),
-            nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(hidden_dim * 2, hidden_dim * 4, 3, 2, 1, bias=False),
-            nn.BatchNorm2d(hidden_dim * 4),
-            nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(hidden_dim * 4, 1, 4, 1, 0, bias=False),
-            nn.Sigmoid()
-        )
+train_graph_clustering(model, data, optimizer, criterion)
 
-    def forward(self, x):
-        return self.main(x)
+# Visualization of graph clustering (using NetworkX)
+def visualize_graph_clustering(model, data):
+    model.eval()
+    with torch.no_grad():
+        output = model(data.x, data.edge_index)
+        pred = output.argmax(dim=1)
+        node_color = pred.cpu().numpy()
+        G = to_networkx(data, to_undirected=True)
+        pos = nx.spring_layout(G)
+        plt.figure(figsize=(8, 6))
+        nx.draw(G, pos, node_color=node_color, cmap=plt.cm.tab10, with_labels=True, node_size=300, font_size=10)
+        plt.title('Graph Clustering')
+        plt.show()
 
-# Initialize networks
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-G = Generator(z_dim, 1).to(device)
-D = Discriminator(1).to(device)
-
-# Optimizers
-optimizer_G = optim.Adam(G.parameters(), lr=lr, betas=(beta1, 0.999))
-optimizer_D = optim.Adam(D.parameters(), lr=lr, betas=(beta1, 0.999))
-
-# Binary cross entropy loss and noise
-criterion = nn.BCELoss()
-fixed_noise = torch.randn(64, z_dim, 1, 1, device=device)
-
-# Training loop
-for epoch in range(num_epochs):
-    for i, (real_images, _) in enumerate(dataloader):
-        batch_size = real_images.size(0)
-        real_images = real_images.to(device)
-
-        # Train Discriminator
-        D.zero_grad()
-        label_real = torch.full((batch_size, 1), 1., device=device)
-        label_fake = torch.full((batch_size, 1), 0., device=device)
-
-        # Real images
-        output = D(real_images)
-        errD_real = criterion(output, label_real)
-        D_x = output.mean().item()
-
-        # Fake images
-        noise = torch.randn(batch_size, z_dim, 1, 1, device=device)
-        fake_images = G(noise)
-        output = D(fake_images.detach())
-        errD_fake = criterion(output, label_fake)
-        D_G_z1 = output.mean().item()
-
-        # Total discriminator loss
-        errD = errD_real + errD_fake
-        errD.backward()
-        optimizer_D.step()
-
-        # Train Generator
-        G.zero_grad()
-        label_real = torch.full((batch_size, 1), 1., device=device)
-        output = D(fake_images)
-        errG = criterion(output, label_real)
-        errG.backward()
-        D_G_z2 = output.mean().item()
-        optimizer_G.step()
-
-        if i % 100 == 0:
-            print('[%d/%d][%d/%d] Loss_D: %.4f Loss_G: %.4f D(x): %.4f D(G(z)): %.4f / %.4f'
-                  % (epoch + 1, num_epochs, i, len(dataloader),
-                     errD.item(), errG.item(), D_x, D_G_z1, D_G_z2))
-
-    # Save generated images
-    if epoch == 0:
-        vutils.save_image(real_images, '%s/real_samples.png' % "./results", normalize=True)
-    
-    fake = G(fixed_noise)
-    vutils.save_image(fake.detach(), '%s/fake_samples_epoch_%03d.png' % ("./results", epoch + 1), normalize=True)
-
-# Save model checkpoints
-torch.save(G.state_dict(), './dcgan_generator.pth')
-torch.save(D.state_dict(), './dcgan_discriminator.pth')
+visualize_graph_clustering(model, data)
 ```
 
-#### Giải thích code:
-- **Generator và Discriminator**: Được định nghĩa bằng lớp `Generator` và `Discriminator` tương ứng. Mạng Generator sử dụng các lớp ConvTranspose2d để chuyển đổi vector nhiễu ngẫu nhiên thành ảnh giả, trong khi Discriminator sử dụng các lớp Conv2d để phân biệt ảnh thật và ảnh giả.
-  
-- **Optimizer**: Sử dụng Adam optimizer để cập nhật các tham số của Generator và Discriminator.
+#### Giải thích:
+- Đoạn mã trên sử dụng tập dữ liệu MUTAG từ `torch_geometric.datasets.TUDataset` làm ví dụ. Tập dữ liệu này chứa các đồ thị nhỏ với đặc trưng nút và nhãn lớp đồ thị.
+- Mô hình `GraphClusteringGCN` được triển khai với lớp convolutional trên đồ thị và một lớp fully connected để phân cụm đồ thị thành hai nhóm.
+- Quá trình huấn luyện và đánh giá được thực hiện thông qua hàm `train_graph_clustering` và `visualize_graph_clustering`, sử dụng NetworkX để trực quan hóa kết quả phân cụm đồ thị.
 
-- **Training Loop**: Vòng lặp huấn luyện với hai giai đoạn chính: huấn luyện Discriminator để phân biệt giữa ảnh thật và ảnh giả và huấn luyện Generator để cố gắng lừa Discriminator bằng cách tạo ra các ảnh giả mà Discriminator cho là ảnh thật.
+### Lưu ý:
+- Các ví dụ trên giới thiệu cách thực hiện các thuật toán GNNs cho các bài toán cụ thể như dự đoán cạnh và phân cụm đồ thị.
+- Mỗi ví dụ có thể được điều chỉnh để phù hợp với yêu cầu cụ thể của bài toán và tập dữ liệu.
+- Để chạy các ví dụ này, cần cài đặt các thư viện `torch`, `torch_geometric`, `networkx` và `matplotlib`.
 
-- **Lưu trữ ảnh và mô hình**: Lưu các ảnh được tạo ra và lưu trữ mô hình Generator cuối cùng sau khi huấn luyện.
-
-Với ví dụ trên, bạn có thể huấn luyện mô hình DCGAN để tạo ra các ảnh chất lượng từ bộ dữ liệu MNIST. Để cải thiện chất lượng hoặc áp dụng cho các bộ dữ liệu khác, bạn có thể điều chỉnh kiến trúc mô hình và các tham số huấn luyện như cách thêm lớp tích chập, kích thước ảnh đầu vào, và số lượng epochs.
 
 
-Dưới đây là một ví dụ khác về cách triển khai mô hình CGAN (Conditional Generative Adversarial Network) bằng PyTorch. Trong ví dụ này, chúng ta sẽ sử dụng bộ dữ liệu FashionMNIST và huấn luyện mô hình để tạo ra các hình ảnh từ các lớp quần áo khác nhau.
 
-### CGAN (Conditional Generative Adversarial Network)
+Dưới đây là thêm một ví dụ khác về cách thực hiện mạng nơ-ron đồ thị (GNN) cho bài toán phát hiện cộng đồng trong đồ thị, sử dụng thư viện PyTorch và Torch Geometric.
 
-CGAN mở rộng GAN bằng cách thêm thông tin điều kiện (conditional information), ví dụ như nhãn lớp, để điều khiển quá trình sinh dữ liệu.
+### 5. Community Detection (Phát hiện cộng đồng)
 
-#### Cài đặt mô hình trong PyTorch
+#### Bài toán:
+Phân tách các đỉnh trong đồ thị thành các cộng đồng hoặc nhóm dựa trên cấu trúc của đồ thị.
+
+#### Mã nguồn Python:
 
 ```python
 import torch
 import torch.nn as nn
-import torch.optim as optim
-from torchvision import datasets, transforms
-from torch.utils.data import DataLoader
-import torchvision.utils as vutils
-import numpy as np
+import torch.nn.functional as F
+from torch_geometric.datasets import KarateClub
+from torch_geometric.nn import GCNConv
+from torch_geometric.utils import to_networkx
+import networkx as nx
 import matplotlib.pyplot as plt
 
-# Set random seed for reproducibility
-manual_seed = 999
-torch.manual_seed(manual_seed)
+# Load dataset (Karate club dataset as an example)
+dataset = KarateClub()
+data = dataset[0]
 
-# Hyperparameters
-batch_size = 128
-image_size = 28
-z_dim = 100
-num_epochs = 50
-lr = 0.0002
-beta1 = 0.5
-num_classes = 10  # Number of classes (labels)
+class CommunityDetectionGCN(nn.Module):
+    def __init__(self, num_features, hidden_size, num_communities):
+        super(CommunityDetectionGCN, self).__init__()
+        self.conv1 = GCNConv(num_features, hidden_size)
+        self.conv2 = GCNConv(hidden_size, num_communities)
 
-# Download FashionMNIST dataset
-transform = transforms.Compose([
-    transforms.Resize(image_size),
-    transforms.ToTensor(),
-    transforms.Normalize((0.5,), (0.5,))
-])
+    def forward(self, x, edge_index):
+        x = self.conv1(x, edge_index)
+        x = F.relu(x)
+        x = self.conv2(x, edge_index)
+        return F.log_softmax(x, dim=1)
 
-dataset = datasets.FashionMNIST(root='./data', train=True, download=True, transform=transform)
-dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=2)
+# Initialize model
+model = CommunityDetectionGCN(num_features=dataset.num_features, hidden_size=16, num_communities=2)
 
-# Generator definition
-class Generator(nn.Module):
-    def __init__(self, z_dim, c_dim, output_dim):
-        super(Generator, self).__init__()
-        self.fc = nn.Sequential(
-            nn.Linear(z_dim + c_dim, 128),
-            nn.ReLU(),
-            nn.Linear(128, output_dim),
-            nn.Tanh()
-        )
-    
-    def forward(self, z, c):
-        x = torch.cat([z, c], dim=1)
-        x = self.fc(x)
-        return x
+# Define optimizer and loss function
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+criterion = nn.NLLLoss()
 
-# Discriminator definition
-class Discriminator(nn.Module):
-    def __init__(self, input_dim, c_dim):
-        super(Discriminator, self).__init__()
-        self.fc = nn.Sequential(
-            nn.Linear(input_dim + c_dim, 128),
-            nn.ReLU(),
-            nn.Linear(128, 1),
-            nn.Sigmoid()
-        )
-    
-    def forward(self, x, c):
-        x = torch.cat([x, c], dim=1)
-        x = self.fc(x)
-        return x
+# Training
+def train_community_detection(model, data, optimizer, criterion, epochs=50):
+    model.train()
+    for epoch in range(epochs):
+        optimizer.zero_grad()
+        output = model(data.x, data.edge_index)
+        loss = criterion(output, data.y)
+        loss.backward()
+        optimizer.step()
+        if epoch % 10 == 0:
+            print(f'Epoch {epoch}, Loss: {loss.item()}')
 
-# Initialize networks
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-G = Generator(z_dim, num_classes, image_size * image_size).to(device)
-D = Discriminator(image_size * image_size, num_classes).to(device)
+train_community_detection(model, data, optimizer, criterion)
 
-# Optimizers
-optimizer_G = optim.Adam(G.parameters(), lr=lr, betas=(beta1, 0.999))
-optimizer_D = optim.Adam(D.parameters(), lr=lr, betas=(beta1, 0.999))
+# Visualization of community detection (using NetworkX)
+def visualize_community_detection(model, data):
+    model.eval()
+    with torch.no_grad():
+        output = model(data.x, data.edge_index)
+        pred = output.argmax(dim=1)
+        node_color = pred.cpu().numpy()
+        G = to_networkx(data, to_undirected=True)
+        pos = nx.spring_layout(G)
+        plt.figure(figsize=(8, 6))
+        nx.draw(G, pos, node_color=node_color, cmap=plt.cm.tab10, with_labels=True, node_size=300, font_size=10)
+        plt.title('Community Detection')
+        plt.show()
 
-# Binary cross entropy loss
-criterion = nn.BCELoss()
-
-# Fixed noise for visualization
-fixed_noise = torch.randn(num_classes, z_dim, device=device)
-
-# Training loop
-for epoch in range(num_epochs):
-    for i, (real_images, labels) in enumerate(dataloader):
-        batch_size = real_images.size(0)
-        real_images = real_images.to(device)
-        labels_onehot = torch.zeros(batch_size, num_classes).scatter_(1, labels.view(-1, 1), 1).to(device)
-
-        # Train Discriminator
-        D.zero_grad()
-        label_real = torch.full((batch_size, 1), 1., device=device)
-        label_fake = torch.full((batch_size, 1), 0., device=device)
-
-        # Real images
-        output = D(real_images.view(batch_size, -1), labels_onehot)
-        errD_real = criterion(output, label_real)
-        D_x = output.mean().item()
-
-        # Fake images
-        noise = torch.randn(batch_size, z_dim, device=device)
-        fake_images = G(noise, labels_onehot)
-        output = D(fake_images.detach(), labels_onehot)
-        errD_fake = criterion(output, label_fake)
-        D_G_z1 = output.mean().item()
-
-        # Total discriminator loss
-        errD = errD_real + errD_fake
-        errD.backward()
-        optimizer_D.step()
-
-        # Train Generator
-        G.zero_grad()
-        label_real = torch.full((batch_size, 1), 1., device=device)
-        output = D(fake_images, labels_onehot)
-        errG = criterion(output, label_real)
-        errG.backward()
-        D_G_z2 = output.mean().item()
-        optimizer_G.step()
-
-        if i % 100 == 0:
-            print('[%d/%d][%d/%d] Loss_D: %.4f Loss_G: %.4f D(x): %.4f D(G(z)): %.4f / %.4f'
-                  % (epoch + 1, num_epochs, i, len(dataloader),
-                     errD.item(), errG.item(), D_x, D_G_z1, D_G_z2))
-
-    # Save generated images
-    if epoch == 0:
-        vutils.save_image(real_images, '%s/real_samples.png' % "./results", normalize=True)
-    
-    fake = G(fixed_noise, torch.eye(num_classes, device=device))
-    vutils.save_image(fake.detach(), '%s/fake_samples_epoch_%03d.png' % ("./results", epoch + 1), normalize=True)
-
-# Save model checkpoints
-torch.save(G.state_dict(), './cgan_generator.pth')
-torch.save(D.state_dict(), './cgan_discriminator.pth')
+visualize_community_detection(model, data)
 ```
 
-#### Giải thích code:
-- **Generator và Discriminator**: Được định nghĩa bằng lớp `Generator` và `Discriminator` tương ứng. Mạng Generator nhận vector nhiễu và nhãn lớp để sinh ra ảnh giả. Discriminator nhận ảnh và nhãn lớp để phân biệt giữa ảnh thật và ảnh giả.
+#### Giải thích:
+- Đoạn mã trên sử dụng tập dữ liệu Karate Club từ `torch_geometric.datasets.KarateClub` làm ví dụ. Tập dữ liệu này bao gồm một đồ thị đơn giản của một câu lạc bộ karate với các đỉnh và cạnh.
+- Mô hình `CommunityDetectionGCN` được triển khai với lớp convolutional trên đồ thị (`GCNConv`) để phân tách các đỉnh thành hai cộng đồng.
+- Quá trình huấn luyện và đánh giá được thực hiện thông qua hàm `train_community_detection` và `visualize_community_detection`, sử dụng NetworkX để trực quan hóa kết quả phân tách cộng đồng của đồ thị.
 
-- **Optimizer**: Sử dụng Adam optimizer để cập nhật các tham số của Generator và Discriminator.
-
-- **Training Loop**: Vòng lặp huấn luyện với hai giai đoạn chính: huấn luyện Discriminator để phân biệt giữa ảnh thật và ảnh giả và huấn luyện Generator để cố gắng lừa Discriminator bằng cách tạo ra các ảnh giả mà Discriminator cho là ảnh thật.
-
-- **Lưu trữ ảnh và mô hình**: Lưu các ảnh được tạo ra và lưu trữ mô hình Generator cuối cùng sau khi huấn luyện.
-
-Với ví dụ trên, bạn có thể huấn luyện mô hình CGAN để tạo ra các hình ảnh từ bộ dữ liệu FashionMNIST dựa trên nhãn lớp. Để cải thiện chất lượng hoặc áp dụng cho các bộ dữ liệu khác, bạn có thể điều chỉnh kiến trúc mô hình, số lượng epochs, và các tham số huấn luyện khác như cách thay đổi số chiều của vector nhiễu hay số lớp đầu ra.
+### Lưu ý:
+- Các ví dụ trên giới thiệu cách thực hiện mạng nơ-ron đồ thị (GNN) cho các bài toán khác nhau như phát hiện cộng đồng trong đồ thị.
+- Mỗi ví dụ có thể được điều chỉnh để phù hợp với yêu cầu cụ thể của bài toán và tập dữ liệu.
+- Để chạy các ví dụ này, cần cài đặt các thư viện `torch`, `torch_geometric`, `networkx` và `matplotlib`.
 
 
 
