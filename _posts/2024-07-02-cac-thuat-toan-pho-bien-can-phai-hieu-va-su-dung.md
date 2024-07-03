@@ -10,952 +10,479 @@ tags:
 Hiểu hơn về các thuật toán phổ biến cần phải biết và sử dụng
 
 
-𝟭𝟬 𝗔𝗹𝗴𝗼𝗿𝗶𝘁𝗵𝗺𝘀 𝗘𝘃𝗲𝗿𝘆 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿 𝗦𝗵𝗼𝘂𝗹𝗱 𝗞𝗻𝗼𝘄:
+Các thuật toán phổ biến của GAN (Generative Adversarial Networks) là các biến thể và cải tiến của mô hình GAN gốc. Dưới đây là một số thuật toán nổi bật và một ví dụ cụ thể về cách triển khai chúng bằng Python và framework PyTorch.
 
+### 1. GAN (Generative Adversarial Networks)
+- **Ý tưởng**: Bao gồm hai mạng: một mạng Generative (G) và một mạng Discriminative (D) cạnh tranh với nhau. Mạng G cố gắng tạo ra dữ liệu giả mạo để lừa mạng D, trong khi mạng D cố gắng phân biệt giữa dữ liệu thật và giả.
 
-𝟬.💡 𝗕𝗿𝗲𝗮𝗱𝘁𝗵-𝗙𝗶𝗿𝘀𝘁 𝗦𝗲𝗮𝗿𝗰𝗵 (𝗕𝗙𝗦): 
-Explore a graph level by level, starting from the root, which is great for finding the shortest path in unweighted graphs. 
-➡️ Useful when: You're designing web crawlers or analyzing social networks.
-
-𝟭.💡 𝗧𝘄𝗼 𝗛𝗲𝗮𝗽𝘀: 
-Uses a min-heap and max-heap to manage dynamic datasets efficiently, maintaining median and priority. 
-➡️ Useful when: You need to manage a priority queue or dynamic datasets.
-
-𝟮.💡 𝗧𝘄𝗼 𝗣𝗼𝗶𝗻𝘁𝗲𝗿𝘀: 
-This technique takes 2 points in a sequence and performs logic based on the problem.
-➡️ Useful when: You are implementing sorting or searching functions.
-
-𝟯.💡 𝗦𝗹𝗶𝗱𝗶𝗻𝗴 𝗪𝗶𝗻𝗱𝗼𝘄: 
-Optimizes the computation by reusing the state from the previous subset of data. 
-➡️ Useful when: You're handling network congestion or data compression.
-
-𝟰.💡 𝗗𝗲𝗽𝘁𝗵-𝗙𝗶𝗿𝘀𝘁 𝗦𝗲𝗮𝗿𝗰𝗵 (𝗗𝗙𝗦): 
-Explores each path to the end, ideal for situations that involve exploring all options like in puzzles. 
-➡️ Useful when: You're working with graph structures or need to generate permutations.
-
-𝟱.💡 𝗧𝗼𝗽𝗼𝗹𝗼𝗴𝗶𝗰𝗮𝗹 𝗦𝗼𝗿𝘁: 
-Helps in scheduling tasks based on their dependencies. 
-➡️ Useful when: You are determining execution order in project management or compiling algorithms.
-
-𝟲.💡 𝗠𝗲𝗿𝗴𝗲 𝗜𝗻𝘁𝗲𝗿𝘃𝗮𝗹𝘀: 
-Optimizes overlapping intervals to minimize the number of intervals. 
-➡️ Useful when: Scheduling resources or managing calendars.
-
-𝟳.💡 𝗕𝗮𝗰𝗸𝘁𝗿𝗮𝗰𝗸𝗶𝗻𝗴: 
-It explores all potential solutions systematically and is perfect for solving puzzles and optimization problems. 
-➡️ Useful when: Solving complex logical puzzles or optimizing resource allocations.
-
-𝟴.💡 𝗧𝗿𝗶𝗲 (𝗣𝗿𝗲𝗳𝗶𝘅 𝗧𝗿𝗲𝗲): 
-A tree-like structure that manages dynamic sets of strings efficiently, often used for searching. 
-➡️ Useful when: Implementing spell-checkers or autocomplete systems.
-
-𝟵.💡 𝗙𝗹𝗼𝗼𝗱 𝗙𝗶𝗹𝗹: 
-It fills a contiguous area for features like the 'paint bucket' tool. 
-➡️ Useful when: Working in graphics editors or game development.
-
-𝟭𝟬.💡 𝗦𝗲𝗴𝗺𝗲𝗻𝘁 𝗧𝗿𝗲𝗲: 
-Efficiently manages intervals or segments and is useful for storing information about intervals and querying over them. 
-➡️ Useful when: Dealing with database range queries or statistical calculations.
-
-
-Để trình bày chi tiết về việc sử dụng mạng nơ-ron nhân tạo (ANN - Artificial Neural Network) trong PyTorch cho bài toán phân loại nhị phân và phân loại nhiều lớp, mình sẽ cung cấp các ví dụ cụ thể và mã nguồn Python.
-
-### Binary Classification
-
-#### Chuẩn bị dữ liệu
-Trước tiên, chúng ta cần chuẩn bị dữ liệu để huấn luyện mô hình. Ví dụ, chúng ta sử dụng dữ liệu từ thư viện sklearn:
-
+**Code ví dụ trong PyTorch**:
 ```python
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-import numpy as np
-
-# Tạo dữ liệu giả lập
-X, y = make_classification(n_samples=1000, n_features=20, random_state=42)
-
-# Chia dữ liệu thành tập huấn luyện và tập kiểm tra
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Chuyển đổi thành tensor trong PyTorch
 import torch
-from torch.utils.data import TensorDataset, DataLoader
-
-X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
-y_train_tensor = torch.tensor(y_train, dtype=torch.float32)
-X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-y_test_tensor = torch.tensor(y_test, dtype=torch.float32)
-
-# Tạo DataLoader cho tập huấn luyện
-train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
-train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-```
-
-#### Xây dựng mô hình ANN
-Sử dụng PyTorch, chúng ta có thể xây dựng mô hình ANN như sau:
-
-```python
 import torch.nn as nn
-import torch.optim as optim
 
-class ANN(nn.Module):
-    def __init__(self, input_dim):
-        super(ANN, self).__init__()
-        self.fc1 = nn.Linear(input_dim, 64)
-        self.fc2 = nn.Linear(64, 1)
-        self.sigmoid = nn.Sigmoid()
-        
-    def forward(self, x):
-        x = torch.relu(self.fc1(x))
-        x = self.fc2(x)
-        x = self.sigmoid(x)
-        return x
-
-# Khởi tạo mô hình và các tham số
-input_dim = X.shape[1]  # số chiều của dữ liệu đầu vào
-model = ANN(input_dim)
-
-# Định nghĩa hàm loss và optimizer
-criterion = nn.BCELoss()  # Binary Cross Entropy Loss
-optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-# Huấn luyện mô hình
-num_epochs = 20
-
-for epoch in range(num_epochs):
-    model.train()
-    epoch_loss = 0.0
-    for inputs, labels in train_loader:
-        optimizer.zero_grad()
-        outputs = model(inputs)
-        loss = criterion(outputs.squeeze(), labels)
-        loss.backward()
-        optimizer.step()
-        epoch_loss += loss.item()
-    
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss/len(train_loader):.4f}')
-
-# Đánh giá mô hình trên tập kiểm tra
-model.eval()
-with torch.no_grad():
-    y_pred = model(X_test_tensor)
-    y_pred_class = y_pred.round()
-    accuracy = (y_pred_class.eq(y_test_tensor.view_as(y_pred_class)).sum() / len(y_test_tensor)).item()
-    print(f'Accuracy on test set: {accuracy:.4f}')
-```
-
-### Multi-class Classification hoặc Regression (Prediction)
-
-#### Chuẩn bị dữ liệu
-Chúng ta sử dụng dữ liệu từ thư viện sklearn, nhưng với một ví dụ có nhiều lớp (multi-class):
-
-```python
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-import numpy as np
-
-# Load dữ liệu Iris dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
-
-# Chia dữ liệu thành tập huấn luyện và tập kiểm tra
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Chuyển đổi thành tensor trong PyTorch
-X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
-y_train_tensor = torch.tensor(y_train, dtype=torch.long)  # y_train là index của lớp
-X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-y_test_tensor = torch.tensor(y_test, dtype=torch.long)
-
-# Tạo DataLoader cho tập huấn luyện
-train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
-train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-```
-
-#### Xây dựng mô hình ANN
-```python
-import torch.nn as nn
-import torch.optim as optim
-
-class ANN(nn.Module):
+# Generator definition
+class Generator(nn.Module):
     def __init__(self, input_dim, output_dim):
-        super(ANN, self).__init__()
-        self.fc1 = nn.Linear(input_dim, 64)
-        self.fc2 = nn.Linear(64, output_dim)
-        
+        super(Generator, self).__init__()
+        self.fc = nn.Sequential(
+            nn.Linear(input_dim, 128),
+            nn.ReLU(),
+            nn.Linear(128, output_dim),
+            nn.Tanh()
+        )
+    
     def forward(self, x):
-        x = torch.relu(self.fc1(x))
-        x = self.fc2(x)
+        x = self.fc(x)
         return x
 
-# Khởi tạo mô hình và các tham số
-input_dim = X.shape[1]  # số chiều của dữ liệu đầu vào
-output_dim = len(np.unique(y))  # số lớp đầu ra
-model = ANN(input_dim, output_dim)
-
-# Định nghĩa hàm loss và optimizer
-criterion = nn.CrossEntropyLoss()  # Cross Entropy Loss
-optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-# Huấn luyện mô hình
-num_epochs = 20
-
-for epoch in range(num_epochs):
-    model.train()
-    epoch_loss = 0.0
-    for inputs, labels in train_loader:
-        optimizer.zero_grad()
-        outputs = model(inputs)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
-        epoch_loss += loss.item()
-    
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss/len(train_loader):.4f}')
-
-# Đánh giá mô hình trên tập kiểm tra
-model.eval()
-with torch.no_grad():
-    y_pred = model(X_test_tensor)
-    _, y_pred_class = torch.max(y_pred, 1)
-    accuracy = (y_pred_class.eq(y_test_tensor).sum() / len(y_test_tensor)).item()
-    print(f'Accuracy on test set: {accuracy:.4f}')
-```
-
-### Tổng kết
-Trên đây là cách sử dụng mạng nơ-ron nhân tạo (ANN) trong PyTorch cho bài toán phân loại nhị phân và phân loại nhiều lớp. Mã nguồn đã cung cấp bao gồm xây dựng mô hình, chuẩn bị dữ liệu, định nghĩa hàm loss và optimizer, huấn luyện mô hình và đánh giá kết quả trên tập kiểm tra. Bạn có thể điều chỉnh các tham số và cấu trúc mô hình để phù hợp với bài toán cụ thể của mình.
-
-
-Để trình bày chi tiết và mã nguồn Python sử dụng mạng perceptron nhiều lớp (MLP - Multilayer Perceptron) trong PyTorch cho bài toán phân loại nhị phân và phân loại nhiều lớp, mình sẽ cung cấp các ví dụ cụ thể.
-
-### Binary Classification
-
-#### Chuẩn bị dữ liệu
-Chúng ta vẫn sử dụng dữ liệu từ thư viện sklearn để minh họa:
-
-```python
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-import numpy as np
-
-# Tạo dữ liệu giả lập
-X, y = make_classification(n_samples=1000, n_features=20, random_state=42)
-
-# Chia dữ liệu thành tập huấn luyện và tập kiểm tra
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Chuyển đổi thành tensor trong PyTorch
-import torch
-from torch.utils.data import TensorDataset, DataLoader
-
-X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
-y_train_tensor = torch.tensor(y_train, dtype=torch.float32)
-X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-y_test_tensor = torch.tensor(y_test, dtype=torch.float32)
-
-# Tạo DataLoader cho tập huấn luyện
-train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
-train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-```
-
-#### Xây dựng mô hình MLP
-Sử dụng PyTorch, chúng ta có thể xây dựng mô hình MLP như sau:
-
-```python
-import torch.nn as nn
-import torch.optim as optim
-
-class MLP(nn.Module):
+# Discriminator definition
+class Discriminator(nn.Module):
     def __init__(self, input_dim):
-        super(MLP, self).__init__()
-        self.fc1 = nn.Linear(input_dim, 64)
-        self.fc2 = nn.Linear(64, 1)
-        self.sigmoid = nn.Sigmoid()
-        
+        super(Discriminator, self).__init__()
+        self.fc = nn.Sequential(
+            nn.Linear(input_dim, 128),
+            nn.ReLU(),
+            nn.Linear(128, 1),
+            nn.Sigmoid()
+        )
+    
     def forward(self, x):
-        x = torch.relu(self.fc1(x))
-        x = self.fc2(x)
-        x = self.sigmoid(x)
+        x = self.fc(x)
         return x
 
-# Khởi tạo mô hình và các tham số
-input_dim = X.shape[1]  # số chiều của dữ liệu đầu vào
-model = MLP(input_dim)
-
-# Định nghĩa hàm loss và optimizer
-criterion = nn.BCELoss()  # Binary Cross Entropy Loss
-optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-# Huấn luyện mô hình
-num_epochs = 20
-
-for epoch in range(num_epochs):
-    model.train()
-    epoch_loss = 0.0
-    for inputs, labels in train_loader:
-        optimizer.zero_grad()
-        outputs = model(inputs)
-        loss = criterion(outputs.squeeze(), labels)
-        loss.backward()
-        optimizer.step()
-        epoch_loss += loss.item()
-    
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss/len(train_loader):.4f}')
-
-# Đánh giá mô hình trên tập kiểm tra
-model.eval()
-with torch.no_grad():
-    y_pred = model(X_test_tensor)
-    y_pred_class = y_pred.round()
-    accuracy = (y_pred_class.eq(y_test_tensor.view_as(y_pred_class)).sum() / len(y_test_tensor)).item()
-    print(f'Accuracy on test set: {accuracy:.4f}')
+# Example usage
+z_dim = 100  # Dimension of the latent space
+data_dim = 784  # Dimension of the generated data (e.g., MNIST images)
+G = Generator(z_dim, data_dim)
+D = Discriminator(data_dim)
 ```
 
-### Multi-class Classification hoặc Regression (Prediction)
+### 2. DCGAN (Deep Convolutional GAN)
+- **Ý tưởng**: Sử dụng mạng neural network tích chập sâu cho cả Generator và Discriminator để cải thiện chất lượng ảnh được tạo ra.
 
-#### Chuẩn bị dữ liệu
-Tiếp tục sử dụng dữ liệu từ thư viện sklearn, nhưng cho một ví dụ với nhiều lớp:
-
+**Code ví dụ trong PyTorch**:
 ```python
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-import numpy as np
-
-# Load dữ liệu Iris dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
-
-# Chia dữ liệu thành tập huấn luyện và tập kiểm tra
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Chuyển đổi thành tensor trong PyTorch
-X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
-y_train_tensor = torch.tensor(y_train, dtype=torch.long)  # y_train là index của lớp
-X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-y_test_tensor = torch.tensor(y_test, dtype=torch.long)
-
-# Tạo DataLoader cho tập huấn luyện
-train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
-train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-```
-
-#### Xây dựng mô hình MLP
-```python
-import torch.nn as nn
-import torch.optim as optim
-
-class MLP(nn.Module):
-    def __init__(self, input_dim, output_dim):
-        super(MLP, self).__init__()
-        self.fc1 = nn.Linear(input_dim, 64)
-        self.fc2 = nn.Linear(64, output_dim)
-        
-    def forward(self, x):
-        x = torch.relu(self.fc1(x))
-        x = self.fc2(x)
-        return x
-
-# Khởi tạo mô hình và các tham số
-input_dim = X.shape[1]  # số chiều của dữ liệu đầu vào
-output_dim = len(np.unique(y))  # số lớp đầu ra
-model = MLP(input_dim, output_dim)
-
-# Định nghĩa hàm loss và optimizer
-criterion = nn.CrossEntropyLoss()  # Cross Entropy Loss
-optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-# Huấn luyện mô hình
-num_epochs = 20
-
-for epoch in range(num_epochs):
-    model.train()
-    epoch_loss = 0.0
-    for inputs, labels in train_loader:
-        optimizer.zero_grad()
-        outputs = model(inputs)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
-        epoch_loss += loss.item()
-    
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss/len(train_loader):.4f}')
-
-# Đánh giá mô hình trên tập kiểm tra
-model.eval()
-with torch.no_grad():
-    y_pred = model(X_test_tensor)
-    _, y_pred_class = torch.max(y_pred, 1)
-    accuracy = (y_pred_class.eq(y_test_tensor).sum() / len(y_test_tensor)).item()
-    print(f'Accuracy on test set: {accuracy:.4f}')
-```
-
-### Tổng kết
-Trên đây là cách sử dụng mạng perceptron nhiều lớp (MLP) trong PyTorch cho bài toán phân loại nhị phân và phân loại nhiều lớp. Mã nguồn đã cung cấp bao gồm xây dựng mô hình, chuẩn bị dữ liệu, định nghĩa hàm loss và optimizer, huấn luyện mô hình và đánh giá kết quả trên tập kiểm tra. Bạn có thể điều chỉnh các tham số và cấu trúc mô hình để phù hợp với bài toán cụ thể của mình.
-
-
-Để trình bày chi tiết và mã nguồn Python sử dụng Mạng Nơ-ron Tích Chập (CNN - Convolutional Neural Networks) trong PyTorch cho bài toán phân loại nhị phân và phân loại nhiều lớp, mình sẽ cung cấp các ví dụ cụ thể.
-
-### Binary Classification
-
-#### Chuẩn bị dữ liệu
-Chúng ta sử dụng dữ liệu từ thư viện sklearn để minh họa. Đây là một ví dụ với dữ liệu giả lập:
-
-```python
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-import numpy as np
-
-# Tạo dữ liệu giả lập
-X, y = make_classification(n_samples=1000, n_features=20, random_state=42)
-
-# Chia dữ liệu thành tập huấn luyện và tập kiểm tra
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Chuyển đổi thành tensor trong PyTorch
 import torch
-from torch.utils.data import TensorDataset, DataLoader
+import torch.nn as nn
 
-X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
-y_train_tensor = torch.tensor(y_train, dtype=torch.float32)
-X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-y_test_tensor = torch.tensor(y_test, dtype=torch.float32)
+# Generator definition
+class Generator(nn.Module):
+    def __init__(self, z_dim, image_channels, hidden_dim=64):
+        super(Generator, self).__init__()
+        self.main = nn.Sequential(
+            nn.ConvTranspose2d(z_dim, hidden_dim * 8, kernel_size=4, stride=1, padding=0, bias=False),
+            nn.BatchNorm2d(hidden_dim * 8),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(hidden_dim * 8, hidden_dim * 4, kernel_size=4, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(hidden_dim * 4),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(hidden_dim * 4, hidden_dim * 2, kernel_size=4, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(hidden_dim * 2),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(hidden_dim * 2, hidden_dim, kernel_size=4, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(hidden_dim),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(hidden_dim, image_channels, kernel_size=4, stride=2, padding=1, bias=False),
+            nn.Tanh()
+        )
 
-# Reshape lại X để phù hợp với đầu vào của CNN (batch_size, channels, height, width)
-X_train_tensor = X_train_tensor.view(-1, 1, 20, 1)
-X_test_tensor = X_test_tensor.view(-1, 1, 20, 1)
+    def forward(self, x):
+        return self.main(x)
 
-# Tạo DataLoader cho tập huấn luyện
-train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
-train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+# Discriminator definition
+class Discriminator(nn.Module):
+    def __init__(self, image_channels, hidden_dim=64):
+        super(Discriminator, self).__init__()
+        self.main = nn.Sequential(
+            nn.Conv2d(image_channels, hidden_dim, kernel_size=4, stride=2, padding=1, bias=False),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(hidden_dim, hidden_dim * 2, kernel_size=4, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(hidden_dim * 2),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(hidden_dim * 2, hidden_dim * 4, kernel_size=4, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(hidden_dim * 4),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(hidden_dim * 4, hidden_dim * 8, kernel_size=4, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(hidden_dim * 8),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(hidden_dim * 8, 1, kernel_size=4, stride=1, padding=0, bias=False),
+            nn.Sigmoid()
+        )
+
+    def forward(self, x):
+        return self.main(x)
+
+# Example usage
+z_dim = 100  # Dimension of the latent space
+image_channels = 1  # For grayscale images (e.g., MNIST)
+G = Generator(z_dim, image_channels)
+D = Discriminator(image_channels)
 ```
 
-#### Xây dựng mô hình CNN
-Sử dụng PyTorch, chúng ta có thể xây dựng mô hình CNN như sau:
+### 3. CGAN (Conditional GAN)
+- **Ý tưởng**: Mở rộng GAN để cho phép điều khiển dữ liệu được tạo bằng cách cung cấp thông tin điều kiện (ví dụ: nhãn lớp).
 
+**Code ví dụ trong PyTorch**:
 ```python
+import torch
 import torch.nn as nn
-import torch.optim as optim
 
-class CNN(nn.Module):
-    def __init__(self):
-        super(CNN, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, stride=1, padding=1)
-        self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
-        self.fc1 = nn.Linear(16 * 10 * 1, 64)  # 16 channels * 10 height * 1 width after pooling
-        self.fc2 = nn.Linear(64, 1)
-        self.sigmoid = nn.Sigmoid()
-        
-    def forward(self, x):
-        x = self.pool(torch.relu(self.conv1(x)))
-        x = x.view(-1, 16 * 10 * 1)
-        x = torch.relu(self.fc1(x))
-        x = self.fc2(x)
-        x = self.sigmoid(x)
+# Generator definition
+class Generator(nn.Module):
+    def __init__(self, z_dim, c_dim, output_dim):
+        super(Generator, self).__init__()
+        self.fc = nn.Sequential(
+            nn.Linear(z_dim + c_dim, 128),
+            nn.ReLU(),
+            nn.Linear(128, output_dim),
+            nn.Tanh()
+        )
+    
+    def forward(self, z, c):
+        x = torch.cat([z, c], dim=1)
+        x = self.fc(x)
         return x
 
-# Khởi tạo mô hình
-model = CNN()
-
-# Định nghĩa hàm loss và optimizer
-criterion = nn.BCELoss()  # Binary Cross Entropy Loss
-optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-# Huấn luyện mô hình
-num_epochs = 20
-
-for epoch in range(num_epochs):
-    model.train()
-    epoch_loss = 0.0
-    for inputs, labels in train_loader:
-        optimizer.zero_grad()
-        outputs = model(inputs)
-        loss = criterion(outputs.squeeze(), labels)
-        loss.backward()
-        optimizer.step()
-        epoch_loss += loss.item()
+# Discriminator definition
+class Discriminator(nn.Module):
+    def __init__(self, input_dim, c_dim):
+        super(Discriminator, self).__init__()
+        self.fc = nn.Sequential(
+            nn.Linear(input_dim + c_dim, 128),
+            nn.ReLU(),
+            nn.Linear(128, 1),
+            nn.Sigmoid()
+        )
     
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss/len(train_loader):.4f}')
-
-# Đánh giá mô hình trên tập kiểm tra
-model.eval()
-with torch.no_grad():
-    X_test_tensor = X_test_tensor.view(-1, 1, 20, 1)
-    y_pred = model(X_test_tensor)
-    y_pred_class = y_pred.round()
-    accuracy = (y_pred_class.eq(y_test_tensor.view_as(y_pred_class)).sum() / len(y_test_tensor)).item()
-    print(f'Accuracy on test set: {accuracy:.4f}')
-```
-
-### Multi-class Classification hoặc Regression (Prediction)
-
-#### Chuẩn bị dữ liệu
-Chúng ta tiếp tục sử dụng dữ liệu từ thư viện sklearn, nhưng cho một ví dụ với nhiều lớp:
-
-```python
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-import numpy as np
-
-# Load dữ liệu Iris dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
-
-# Chia dữ liệu thành tập huấn luyện và tập kiểm tra
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Chuyển đổi thành tensor trong PyTorch
-X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
-y_train_tensor = torch.tensor(y_train, dtype=torch.long)  # y_train là index của lớp
-X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-y_test_tensor = torch.tensor(y_test, dtype=torch.long)
-
-# Reshape lại X để phù hợp với đầu vào của CNN (batch_size, channels, height, width)
-X_train_tensor = X_train_tensor.view(-1, 1, 4, 1)
-X_test_tensor = X_test_tensor.view(-1, 1, 4, 1)
-
-# Tạo DataLoader cho tập huấn luyện
-train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
-train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-```
-
-#### Xây dựng mô hình CNN
-```python
-import torch.nn as nn
-import torch.optim as optim
-
-class CNN(nn.Module):
-    def __init__(self, num_classes):
-        super(CNN, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, stride=1, padding=1)
-        self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
-        self.fc1 = nn.Linear(16 * 2 * 1, 64)  # 16 channels * 2 height * 1 width after pooling
-        self.fc2 = nn.Linear(64, num_classes)
-        
-    def forward(self, x):
-        x = self.pool(torch.relu(self.conv1(x)))
-        x = x.view(-1, 16 * 2 * 1)
-        x = torch.relu(self.fc1(x))
-        x = self.fc2(x)
+    def forward(self, x, c):
+        x = torch.cat([x, c], dim=1)
+        x = self.fc(x)
         return x
 
-# Khởi tạo mô hình
-num_classes = len(np.unique(y))  # số lớp đầu ra
-model = CNN(num_classes)
-
-# Định nghĩa hàm loss và optimizer
-criterion = nn.CrossEntropyLoss()  # Cross Entropy Loss
-optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-# Huấn luyện mô hình
-num_epochs = 20
-
-for epoch in range(num_epochs):
-    model.train()
-    epoch_loss = 0.0
-    for inputs, labels in train_loader:
-        optimizer.zero_grad()
-        outputs = model(inputs)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
-        epoch_loss += loss.item()
-    
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss/len(train_loader):.4f}')
-
-# Đánh giá mô hình trên tập kiểm tra
-model.eval()
-with torch.no_grad():
-    X_test_tensor = X_test_tensor.view(-1, 1, 4, 1)
-    y_pred = model(X_test_tensor)
-    _, y_pred_class = torch.max(y_pred, 1)
-    accuracy = (y_pred_class.eq(y_test_tensor).sum() / len(y_test_tensor)).item()
-    print(f'Accuracy on test set: {accuracy:.4f}')
+# Example usage
+z_dim = 100  # Dimension of the latent space
+c_dim = 10  # Dimension of the condition vector (e.g., number of classes)
+data_dim = 784  # Dimension of the generated data (e.g., MNIST images)
+G = Generator(z_dim, c_dim, data_dim)
+D = Discriminator(data_dim, c_dim)
 ```
 
-### Tổng kết
-Trên đây là cách sử dụng Mạng Nơ-ron Tích Chập (CNN) trong PyTorch cho bài toán phân loại nhị phân và phân loại nhiều lớp. Mã nguồn đã cung cấp bao gồm xây dựng mô hình, chuẩn bị dữ liệu, định nghĩa hàm loss và optimizer, huấn luyện mô hình và đánh giá kết quả trên tập kiểm tra. Bạn có thể điều chỉnh các tham số và cấu trúc mô hình để phù hợp với bài toán cụ thể của mình.
+Các ví dụ trên chỉ là các mô hình cơ bản. Các thuật toán GAN tiến tiến hơn như WGAN, WGAN-GP, CycleGAN, etc., cũng có thể triển khai tương tự nhưng có thêm các điều chỉnh riêng để cải thiện tính ổn định và chất lượng của mô hình.
 
 
-Để trình bày chi tiết và mã nguồn Python sử dụng Mạng Nơ-ron Tái Phát (RNN - Recurrent Neural Networks) trong PyTorch cho bài toán phân loại nhị phân và phân loại nhiều lớp, mình sẽ cung cấp các ví dụ cụ thể.
+Dưới đây là một ví dụ cụ thể về cách triển khai mô hình DCGAN (Deep Convolutional GAN) bằng PyTorch. Trong ví dụ này, chúng ta sẽ sử dụng dữ liệu từ bộ dữ liệu MNIST để huấn luyện mô hình.
 
-### Binary Classification
+### DCGAN (Deep Convolutional GAN)
 
-#### Chuẩn bị dữ liệu
-Chúng ta sử dụng dữ liệu từ thư viện sklearn để minh họa. Đây là một ví dụ với dữ liệu giả lập:
+DCGAN là một biến thể của GAN sử dụng mạng tích chập sâu cho cả Generator và Discriminator để cải thiện chất lượng ảnh được tạo ra. Đây là một trong những thuật toán GAN phổ biến và hiệu quả trong thực tế.
+
+#### Cài đặt mô hình trong PyTorch
 
 ```python
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-import numpy as np
-
-# Tạo dữ liệu giả lập
-X, y = make_classification(n_samples=1000, n_features=20, random_state=42)
-
-# Chia dữ liệu thành tập huấn luyện và tập kiểm tra
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Chuyển đổi thành tensor trong PyTorch
 import torch
-from torch.utils.data import TensorDataset, DataLoader
-
-X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
-y_train_tensor = torch.tensor(y_train, dtype=torch.float32)
-X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-y_test_tensor = torch.tensor(y_test, dtype=torch.float32)
-
-# Reshape lại X để phù hợp với đầu vào của RNN (batch_size, seq_len, input_size)
-X_train_tensor = X_train_tensor.view(-1, 20, 1)  # seq_len = 20, input_size = 1
-X_test_tensor = X_test_tensor.view(-1, 20, 1)
-
-# Tạo DataLoader cho tập huấn luyện
-train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
-train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-```
-
-#### Xây dựng mô hình RNN
-Sử dụng PyTorch, chúng ta có thể xây dựng mô hình RNN như sau:
-
-```python
 import torch.nn as nn
 import torch.optim as optim
-
-class RNN(nn.Module):
-    def __init__(self, input_size, hidden_size, num_layers, output_size):
-        super(RNN, self).__init__()
-        self.hidden_size = hidden_size
-        self.num_layers = num_layers
-        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)
-        self.fc = nn.Linear(hidden_size, output_size)
-        self.sigmoid = nn.Sigmoid()
-        
-    def forward(self, x):
-        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
-        out, _ = self.rnn(x, h0)
-        out = self.fc(out[:, -1, :])  # Lấy output của lớp cuối cùng
-        out = self.sigmoid(out)
-        return out
-
-# Khởi tạo mô hình
-input_size = 1  # số chiều của dữ liệu đầu vào
-hidden_size = 32  # số nơ-ron ẩn
-num_layers = 1  # số lớp RNN
-output_size = 1  # đầu ra có 1 nơ-ron vì là bài toán nhị phân
-model = RNN(input_size, hidden_size, num_layers, output_size)
-
-# Định nghĩa hàm loss và optimizer
-criterion = nn.BCELoss()  # Binary Cross Entropy Loss
-optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-# Huấn luyện mô hình
-num_epochs = 20
-
-for epoch in range(num_epochs):
-    model.train()
-    epoch_loss = 0.0
-    for inputs, labels in train_loader:
-        optimizer.zero_grad()
-        outputs = model(inputs)
-        loss = criterion(outputs.squeeze(), labels)
-        loss.backward()
-        optimizer.step()
-        epoch_loss += loss.item()
-    
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss/len(train_loader):.4f}')
-
-# Đánh giá mô hình trên tập kiểm tra
-model.eval()
-with torch.no_grad():
-    X_test_tensor = X_test_tensor.view(-1, 20, 1)
-    y_pred = model(X_test_tensor)
-    y_pred_class = y_pred.round()
-    accuracy = (y_pred_class.eq(y_test_tensor.view_as(y_pred_class)).sum() / len(y_test_tensor)).item()
-    print(f'Accuracy on test set: {accuracy:.4f}')
-```
-
-### Multi-class Classification hoặc Regression (Prediction)
-
-#### Chuẩn bị dữ liệu
-Chúng ta tiếp tục sử dụng dữ liệu từ thư viện sklearn, nhưng cho một ví dụ với nhiều lớp:
-
-```python
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+import torchvision.utils as vutils
 import numpy as np
+import matplotlib.pyplot as plt
 
-# Load dữ liệu Iris dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
+# Set random seed for reproducibility
+manual_seed = 999
+torch.manual_seed(manual_seed)
 
-# Chia dữ liệu thành tập huấn luyện và tập kiểm tra
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Hyperparameters
+batch_size = 128
+image_size = 28
+z_dim = 100
+num_epochs = 50
+lr = 0.0002
+beta1 = 0.5
 
-# Chuyển đổi thành tensor trong PyTorch
-X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
-y_train_tensor = torch.tensor(y_train, dtype=torch.long)  # y_train là index của lớp
-X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-y_test_tensor = torch.tensor(y_test, dtype=torch.long)
+# Download MNIST dataset
+transform = transforms.Compose([
+    transforms.Resize(image_size),
+    transforms.ToTensor(),
+    transforms.Normalize((0.5,), (0.5,))
+])
 
-# Reshape lại X để phù hợp với đầu vào của RNN (batch_size, seq_len, input_size)
-X_train_tensor = X_train_tensor.view(-1, X.shape[1], 1)  # seq_len = số đặc trưng của Iris, input_size = 1
-X_test_tensor = X_test_tensor.view(-1, X.shape[1], 1)
+dataset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
+dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=2)
 
-# Tạo DataLoader cho tập huấn luyện
-train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
-train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-```
+# Generator definition
+class Generator(nn.Module):
+    def __init__(self, z_dim, image_channels, hidden_dim=64):
+        super(Generator, self).__init__()
+        self.main = nn.Sequential(
+            nn.ConvTranspose2d(z_dim, hidden_dim * 4, 4, 1, 0, bias=False),
+            nn.BatchNorm2d(hidden_dim * 4),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(hidden_dim * 4, hidden_dim * 2, 3, 2, 1, bias=False),
+            nn.BatchNorm2d(hidden_dim * 2),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(hidden_dim * 2, hidden_dim, 4, 2, 1, bias=False),
+            nn.BatchNorm2d(hidden_dim),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(hidden_dim, image_channels, 4, 2, 1, bias=False),
+            nn.Tanh()
+        )
 
-#### Xây dựng mô hình RNN
-```python
-import torch.nn as nn
-import torch.optim as optim
-
-class RNN(nn.Module):
-    def __init__(self, input_size, hidden_size, num_layers, output_size):
-        super(RNN, self).__init__()
-        self.hidden_size = hidden_size
-        self.num_layers = num_layers
-        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)
-        self.fc = nn.Linear(hidden_size, output_size)
-        
     def forward(self, x):
-        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
-        out, _ = self.rnn(x, h0)
-        out = self.fc(out[:, -1, :])  # Lấy output của lớp cuối cùng
-        return out
+        return self.main(x)
 
-# Khởi tạo mô hình
-input_size = 1  # số chiều của dữ liệu đầu vào
-hidden_size = 32  # số nơ-ron ẩn
-num_layers = 1  # số lớp RNN
-output_size = len(np.unique(y))  # số lớp đầu ra
-model = RNN(input_size, hidden_size, num_layers, output_size)
+# Discriminator definition
+class Discriminator(nn.Module):
+    def __init__(self, image_channels, hidden_dim=64):
+        super(Discriminator, self).__init__()
+        self.main = nn.Sequential(
+            nn.Conv2d(image_channels, hidden_dim, 4, 2, 1, bias=False),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(hidden_dim, hidden_dim * 2, 4, 2, 1, bias=False),
+            nn.BatchNorm2d(hidden_dim * 2),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(hidden_dim * 2, hidden_dim * 4, 3, 2, 1, bias=False),
+            nn.BatchNorm2d(hidden_dim * 4),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(hidden_dim * 4, 1, 4, 1, 0, bias=False),
+            nn.Sigmoid()
+        )
 
-# Định nghĩa hàm loss và optimizer
-criterion = nn.CrossEntropyLoss()  # Cross Entropy Loss
-optimizer = optim.Adam(model.parameters(), lr=0.001)
+    def forward(self, x):
+        return self.main(x)
 
-# Huấn luyện mô hình
-num_epochs = 20
+# Initialize networks
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+G = Generator(z_dim, 1).to(device)
+D = Discriminator(1).to(device)
 
+# Optimizers
+optimizer_G = optim.Adam(G.parameters(), lr=lr, betas=(beta1, 0.999))
+optimizer_D = optim.Adam(D.parameters(), lr=lr, betas=(beta1, 0.999))
+
+# Binary cross entropy loss and noise
+criterion = nn.BCELoss()
+fixed_noise = torch.randn(64, z_dim, 1, 1, device=device)
+
+# Training loop
 for epoch in range(num_epochs):
-    model.train()
-    epoch_loss = 0.0
-    for inputs, labels in train_loader:
-        optimizer.zero_grad()
-        outputs = model(inputs)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
-        epoch_loss += loss.item()
-    
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss/len(train_loader):.4f}')
+    for i, (real_images, _) in enumerate(dataloader):
+        batch_size = real_images.size(0)
+        real_images = real_images.to(device)
 
-# Đánh giá mô hình trên tập kiểm tra
-model.eval()
-with torch.no_grad():
-    X_test_tensor = X_test_tensor.view(-1, X.shape[1], 1)
-    y_pred = model(X_test_tensor)
-    _, y_pred_class = torch.max(y_pred, 1)
-    accuracy = (y_pred_class.eq(y_test_tensor).sum() / len(y_test_tensor)).item()
-    print(f'Accuracy on test set: {accuracy:.4f}')
+        # Train Discriminator
+        D.zero_grad()
+        label_real = torch.full((batch_size, 1), 1., device=device)
+        label_fake = torch.full((batch_size, 1), 0., device=device)
+
+        # Real images
+        output = D(real_images)
+        errD_real = criterion(output, label_real)
+        D_x = output.mean().item()
+
+        # Fake images
+        noise = torch.randn(batch_size, z_dim, 1, 1, device=device)
+        fake_images = G(noise)
+        output = D(fake_images.detach())
+        errD_fake = criterion(output, label_fake)
+        D_G_z1 = output.mean().item()
+
+        # Total discriminator loss
+        errD = errD_real + errD_fake
+        errD.backward()
+        optimizer_D.step()
+
+        # Train Generator
+        G.zero_grad()
+        label_real = torch.full((batch_size, 1), 1., device=device)
+        output = D(fake_images)
+        errG = criterion(output, label_real)
+        errG.backward()
+        D_G_z2 = output.mean().item()
+        optimizer_G.step()
+
+        if i % 100 == 0:
+            print('[%d/%d][%d/%d] Loss_D: %.4f Loss_G: %.4f D(x): %.4f D(G(z)): %.4f / %.4f'
+                  % (epoch + 1, num_epochs, i, len(dataloader),
+                     errD.item(), errG.item(), D_x, D_G_z1, D_G_z2))
+
+    # Save generated images
+    if epoch == 0:
+        vutils.save_image(real_images, '%s/real_samples.png' % "./results", normalize=True)
+    
+    fake = G(fixed_noise)
+    vutils.save_image(fake.detach(), '%s/fake_samples_epoch_%03d.png' % ("./results", epoch + 1), normalize=True)
+
+# Save model checkpoints
+torch.save(G.state_dict(), './dcgan_generator.pth')
+torch.save(D.state_dict(), './dcgan_discriminator.pth')
 ```
 
-### Tổng kết
-Trên đây là cách sử dụng Mạng Nơ-ron Tái Phát (RNN) trong PyTorch cho bài toán phân loại nhị phân và phân loại nhiều lớp. Mã nguồn đã cung cấp bao gồm xây dựng mô hình, chuẩn bị dữ liệu, định nghĩa hàm loss và optimizer, huấn luyện mô hình và đánh giá kết quả trên tập kiểm tra. Bạn có thể điều chỉnh các tham số và cấu trúc mô hình để phù hợp với bài toán cụ thể của mình.
+#### Giải thích code:
+- **Generator và Discriminator**: Được định nghĩa bằng lớp `Generator` và `Discriminator` tương ứng. Mạng Generator sử dụng các lớp ConvTranspose2d để chuyển đổi vector nhiễu ngẫu nhiên thành ảnh giả, trong khi Discriminator sử dụng các lớp Conv2d để phân biệt ảnh thật và ảnh giả.
+  
+- **Optimizer**: Sử dụng Adam optimizer để cập nhật các tham số của Generator và Discriminator.
+
+- **Training Loop**: Vòng lặp huấn luyện với hai giai đoạn chính: huấn luyện Discriminator để phân biệt giữa ảnh thật và ảnh giả và huấn luyện Generator để cố gắng lừa Discriminator bằng cách tạo ra các ảnh giả mà Discriminator cho là ảnh thật.
+
+- **Lưu trữ ảnh và mô hình**: Lưu các ảnh được tạo ra và lưu trữ mô hình Generator cuối cùng sau khi huấn luyện.
+
+Với ví dụ trên, bạn có thể huấn luyện mô hình DCGAN để tạo ra các ảnh chất lượng từ bộ dữ liệu MNIST. Để cải thiện chất lượng hoặc áp dụng cho các bộ dữ liệu khác, bạn có thể điều chỉnh kiến trúc mô hình và các tham số huấn luyện như cách thêm lớp tích chập, kích thước ảnh đầu vào, và số lượng epochs.
 
 
-Để trình bày chi tiết và mã nguồn Python sử dụng Mạng Nơ-ron Dài Hạn và Ngắn Hạn (LSTM - Long Short-Term Memory) trong PyTorch cho bài toán phân loại nhị phân và phân loại nhiều lớp, mình sẽ cung cấp các ví dụ cụ thể.
+Dưới đây là một ví dụ khác về cách triển khai mô hình CGAN (Conditional Generative Adversarial Network) bằng PyTorch. Trong ví dụ này, chúng ta sẽ sử dụng bộ dữ liệu FashionMNIST và huấn luyện mô hình để tạo ra các hình ảnh từ các lớp quần áo khác nhau.
 
-### Binary Classification
+### CGAN (Conditional Generative Adversarial Network)
 
-#### Chuẩn bị dữ liệu
-Chúng ta sử dụng dữ liệu từ thư viện sklearn để minh họa. Đây là một ví dụ với dữ liệu giả lập:
+CGAN mở rộng GAN bằng cách thêm thông tin điều kiện (conditional information), ví dụ như nhãn lớp, để điều khiển quá trình sinh dữ liệu.
+
+#### Cài đặt mô hình trong PyTorch
 
 ```python
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-import numpy as np
-
-# Tạo dữ liệu giả lập
-X, y = make_classification(n_samples=1000, n_features=20, random_state=42)
-
-# Chia dữ liệu thành tập huấn luyện và tập kiểm tra
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Chuyển đổi thành tensor trong PyTorch
 import torch
-from torch.utils.data import TensorDataset, DataLoader
-
-X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
-y_train_tensor = torch.tensor(y_train, dtype=torch.float32)
-X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-y_test_tensor = torch.tensor(y_test, dtype=torch.float32)
-
-# Reshape lại X để phù hợp với đầu vào của LSTM (batch_size, seq_len, input_size)
-X_train_tensor = X_train_tensor.view(-1, 20, 1)  # seq_len = 20, input_size = 1
-X_test_tensor = X_test_tensor.view(-1, 20, 1)
-
-# Tạo DataLoader cho tập huấn luyện
-train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
-train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-```
-
-#### Xây dựng mô hình LSTM
-Sử dụng PyTorch, chúng ta có thể xây dựng mô hình LSTM như sau:
-
-```python
 import torch.nn as nn
 import torch.optim as optim
-
-class LSTM(nn.Module):
-    def __init__(self, input_size, hidden_size, num_layers, output_size):
-        super(LSTM, self).__init__()
-        self.hidden_size = hidden_size
-        self.num_layers = num_layers
-        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)
-        self.fc = nn.Linear(hidden_size, output_size)
-        self.sigmoid = nn.Sigmoid()
-        
-    def forward(self, x):
-        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
-        c0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
-        out, _ = self.lstm(x, (h0, c0))
-        out = self.fc(out[:, -1, :])  # Lấy output của lớp cuối cùng
-        out = self.sigmoid(out)
-        return out
-
-# Khởi tạo mô hình
-input_size = 1  # số chiều của dữ liệu đầu vào
-hidden_size = 32  # số nơ-ron ẩn
-num_layers = 1  # số lớp LSTM
-output_size = 1  # đầu ra có 1 nơ-ron vì là bài toán nhị phân
-model = LSTM(input_size, hidden_size, num_layers, output_size)
-
-# Định nghĩa hàm loss và optimizer
-criterion = nn.BCELoss()  # Binary Cross Entropy Loss
-optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-# Huấn luyện mô hình
-num_epochs = 20
-
-for epoch in range(num_epochs):
-    model.train()
-    epoch_loss = 0.0
-    for inputs, labels in train_loader:
-        optimizer.zero_grad()
-        outputs = model(inputs)
-        loss = criterion(outputs.squeeze(), labels)
-        loss.backward()
-        optimizer.step()
-        epoch_loss += loss.item()
-    
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss/len(train_loader):.4f}')
-
-# Đánh giá mô hình trên tập kiểm tra
-model.eval()
-with torch.no_grad():
-    X_test_tensor = X_test_tensor.view(-1, 20, 1)
-    y_pred = model(X_test_tensor)
-    y_pred_class = y_pred.round()
-    accuracy = (y_pred_class.eq(y_test_tensor.view_as(y_pred_class)).sum() / len(y_test_tensor)).item()
-    print(f'Accuracy on test set: {accuracy:.4f}')
-```
-
-### Multi-class Classification hoặc Regression (Prediction)
-
-#### Chuẩn bị dữ liệu
-Chúng ta tiếp tục sử dụng dữ liệu từ thư viện sklearn, nhưng cho một ví dụ với nhiều lớp:
-
-```python
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+import torchvision.utils as vutils
 import numpy as np
+import matplotlib.pyplot as plt
 
-# Load dữ liệu Iris dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
+# Set random seed for reproducibility
+manual_seed = 999
+torch.manual_seed(manual_seed)
 
-# Chia dữ liệu thành tập huấn luyện và tập kiểm tra
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Hyperparameters
+batch_size = 128
+image_size = 28
+z_dim = 100
+num_epochs = 50
+lr = 0.0002
+beta1 = 0.5
+num_classes = 10  # Number of classes (labels)
 
-# Chuyển đổi thành tensor trong PyTorch
-X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
-y_train_tensor = torch.tensor(y_train, dtype=torch.long)  # y_train là index của lớp
-X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-y_test_tensor = torch.tensor(y_test, dtype=torch.long)
+# Download FashionMNIST dataset
+transform = transforms.Compose([
+    transforms.Resize(image_size),
+    transforms.ToTensor(),
+    transforms.Normalize((0.5,), (0.5,))
+])
 
-# Reshape lại X để phù hợp với đầu vào của LSTM (batch_size, seq_len, input_size)
-X_train_tensor = X_train_tensor.view(-1, X.shape[1], 1)  # seq_len = số đặc trưng của Iris, input_size = 1
-X_test_tensor = X_test_tensor.view(-1, X.shape[1], 1)
+dataset = datasets.FashionMNIST(root='./data', train=True, download=True, transform=transform)
+dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=2)
 
-# Tạo DataLoader cho tập huấn luyện
-train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
-train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-```
-
-#### Xây dựng mô hình LSTM
-```python
-import torch.nn as nn
-import torch.optim as optim
-
-class LSTM(nn.Module):
-    def __init__(self, input_size, hidden_size, num_layers, output_size):
-        super(LSTM, self).__init__()
-        self.hidden_size = hidden_size
-        self.num_layers = num_layers
-        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)
-        self.fc = nn.Linear(hidden_size, output_size)
-        
-    def forward(self, x):
-        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
-        c0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
-        out, _ = self.lstm(x, (h0, c0))
-        out = self.fc(out[:, -1, :])  # Lấy output của lớp cuối cùng
-        return out
-
-# Khởi tạo mô hình
-input_size = 1  # số chiều của dữ liệu đầu vào
-hidden_size = 32  # số nơ-ron ẩn
-num_layers = 1  # số lớp LSTM
-output_size = len(np.unique(y))  # số lớp đầu ra
-model = LSTM(input_size, hidden_size, num_layers, output_size)
-
-# Định nghĩa hàm loss và optimizer
-criterion = nn.CrossEntropyLoss()  # Cross Entropy Loss
-optimizer = optim.Adam(model.parameters(), lr=0.001)
-
-# Huấn luyện mô hình
-num_epochs = 20
-
-for epoch in range(num_epochs):
-    model.train()
-    epoch_loss = 0.0
-    for inputs, labels in train_loader:
-        optimizer.zero_grad()
-        outputs = model(inputs)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
-        epoch_loss += loss.item()
+# Generator definition
+class Generator(nn.Module):
+    def __init__(self, z_dim, c_dim, output_dim):
+        super(Generator, self).__init__()
+        self.fc = nn.Sequential(
+            nn.Linear(z_dim + c_dim, 128),
+            nn.ReLU(),
+            nn.Linear(128, output_dim),
+            nn.Tanh()
+        )
     
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss/len(train_loader):.4f}')
+    def forward(self, z, c):
+        x = torch.cat([z, c], dim=1)
+        x = self.fc(x)
+        return x
 
-# Đánh giá mô hình trên tập kiểm tra
-model.eval()
-with torch.no_grad():
-    X_test_tensor = X_test_tensor.view(-1, X.shape[1], 1)
-    y_pred = model(X_test_tensor)
-    _, y_pred_class = torch.max(y_pred, 1)
-    accuracy = (y_pred_class.eq(y_test_tensor).sum() / len(y_test_tensor)).item()
-    print(f'Accuracy on test set: {accuracy:.4f}')
+# Discriminator definition
+class Discriminator(nn.Module):
+    def __init__(self, input_dim, c_dim):
+        super(Discriminator, self).__init__()
+        self.fc = nn.Sequential(
+            nn.Linear(input_dim + c_dim, 128),
+            nn.ReLU(),
+            nn.Linear(128, 1),
+            nn.Sigmoid()
+        )
+    
+    def forward(self, x, c):
+        x = torch.cat([x, c], dim=1)
+        x = self.fc(x)
+        return x
+
+# Initialize networks
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+G = Generator(z_dim, num_classes, image_size * image_size).to(device)
+D = Discriminator(image_size * image_size, num_classes).to(device)
+
+# Optimizers
+optimizer_G = optim.Adam(G.parameters(), lr=lr, betas=(beta1, 0.999))
+optimizer_D = optim.Adam(D.parameters(), lr=lr, betas=(beta1, 0.999))
+
+# Binary cross entropy loss
+criterion = nn.BCELoss()
+
+# Fixed noise for visualization
+fixed_noise = torch.randn(num_classes, z_dim, device=device)
+
+# Training loop
+for epoch in range(num_epochs):
+    for i, (real_images, labels) in enumerate(dataloader):
+        batch_size = real_images.size(0)
+        real_images = real_images.to(device)
+        labels_onehot = torch.zeros(batch_size, num_classes).scatter_(1, labels.view(-1, 1), 1).to(device)
+
+        # Train Discriminator
+        D.zero_grad()
+        label_real = torch.full((batch_size, 1), 1., device=device)
+        label_fake = torch.full((batch_size, 1), 0., device=device)
+
+        # Real images
+        output = D(real_images.view(batch_size, -1), labels_onehot)
+        errD_real = criterion(output, label_real)
+        D_x = output.mean().item()
+
+        # Fake images
+        noise = torch.randn(batch_size, z_dim, device=device)
+        fake_images = G(noise, labels_onehot)
+        output = D(fake_images.detach(), labels_onehot)
+        errD_fake = criterion(output, label_fake)
+        D_G_z1 = output.mean().item()
+
+        # Total discriminator loss
+        errD = errD_real + errD_fake
+        errD.backward()
+        optimizer_D.step()
+
+        # Train Generator
+        G.zero_grad()
+        label_real = torch.full((batch_size, 1), 1., device=device)
+        output = D(fake_images, labels_onehot)
+        errG = criterion(output, label_real)
+        errG.backward()
+        D_G_z2 = output.mean().item()
+        optimizer_G.step()
+
+        if i % 100 == 0:
+            print('[%d/%d][%d/%d] Loss_D: %.4f Loss_G: %.4f D(x): %.4f D(G(z)): %.4f / %.4f'
+                  % (epoch + 1, num_epochs, i, len(dataloader),
+                     errD.item(), errG.item(), D_x, D_G_z1, D_G_z2))
+
+    # Save generated images
+    if epoch == 0:
+        vutils.save_image(real_images, '%s/real_samples.png' % "./results", normalize=True)
+    
+    fake = G(fixed_noise, torch.eye(num_classes, device=device))
+    vutils.save_image(fake.detach(), '%s/fake_samples_epoch_%03d.png' % ("./results", epoch + 1), normalize=True)
+
+# Save model checkpoints
+torch.save(G.state_dict(), './cgan_generator.pth')
+torch.save(D.state_dict(), './cgan_discriminator.pth')
 ```
 
-### Tổng kết
-Trên đây là cách sử dụng Mạng Nơ-ron Dài Hạn và Ngắn Hạn (LSTM) trong PyTorch cho bài toán phân loại nhị phân và phân loại nhiều lớp. Mã nguồn đã cung cấp bao gồm xây dựng mô hình, chuẩn bị dữ liệu, định nghĩa hàm loss và optimizer, huấn luyện mô hình và đánh giá kết quả trên tập kiểm tra. Bạn có thể điều chỉnh các tham số và cấu trúc mô hình để phù hợp với bài toán cụ thể của mình.
+#### Giải thích code:
+- **Generator và Discriminator**: Được định nghĩa bằng lớp `Generator` và `Discriminator` tương ứng. Mạng Generator nhận vector nhiễu và nhãn lớp để sinh ra ảnh giả. Discriminator nhận ảnh và nhãn lớp để phân biệt giữa ảnh thật và ảnh giả.
+
+- **Optimizer**: Sử dụng Adam optimizer để cập nhật các tham số của Generator và Discriminator.
+
+- **Training Loop**: Vòng lặp huấn luyện với hai giai đoạn chính: huấn luyện Discriminator để phân biệt giữa ảnh thật và ảnh giả và huấn luyện Generator để cố gắng lừa Discriminator bằng cách tạo ra các ảnh giả mà Discriminator cho là ảnh thật.
+
+- **Lưu trữ ảnh và mô hình**: Lưu các ảnh được tạo ra và lưu trữ mô hình Generator cuối cùng sau khi huấn luyện.
+
+Với ví dụ trên, bạn có thể huấn luyện mô hình CGAN để tạo ra các hình ảnh từ bộ dữ liệu FashionMNIST dựa trên nhãn lớp. Để cải thiện chất lượng hoặc áp dụng cho các bộ dữ liệu khác, bạn có thể điều chỉnh kiến trúc mô hình, số lượng epochs, và các tham số huấn luyện khác như cách thay đổi số chiều của vector nhiễu hay số lớp đầu ra.
 
 
 
