@@ -9,134 +9,52 @@ tags:
 
 Hiểu hơn về các thuật toán phổ biến cần phải biết và sử dụng
 
-Cả hai thuật toán MobileNet và EfficientNet đều là các mô hình deep learning được phát triển để giảm kích thước và tính toán của mạng neural network, đặc biệt là trong bối cảnh các ứng dụng nhúng trên thiết bị có tài nguyên hạn chế như điện thoại thông minh.
 
-### 1. MobileNet
-
-**Giải thích:** MobileNet là một mạng neural network được thiết kế để có thể hoạt động hiệu quả trên các thiết bị di động và các thiết bị nhúng khác. Nó sử dụng một kỹ thuật gọi là Depthwise Separable Convolution để giảm số lượng tham số và tính toán so với các mạng truyền thống.
-
-**Code PyTorch:**
-```python
-import torch
-import torch.nn as nn
-from torch.hub import load_state_dict_from_url
-
-__all__ = ['MobileNetV1', 'mobilenet_v1']
-
-model_urls = {
-    'mobilenet_v1': 'https://download.pytorch.org/models/mobilenet_v1.pth.tar',
-}
-
-class MobileNetV1(nn.Module):
-    def __init__(self, num_classes=1000):
-        super(MobileNetV1, self).__init__()
-        # Define layers according to MobileNetV1 architecture
-        self.features = nn.Sequential(
-            nn.Conv2d(3, 32, kernel_size=3, stride=2, padding=1),
-            nn.BatchNorm2d(32),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1, groups=32),
-            nn.BatchNorm2d(64),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(64, 128, kernel_size=1, stride=1, padding=0),
-            nn.BatchNorm2d(128),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(128, 128, kernel_size=3, stride=2, padding=1, groups=128),
-            nn.BatchNorm2d(128),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(128, 256, kernel_size=1, stride=1, padding=0),
-            nn.BatchNorm2d(256),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(256, 256, kernel_size=3, stride=2, padding=1, groups=256),
-            nn.BatchNorm2d(256),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(256, 512, kernel_size=1, stride=1, padding=0),
-            nn.BatchNorm2d(512),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(512, 512, kernel_size=3, stride=2, padding=1, groups=512),
-            nn.BatchNorm2d(512),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(512, 1024, kernel_size=1, stride=1, padding=0),
-            nn.BatchNorm2d(1024),
-            nn.ReLU(inplace=True),
-            nn.AvgPool2d(kernel_size=7, stride=1),
-        )
-        self.classifier = nn.Linear(1024, num_classes)
-
-    def forward(self, x):
-        x = self.features(x)
-        x = x.view(x.size(0), -1)
-        x = self.classifier(x)
-        return x
-
-def mobilenet_v1(pretrained=False, progress=True, **kwargs):
-    model = MobileNetV1(**kwargs)
-    if pretrained:
-        state_dict = load_state_dict_from_url(model_urls['mobilenet_v1'],
-                                              progress=progress)
-        model.load_state_dict(state_dict)
-    return model
-```
-
-**Ví dụ sử dụng:**
-```python
-# Load pretrained MobileNetV1 model
-model = mobilenet_v1(pretrained=True)
-
-# Set model to evaluation mode
-model.eval()
-
-# Example input tensor (batch_size, channels, height, width)
-example_input = torch.randn(1, 3, 224, 224)
-
-# Forward pass
-output = model(example_input)
-print(output.shape)  # Shape of the output tensor
-```
-
-### 2. EfficientNet
-
-**Giải thích:** EfficientNet là một mạng neural network được tối ưu hóa để đạt được một hiệu suất tốt hơn với số lượng tham số và tính toán thấp hơn so với các mạng truyền thống. Nó sử dụng một kỹ thuật gọi là Compound Scaling để tự động cân bằng kích thước mạng theo chiều rộng, chiều sâu và độ phân giải của hình ảnh đầu vào.
-
-**Code PyTorch:**
-```python
-from efficientnet_pytorch import EfficientNet
-
-# Define EfficientNet model (e.g., EfficientNet-B0)
-model = EfficientNet.from_name('efficientnet-b0')
-
-# Alternatively, load pretrained weights
-# model = EfficientNet.from_pretrained('efficientnet-b0')
-
-# Set model to evaluation mode
-model.eval()
-
-# Example input tensor (batch_size, channels, height, width)
-example_input = torch.randn(1, 3, 224, 224)
-
-# Forward pass
-output = model(example_input)
-print(output.shape)  # Shape of the output tensor
-```
-
-**Ví dụ sử dụng:**
-```python
-# Load pretrained EfficientNet model
-model = EfficientNet.from_pretrained('efficientnet-b0')
-
-# Set model to evaluation mode
-model.eval()
-
-# Example input tensor (batch_size, channels, height, width)
-example_input = torch.randn(1, 3, 224, 224)
-
-# Forward pass
-output = model(example_input)
-print(output.shape)  # Shape of the output tensor
-```
-
-Đoạn code cho cả MobileNet và EfficientNet mô tả cách để định nghĩa và sử dụng các mô hình này trong PyTorch. Bạn có thể thay đổi kích thước của input và số lượng lớp đầu ra tuỳ thuộc vào nhu cầu của bạn.
+𝟭𝟬 𝗔𝗹𝗴𝗼𝗿𝗶𝘁𝗵𝗺𝘀 𝗘𝘃𝗲𝗿𝘆 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿 𝗦𝗵𝗼𝘂𝗹𝗱 𝗞𝗻𝗼𝘄:
 
 
+𝟬.💡 𝗕𝗿𝗲𝗮𝗱𝘁𝗵-𝗙𝗶𝗿𝘀𝘁 𝗦𝗲𝗮𝗿𝗰𝗵 (𝗕𝗙𝗦): 
+Explore a graph level by level, starting from the root, which is great for finding the shortest path in unweighted graphs. 
+➡️ Useful when: You're designing web crawlers or analyzing social networks.
+
+𝟭.💡 𝗧𝘄𝗼 𝗛𝗲𝗮𝗽𝘀: 
+Uses a min-heap and max-heap to manage dynamic datasets efficiently, maintaining median and priority. 
+➡️ Useful when: You need to manage a priority queue or dynamic datasets.
+
+𝟮.💡 𝗧𝘄𝗼 𝗣𝗼𝗶𝗻𝘁𝗲𝗿𝘀: 
+This technique takes 2 points in a sequence and performs logic based on the problem.
+➡️ Useful when: You are implementing sorting or searching functions.
+
+𝟯.💡 𝗦𝗹𝗶𝗱𝗶𝗻𝗴 𝗪𝗶𝗻𝗱𝗼𝘄: 
+Optimizes the computation by reusing the state from the previous subset of data. 
+➡️ Useful when: You're handling network congestion or data compression.
+
+𝟰.💡 𝗗𝗲𝗽𝘁𝗵-𝗙𝗶𝗿𝘀𝘁 𝗦𝗲𝗮𝗿𝗰𝗵 (𝗗𝗙𝗦): 
+Explores each path to the end, ideal for situations that involve exploring all options like in puzzles. 
+➡️ Useful when: You're working with graph structures or need to generate permutations.
+
+𝟱.💡 𝗧𝗼𝗽𝗼𝗹𝗼𝗴𝗶𝗰𝗮𝗹 𝗦𝗼𝗿𝘁: 
+Helps in scheduling tasks based on their dependencies. 
+➡️ Useful when: You are determining execution order in project management or compiling algorithms.
+
+𝟲.💡 𝗠𝗲𝗿𝗴𝗲 𝗜𝗻𝘁𝗲𝗿𝘃𝗮𝗹𝘀: 
+Optimizes overlapping intervals to minimize the number of intervals. 
+➡️ Useful when: Scheduling resources or managing calendars.
+
+𝟳.💡 𝗕𝗮𝗰𝗸𝘁𝗿𝗮𝗰𝗸𝗶𝗻𝗴: 
+It explores all potential solutions systematically and is perfect for solving puzzles and optimization problems. 
+➡️ Useful when: Solving complex logical puzzles or optimizing resource allocations.
+
+𝟴.💡 𝗧𝗿𝗶𝗲 (𝗣𝗿𝗲𝗳𝗶𝘅 𝗧𝗿𝗲𝗲): 
+A tree-like structure that manages dynamic sets of strings efficiently, often used for searching. 
+➡️ Useful when: Implementing spell-checkers or autocomplete systems.
+
+𝟵.💡 𝗙𝗹𝗼𝗼𝗱 𝗙𝗶𝗹𝗹: 
+It fills a contiguous area for features like the 'paint bucket' tool. 
+➡️ Useful when: Working in graphics editors or game development.
+
+𝟭𝟬.💡 𝗦𝗲𝗴𝗺𝗲𝗻𝘁 𝗧𝗿𝗲𝗲: 
+Efficiently manages intervals or segments and is useful for storing information about intervals and querying over them. 
+➡️ Useful when: Dealing with database range queries or statistical calculations.
 
 Hết.
