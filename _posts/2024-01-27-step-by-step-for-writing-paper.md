@@ -11,41 +11,44 @@ tags:
 
 Các outline gồm những nội dung sau
 
-1. Làm sao để cải thiện chất lượng bài báo
-   
-2. Examples of ChatGPT Prompts
-   
-3. Các bước tiếp cận để viết một bài báo khoa học
-   
-4. Phương pháp đọc và tiếp cận việc viết báo
-   
-5. Tư duy để liệt kê danh sách các bài toán nghiên cứu cụ thể
-    
-6. Việc hướng dẫn sinh viên để tham gia nckh
-    
-7. Cách viết các bài analysis và survey "nhẹ nhàng" thì làm thế nào?
-    
-8. Chi tiết bài các loại review đi
-    
-9. To write a comprehensive survey paper on a particular concept, follow these steps
-    
-10. Một số paper tham khảo cách viết (literature review, synthesis review, survey) và thực hiện
-    
-11. How to use AI to conduct review
-    
-12. How to create research question
-    
-13. Research Methodology
+***Để viết báo có ranking: Viết báo ranking (Q1. research question? Q2. Gồm những contribtution nào? a. Biểu diễn formula problem, b. Toán từ quá trình pre đến model, c. Cách mô tả dữ liệu cần exp (bảng, hình ảnh), d. Trình bày chi tiết main flow, e. Cơ chế hoạt động của pp đề xuất, f. Vẽ hình kết quả cho đẹp, g. Numerical exp nếu có)
 
-14. Prompts For Academic Writing To Enhance Academic Writing Skills
-    
-15. How to reading a scientific paper for newbie
 
-16. How to build mathematical formula (from natural idea)
+2. Làm sao để cải thiện chất lượng bài báo
+   
+3. Examples of ChatGPT Prompts
+   
+4. Các bước tiếp cận để viết một bài báo khoa học
+   
+5. Phương pháp đọc và tiếp cận việc viết báo
+   
+6. Tư duy để liệt kê danh sách các bài toán nghiên cứu cụ thể
     
-17. Hiểu hơn cách sử dụng prompt phù hợp
+7. Việc hướng dẫn sinh viên để tham gia nckh
+    
+8. Cách viết các bài analysis và survey "nhẹ nhàng" thì làm thế nào?
+    
+9. Chi tiết bài các loại review đi
+    
+10. To write a comprehensive survey paper on a particular concept, follow these steps
+    
+11. Một số paper tham khảo cách viết (literature review, synthesis review, survey) và thực hiện
+    
+12. How to use AI to conduct review
+    
+13. How to create research question
+    
+14. Research Methodology
 
-18. Các hình ảnh và bảng biểu cần có trong một paper
+15. Prompts For Academic Writing To Enhance Academic Writing Skills
+    
+16. How to reading a scientific paper for newbie
+
+17. How to build mathematical formula (from natural idea)
+    
+18. Hiểu hơn cách sử dụng prompt phù hợp
+
+19. Các hình ảnh và bảng biểu cần có trong một paper
 
 1.Làm sao để cải thiện chất lượng bài báo
 ======
