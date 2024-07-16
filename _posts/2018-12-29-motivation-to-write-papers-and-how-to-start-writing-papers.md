@@ -41,5 +41,26 @@ How to start writing paper
 
 5. Phải viết mỗi ngày, mỗi ngày phải viết, viết nhiều nhiều vào. 
 
+Làm sao để các bài báo có ranking?
+=======
+
+- xác định (Q1. research question? Q2. Gồm những contribtution nào?)
+
+- Về hình thức:
++ phần luồng chính (nên vẽ trắng đen như này nhé.)
+[Link tham khảo] (https://app.diagrams.net/#G16foGh5eOzMDlT9Wy-hKnTPNvSwXG3cyn#%7B%22pageId%22%3A%22_QMtOwwpuYUK7a-xD40q%22%7D)
++ phần mô tả dataset và preprocessing (vẽ bảng, vẽ luồng thực hiện) (có thể tạo dataset mẫu hay sử dụng public dataset)
++ phần trình method thực hiện (luồng chính + mã giả + bảng tham số)
++ phần result và experiment:  (nó cần những cái gì? hình ảnh, bảng biểu)
+
+- Về nội dung: 
++ Biểu diễn formula problem,
++ Toán từ quá trình pre đến model, 
++ Cách mô tả dữ liệu cần exp (bảng, hình ảnh) 
++ Trình bày chi tiết main flow
++ Cơ chế hoạt động của pp đề xuất, 
++ Vẽ hình kết quả cho đẹp
++ Numerical exp nếu có
+
 
 Hết.
