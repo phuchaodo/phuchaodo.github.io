@@ -49,13 +49,14 @@ Làm sao để các bài báo có ranking?
 - Về hình thức:
 
 1. phần luồng chính (nên vẽ trắng đen như này nhé.)
-[Link tham khảo] (https://app.diagrams.net/#G16foGh5eOzMDlT9Wy-hKnTPNvSwXG3cyn#%7B%22pageId%22%3A%22_QMtOwwpuYUK7a-xD40q%22%7D)
 
-2. phần mô tả dataset và preprocessing (vẽ bảng, vẽ luồng thực hiện) (có thể tạo dataset mẫu hay sử dụng public dataset)
+[Link tham khảo](https://app.diagrams.net/#G16foGh5eOzMDlT9Wy-hKnTPNvSwXG3cyn#%7B%22pageId%22%3A%22_QMtOwwpuYUK7a-xD40q%22%7D)
 
-3. phần trình method thực hiện (luồng chính + mã giả + bảng tham số)
+3. phần mô tả dataset và preprocessing (vẽ bảng, vẽ luồng thực hiện) (có thể tạo dataset mẫu hay sử dụng public dataset)
 
-4. phần result và experiment:  (nó cần những cái gì? hình ảnh, bảng biểu)
+4. phần trình method thực hiện (luồng chính + mã giả + bảng tham số)
+
+5. phần result và experiment:  (nó cần những cái gì? hình ảnh, bảng biểu)
 
 - Về nội dung: 
 
