@@ -50,7 +50,7 @@ Làm sao để các bài báo có ranking?
 
 1. phần luồng chính (nên vẽ trắng đen như này nhé.)
 
-[Link tham khảo](https://app.diagrams.net/#G16foGh5eOzMDlT9Wy-hKnTPNvSwXG3cyn#%7B%22pageId%22%3A%22_QMtOwwpuYUK7a-xD40q%22%7D)
+      [Link tham khảo](https://app.diagrams.net/#G16foGh5eOzMDlT9Wy-hKnTPNvSwXG3cyn#%7B%22pageId%22%3A%22_QMtOwwpuYUK7a-xD40q%22%7D)
 
 3. phần mô tả dataset và preprocessing (vẽ bảng, vẽ luồng thực hiện) (có thể tạo dataset mẫu hay sử dụng public dataset)
 
