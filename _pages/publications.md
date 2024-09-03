@@ -9,27 +9,32 @@ author_profile: true
 
 **UNDER REVIEW OR ACCEPTED**  
 
-[28] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Reducing Latency in Hybrid Satellite-Terrestrial Networks through Lossless Network Traffic Compression Using Spatio-Temporal Graph Neural Networks. _In 8th International Conference on Information, Control, and Communication Technologies (ICCT2024)_, 2024. (_Under review_)
+[30] Nguyen, Nang Hung Van, **Do, Phuc Hao**, Le, Tran Duc, Ngo, Van Uc, Dinh, Truong Duy, Pham, Van Dai. Comparative Performance of Deep Learning Models in Detecting Invasive Ductal Carcinoma. In The International Conference on Big data, IoT, and Cloud computing (BIC 2024), 2024. (_Accepted_)
 
-[27] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Advancing Satellite Communications: Multi-Objective Optimization with Genetic Algorithms. _In 27th Distributed Computer and Communication Networks: Control, Computation, Communications (DCCN2024)_, 2024. (_Accepted_)
+[29] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Reducing Latency in Hybrid Satellite-Terrestrial Networks through Lossless Network Traffic Compression Using Spatio-Temporal Graph Neural Networks. _In 8th International Conference on Information, Control, and Communication Technologies (ICCT2024)_, 2024. (_Accepted_)
 
-[26] Tran, Thanh Liem, **Do, Phuc Hao**, Pham, Van Dai, Abdelhamied, A. Ateya, Le, Tran Duc. [Investigating the Effectiveness of Different GNN Models for IoT-Healthcare Systems Botnet Traffic Classification](https://www.routledge.com/Secure-Health-A-Guide-to-Cybersecurity-for-Healthcare-Managers/Hammad-Ali-El-Affendi-Maleh-AbdEl-Latif/p/book/9781032742656). _Secure Health: A Guide to Cybersecurity for Healthcare Managers_, Taylor & Francis, Oct. 2024. (_In press_)
+[28] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Advancing Satellite Communications: Multi-Objective Optimization with Genetic Algorithms. _In 27th Distributed Computer and Communication Networks: Control, Computation, Communications (DCCN2024)_, 2024. (_Accepted_)
 
-[25] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Analysis of intelligent compression methods for traffic transmission in satellite communication channels. In EAI/Springer Innovations in Communication and Computing, Springer, 2023. (Accepted)
+[27] Tran, Thanh Liem, **Do, Phuc Hao**, Pham, Van Dai, Abdelhamied, A. Ateya, Le, Tran Duc. [Investigating the Effectiveness of Different GNN Models for IoT-Healthcare Systems Botnet Traffic Classification](https://www.routledge.com/Secure-Health-A-Guide-to-Cybersecurity-for-Healthcare-Managers/Hammad-Ali-El-Affendi-Maleh-AbdEl-Latif/p/book/9781032742656). _Secure Health: A Guide to Cybersecurity for Healthcare Managers_, Taylor & Francis, Oct. 2024. (_In press_)
+
+[26] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Analysis of intelligent compression methods for traffic transmission in satellite communication channels. In EAI/Springer Innovations in Communication and Computing, Springer, 2023. (Accepted)
 
 **2024**  
 
-[24] BEREZKIN A.A., **PHUC H.DO.**, KIRICHEK R.V, ZAHAROV A.A. [ANALYSIS OF ULTRA-HIGH RESOLUTION NEURAL NETWORK MODELS IN THE UAV VIDEO STREAM COMPRESSION SYSTEM
+[25] BEREZKIN A.A., **PHUC H.DO.**, KIRICHEK R.V, ZAHAROV A.A. [ANALYSIS OF ULTRA-HIGH RESOLUTION NEURAL NETWORK MODELS IN THE UAV VIDEO STREAM COMPRESSION SYSTEM
 ](https://www.elibrary.ru/item.asp?id=67294355). _ЭЛЕКТРОСВЯЗЬ_, 35-43, 2024. 
 
-[23] Nguyen Nang Hung Van, Ho Le Minh Nhat, Vo Duc Hoang, **Do Phuc Hao**. Transforming enrollment advising in education with deep learning models and chatbots, Kỷ yếu Hội nghị KHCN Quốc gia lần thứ XIV về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR), 2023 (Accepted)
+[24] Nguyen Nang Hung Van, Ho Le Minh Nhat, Vo Duc Hoang, **Do Phuc Hao**. Transforming enrollment advising in education with deep learning models and chatbots, Kỷ yếu Hội nghị KHCN Quốc gia lần thứ XIV về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR), 2023 (Accepted)
 
-[22] **Do, Phuc Hao**, Pham, Van Quan, Le, Tran Duc, Dinh, Truong Duy, Nguyen, Nang Hung Van, Pham, Minh Tuan. [Unveiling the Power of Pretrained Models for Neural Machine Translation in Vietnamese Language: A Comparative Analysis](https://ieeexplore.ieee.org/document/10471832). _In The 2023 RIVF International Conference on Computing and Communication Technologies_, IEEE, 452-457, 2024. 
+[23] **Do, Phuc Hao**, Pham, Van Quan, Le, Tran Duc, Dinh, Truong Duy, Nguyen, Nang Hung Van, Pham, Minh Tuan. [Unveiling the Power of Pretrained Models for Neural Machine Translation in Vietnamese Language: A Comparative Analysis](https://ieeexplore.ieee.org/document/10471832). _In The 2023 RIVF International Conference on Computing and Communication Technologies_, IEEE, 452-457, 2024. 
 
-[21] **Do, Phuc Hao**, Le, Tran Duc, Vishnevsky, Vladimir, Berezkin, Aleksandr, Kirichek, Ruslan. [A Horizontal Federated Learning Approach to IoT Malware Traffic Detection: An Empirical Evaluation with N-BaIoT Dataset](https://ieeexplore.ieee.org/document/10471929). _ICACT-Transactions on Advanced Communications Technology (TACT)_, IEEE, Vol. 12, Issue 3, 1494-1506, 2024. 
+[22] **Do, Phuc Hao**, Le, Tran Duc, Vishnevsky, Vladimir, Berezkin, Aleksandr, Kirichek, Ruslan. [A Horizontal Federated Learning Approach to IoT Malware Traffic Detection: An Empirical Evaluation with N-BaIoT Dataset](https://ieeexplore.ieee.org/document/10471929). _ICACT-Transactions on Advanced Communications Technology (TACT)_, IEEE, Vol. 12, Issue 3, 1494-1506, 2024. 
 
 
 **2023**
+
+[21] BEREZKIN A.A, **PHUC H.DO**, TRAN D.LE, KIRICHEK R.V [A COMPARATIVE ANALYSIS OF DIFFUSION-BASED SUPER-RESOLUTION TECHNIQUES IN A VIDEO STREAM COMPRESSION SYSTEM IN FPV CONTROL OF UNMANNED SYSTEMS
+](https://www.elibrary.ru/item.asp?id=56108145). _ТРУДЫ НАУЧНО-ИССЛЕДОВАТЕЛЬСКОГО ИНСТИТУТА РАДИО_, 26-39, 2023. 
 
 [20] Le, Tran Duc, **Do, Phuc Hao**, Nguyen, Duc Tai, Phung, Van Thang, Nguyen, Cong Danh, Dinh, Truong Duy. [Federated Learning for Linux Malware Detection: An Experimental Study](https://link.springer.com/chapter/10.1007/978-3-031-51097-7_6?fbclid=IwAR3I7ykdEHTVezfT1DR80u6HgSKVSldb1b1pZ2g3ZSP9FgNkHUJXY15bpsA). _EAI/Springer Innovations in Communication and Computing. Springer, Cham._, 63-75, 2023.  
 
