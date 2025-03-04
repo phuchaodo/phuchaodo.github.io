@@ -9,7 +9,7 @@ author_profile: true
 
 **UNDER REVIEW OR ACCEPTED**  
 
-[32] **Phuc Hao Do**, Van Nam Hoang, Truc Thi Kim Nguyen, Nguyen Nang Hung Van. PFR-ViT: A Polynomial Feature Representation-Enhanced Vision Transformer for Medical Data Classification. _IEEE JOURNAL OF BIOMEDICAL AND HEALTH INFORMATICS_, 2025. (_Under review_)
+[32] **Phuc Hao Do**, Van Nam Hoang, Truc Thi Kim Nguyen, Nguyen Nang Hung Van. PFR-ViT: A Polynomial Feature Representation-Enhanced Vision Transformer for Medical Data Classification. _IEEE Journal of Biomedical and Health Informatics (JBHI)_, 2025. (_Under review_)
 
 [31] **Phuc Hao DO**, Tran Duc LE, Van Nam HOANG, Nguyen Nang Hung VAN. Noise-Injected Multi-Head Attention for Robust Medical Image Classification. _Informatica Journal_, 2025. (_Under review_)
 
@@ -27,20 +27,17 @@ author_profile: true
 
 [26] Tran, Thanh Liem, **Do, Phuc Hao**, Pham, Van Dai, Abdelhamied, A. Ateya, Le, Tran Duc. [Investigating the Effectiveness of Different GNN Models for IoT-Healthcare Systems Botnet Traffic Classification](https://www.routledge.com/Secure-Health-A-Guide-to-Cybersecurity-for-Healthcare-Managers/Hammad-Ali-El-Affendi-Maleh-AbdEl-Latif/p/book/9781032742656). _Secure Health: A Guide to Cybersecurity for Healthcare Managers_, Taylor & Francis, Oct. 2024. (_In press_)
 
-[25] BEREZKIN A.A., **PHUC H.DO.**, KIRICHEK R.V, ZAHAROV A.A. [ANALYSIS OF ULTRA-HIGH RESOLUTION NEURAL NETWORK MODELS IN THE UAV VIDEO STREAM COMPRESSION SYSTEM
-](https://www.elibrary.ru/item.asp?id=67294355). _ЭЛЕКТРОСВЯЗЬ_, 35-43, 2024. 
+[25] Berezkin A.A., **Phuc H.Do.**, Kirichek R.V, Zaharov A.A. [Analysis of ultra-high resolution neural network models in the UAV video stream compression system](https://www.elibrary.ru/item.asp?id=67294355). _Электросвязь_, 35-43, 2024.
 
-[24] Nguyen Nang Hung Van, Ho Le Minh Nhat, Vo Duc Hoang, **Do Phuc Hao**. Transforming enrollment advising in education with deep learning models and chatbots, Kỷ yếu Hội nghị KHCN Quốc gia lần thứ XIV về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR), 2023 (Accepted)
+[24] Nguyen Nang Hung Van, Ho Le Minh Nhat, Vo Duc Hoang, **Do Phuc Hao**. [Transforming enrollment advising in education with deep learning models and chatbots](https://vap.ac.vn/Portals/0/TuyenTap/2024/2/21/64e13532907845ed9f5a2547dfec276f/24BB_FAIR2023_paper_6947.pdf), Kỷ yếu Hội nghị KHCN Quốc gia lần thứ XIV về Nghiên cứu cơ bản và ứng dụng Công nghệ thông tin (FAIR), 2023
 
 [23] **Do, Phuc Hao**, Pham, Van Quan, Le, Tran Duc, Dinh, Truong Duy, Nguyen, Nang Hung Van, Pham, Minh Tuan. [Unveiling the Power of Pretrained Models for Neural Machine Translation in Vietnamese Language: A Comparative Analysis](https://ieeexplore.ieee.org/document/10471832). _In The 2023 RIVF International Conference on Computing and Communication Technologies_, IEEE, 452-457, 2024. 
 
 [22] **Do, Phuc Hao**, Le, Tran Duc, Vishnevsky, Vladimir, Berezkin, Aleksandr, Kirichek, Ruslan. [A Horizontal Federated Learning Approach to IoT Malware Traffic Detection: An Empirical Evaluation with N-BaIoT Dataset](https://ieeexplore.ieee.org/document/10471929). _ICACT-Transactions on Advanced Communications Technology (TACT)_, IEEE, Vol. 12, Issue 3, 1494-1506, 2024. 
 
-
 **2023**
 
-[21] BEREZKIN A.A, **PHUC H.DO**, TRAN D.LE, KIRICHEK R.V [A COMPARATIVE ANALYSIS OF DIFFUSION-BASED SUPER-RESOLUTION TECHNIQUES IN A VIDEO STREAM COMPRESSION SYSTEM IN FPV CONTROL OF UNMANNED SYSTEMS
-](https://www.elibrary.ru/item.asp?id=56108145). _ТРУДЫ НАУЧНО-ИССЛЕДОВАТЕЛЬСКОГО ИНСТИТУТА РАДИО_, 26-39, 2023. 
+[21] Berezkin A.A, **Phuc H.Do**, Tran D.Le, Kirichek R.V [A comparative analysis of diffusion-based super-resolution techniques in a video stream compression system in FPV control of unmanned systems](https://www.elibrary.ru/item.asp?id=56108145). _Труды научно-исследовательского института радио_, 26-39, 2023.
 
 [20] Le, Tran Duc, **Do, Phuc Hao**, Nguyen, Duc Tai, Phung, Van Thang, Nguyen, Cong Danh, Dinh, Truong Duy. [Federated Learning for Linux Malware Detection: An Experimental Study](https://link.springer.com/chapter/10.1007/978-3-031-51097-7_6?fbclid=IwAR3I7ykdEHTVezfT1DR80u6HgSKVSldb1b1pZ2g3ZSP9FgNkHUJXY15bpsA). _EAI/Springer Innovations in Communication and Computing. Springer, Cham._, 63-75, 2023.  
 
