@@ -9,17 +9,23 @@ author_profile: true
 
 **UNDER REVIEW OR ACCEPTED**  
 
+[32] **Phuc Hao Do**, Van Nam Hoang, Truc Thi Kim Nguyen, Nguyen Nang Hung Van. PFR-ViT: A Polynomial Feature Representation-Enhanced Vision Transformer for Medical Data Classification. _IEEE JOURNAL OF BIOMEDICAL AND HEALTH INFORMATICS_, 2025. (_Under review_)
+
+[31] **Phuc Hao DO**, Tran Duc LE, Van Nam HOANG, Nguyen Nang Hung VAN. Noise-Injected Multi-Head Attention for Robust Medical Image Classification. _Informatica Journal_, 2025. (_Under review_)
+
 [30] Nguyen, Nang Hung Van, **Do, Phuc Hao**, Le, Tran Duc, Ngo, Van Uc, Dinh, Truong Duy, Pham, Van Dai. Comparative Performance of Deep Learning Models in Detecting Invasive Ductal Carcinoma. In The International Conference on Big data, IoT, and Cloud computing (BIC 2024), 2024. (_Accepted_)
 
-[29] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Reducing Latency in Hybrid Satellite-Terrestrial Networks through Lossless Network Traffic Compression Using Spatio-Temporal Graph Neural Networks. _In 8th International Conference on Information, Control, and Communication Technologies (ICCT2024)_, 2024. (_Accepted_)
+**2025**
 
-[28] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Advancing Satellite Communications: Multi-Objective Optimization with Genetic Algorithms. _In 27th Distributed Computer and Communication Networks: Control, Computation, Communications (DCCN2024)_, 2024. (_Accepted_)
+[29] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. [Optimizing Resource Allocation for Multi-beam Satellites Using Genetic Algorithm Variations](https://link.springer.com/10.1007/978-3-031-80853-1_2). _In 27th Distributed Computer and Communication Networks: Control, Computation, Communications (DCCN2024)_, Springer, Cham, 16-29, 2025.
 
-[27] Tran, Thanh Liem, **Do, Phuc Hao**, Pham, Van Dai, Abdelhamied, A. Ateya, Le, Tran Duc. [Investigating the Effectiveness of Different GNN Models for IoT-Healthcare Systems Botnet Traffic Classification](https://www.routledge.com/Secure-Health-A-Guide-to-Cybersecurity-for-Healthcare-Managers/Hammad-Ali-El-Affendi-Maleh-AbdEl-Latif/p/book/9781032742656). _Secure Health: A Guide to Cybersecurity for Healthcare Managers_, Taylor & Francis, Oct. 2024. (_In press_)
+[28] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. [ST-GNN-Powered Compression for Latency Reduction in Hybrid Satellite-Terrestrial Networks](https://ieeexplore.ieee.org/document/10874999). _In 2024 8th International Conference on Information, Control, and Communication Technologies (ICCT)_, IEEE, 1-10, 2025.
 
-[26] **Do, Phuc Hao**, Le, Tran Duc, Berezkin, Aleksandr, Kirichek, Ruslan. Analysis of intelligent compression methods for traffic transmission in satellite communication channels. In EAI/Springer Innovations in Communication and Computing, Springer, 2023. (Accepted)
+[27] **Do, Phuc Hao**, Le, Tran Duc, Dinh, Truong Duy, Pham, Van Dai. [Classifying IoT Botnet Attacks with Kolmogorov-Arnold Networks: A Comparative Analysis of Architectural Variations](https://ieeexplore.ieee.org/abstract/document/10839389). _IEEE Access_, Vol. 13, 16072 - 16093, 2025. **(SCIE Q1, IF = 3.4) **
 
 **2024**  
+
+[26] Tran, Thanh Liem, **Do, Phuc Hao**, Pham, Van Dai, Abdelhamied, A. Ateya, Le, Tran Duc. [Investigating the Effectiveness of Different GNN Models for IoT-Healthcare Systems Botnet Traffic Classification](https://www.routledge.com/Secure-Health-A-Guide-to-Cybersecurity-for-Healthcare-Managers/Hammad-Ali-El-Affendi-Maleh-AbdEl-Latif/p/book/9781032742656). _Secure Health: A Guide to Cybersecurity for Healthcare Managers_, Taylor & Francis, Oct. 2024. (_In press_)
 
 [25] BEREZKIN A.A., **PHUC H.DO.**, KIRICHEK R.V, ZAHAROV A.A. [ANALYSIS OF ULTRA-HIGH RESOLUTION NEURAL NETWORK MODELS IN THE UAV VIDEO STREAM COMPRESSION SYSTEM
 ](https://www.elibrary.ru/item.asp?id=67294355). _ЭЛЕКТРОСВЯЗЬ_, 35-43, 2024. 
